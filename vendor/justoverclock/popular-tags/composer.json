@@ -1,0 +1,51 @@
+{
+    "name": "justoverclock/popular-tags",
+    "description": "Add popular tags widget to Flarum",
+    "keywords": [
+        "Popular Tags"
+    ],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "require": {
+        "flarum/core": "^1.2.0",
+        "afrux/forum-widgets-core": "^0.1.0"
+    },
+    "authors": [
+        {
+            "name": "Marco Colia",
+            "email": "info@flarum.it",
+            "role": "Developer"
+        }
+    ],
+    "extra": {
+        "flarum-extension": {
+            "title": "Popular Tags",
+            "category": "features",
+            "icon": {
+                "name": "fas fa-tags",
+                "color": "red",
+                "backgroundColor": "qhite"
+            }
+        },
+        "flarum-cli": {
+            "modules": {
+                "admin": true,
+                "forum": true,
+                "js": true,
+                "jsCommon": false,
+                "css": true,
+                "locale": true,
+                "gitConf": true,
+                "githubActions": false,
+                "prettier": true,
+                "typescript": false,
+                "bundlewatch": true,
+                "backendTesting": false,
+                "editorConfig": true,
+                "styleci": true
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

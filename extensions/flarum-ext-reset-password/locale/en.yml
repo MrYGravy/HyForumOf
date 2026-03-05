@@ -1,0 +1,23 @@
+en:
+  miforums-reset-password:
+    forum:
+      title: "New Password"
+      subtitle: "Create a secure password to protect your forum account."
+      requirements_title: "Security Requirements"
+      req1: "Minimum 8 characters long"
+      req2: "At least one uppercase and one lowercase letter"
+      req3: "At least one number or special symbol"
+      req4: "Both passwords must match exactly"
+      new_password: "New password"
+      new_password_placeholder: "Enter your new password"
+      confirm_password: "Confirm password"
+      confirm_placeholder: "Repeat your new password"
+      strength_label: "Strength:"
+      strength_weak: "Weak"
+      strength_medium: "Moderate"
+      strength_strong: "Strong"
+      passwords_match: "Passwords match"
+      passwords_no_match: "Passwords do not match"
+      save_button: "Save new password"
+      saved: "✓ Password updated"
+      back_to_login: "Back to login"

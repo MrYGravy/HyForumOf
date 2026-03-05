@@ -1,0 +1,3669 @@
+[2026-02-22 17:05:26] composer.ERROR: require 'fof/pretty-mail:*' -W
+/var/www/flarum/composer.json has been updated
+Running composer update fof/pretty-mail --with-all-dependencies
+Loading composer repositories with package information
+Updating dependencies
+Your requirements could not be resolved to an installable set of packages.
+
+  Problem 1
+    - Root composer.json requires fof/pretty-mail *, found fof/pretty-mail[0.1.0, ..., 0.4.0, 1.0.0, ..., 1.1.2] but these were not loaded, because they are affected by security advisories ("PKSA-zqkh-gtty-c5yv"). Go to https://packagist.org/security-advisories/ to find advisory details. To ignore the advisories, add them to the audit "ignore" config. To turn the feature off entirely, you can set "block-insecure" to false in your "audit" config.
+
+
+Installation failed, reverting /var/www/flarum/composer.json and /var/www/flarum/composer.lock to their original content.
+  
+[2026-02-22 17:08:43] composer.INFO: outdated --format
+{
+    "installed": [
+        {
+            "name": "axy/backtrace",
+            "direct-dependency": false,
+            "homepage": "https://github.com/axypro/backtrace",
+            "source": "https://github.com/axypro/backtrace/tree/2.0.0",
+            "version": "2.0.0",
+            "release-age": "7 years old",
+            "release-date": "2019-02-02T18:01:31+00:00",
+            "latest": "3.0.1",
+            "latest-status": "update-possible",
+            "latest-release-date": "2023-03-16T11:02:09+00:00",
+            "description": "Tracing in PHP",
+            "abandoned": false
+        },
+        {
+            "name": "brick/math",
+            "direct-dependency": false,
+            "homepage": null,
+            "source": "https://github.com/brick/math/tree/0.14.8",
+            "version": "0.14.8",
+            "release-age": "from last week",
+            "release-date": "2026-02-10T14:33:43+00:00",
+            "latest": "0.15.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-20T15:19:18+00:00",
+            "description": "Arbitrary-precision arithmetic library",
+            "abandoned": false
+        },
+        {
+            "name": "carbonphp/carbon-doctrine-types",
+            "direct-dependency": false,
+            "homepage": null,
+            "source": "https://github.com/CarbonPHP/carbon-doctrine-types/tree/1.0.0",
+            "version": "1.0.0",
+            "release-age": "2 years old",
+            "release-date": "2023-10-01T12:35:29+00:00",
+            "latest": "3.2.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2024-02-09T16:56:22+00:00",
+            "description": "Types to use Carbon in Doctrine",
+            "abandoned": false
+        },
+        {
+            "name": "components/font-awesome",
+            "direct-dependency": false,
+            "homepage": null,
+            "source": "https://github.com/components/font-awesome/tree/5.15.4",
+            "version": "5.15.4",
+            "release-age": "4 years old",
+            "release-date": "2021-08-15T10:31:24+00:00",
+            "latest": "6.5.2",
+            "latest-status": "update-possible",
+            "latest-release-date": "2024-04-08T15:15:22+00:00",
+            "description": "Font Awesome, the iconic SVG, font, and CSS framework.",
+            "abandoned": false
+        },
+        {
+            "name": "doctrine/cache",
+            "direct-dependency": false,
+            "homepage": "https://www.doctrine-project.org/projects/cache.html",
+            "source": "https://github.com/doctrine/cache/tree/2.2.0",
+            "version": "2.2.0",
+            "release-age": "3 years old",
+            "release-date": "2022-05-20T20:07:39+00:00",
+            "latest": "2.2.0",
+            "latest-status": "up-to-date",
+            "latest-release-date": "2022-05-20T20:07:39+00:00",
+            "description": "PHP Doctrine Cache library is a popular cache implementation that supports many different drivers such as redis, memcache, apc, mongodb and others.",
+            "warning": "Package doctrine/cache is abandoned, you should avoid using it. No replacement was suggested.",
+            "abandoned": true
+        },
+        {
+            "name": "doctrine/dbal",
+            "direct-dependency": false,
+            "homepage": "https://www.doctrine-project.org/projects/dbal.html",
+            "source": "https://github.com/doctrine/dbal/tree/2.13.9",
+            "version": "2.13.9",
+            "release-age": "3 years old",
+            "release-date": "2022-05-02T20:28:55+00:00",
+            "latest": "4.4.1",
+            "latest-status": "update-possible",
+            "latest-release-date": "2025-12-04T10:11:03+00:00",
+            "description": "Powerful PHP database abstraction layer (DBAL) with many features for database schema introspection and management.",
+            "abandoned": false
+        },
+        {
+            "name": "doctrine/event-manager",
+            "direct-dependency": false,
+            "homepage": "https://www.doctrine-project.org/projects/event-manager.html",
+            "source": "https://github.com/doctrine/event-manager/tree/1.2.0",
+            "version": "1.2.0",
+            "release-age": "3 years old",
+            "release-date": "2022-10-12T20:51:15+00:00",
+            "latest": "2.1.1",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-29T07:11:08+00:00",
+            "description": "The Doctrine Event Manager is a simple PHP event system that was built to be used with the various Doctrine projects.",
+            "abandoned": false
+        },
+        {
+            "name": "doctrine/lexer",
+            "direct-dependency": false,
+            "homepage": "https://www.doctrine-project.org/projects/lexer.html",
+            "source": "https://github.com/doctrine/lexer/tree/1.2.3",
+            "version": "1.2.3",
+            "release-age": "3 years old",
+            "release-date": "2022-02-28T11:07:21+00:00",
+            "latest": "3.0.1",
+            "latest-status": "update-possible",
+            "latest-release-date": "2024-02-05T11:56:58+00:00",
+            "description": "PHP Doctrine Lexer parser library that can be used in Top-Down, Recursive Descent Parsers.",
+            "abandoned": false
+        },
+        {
+            "name": "egulias/email-validator",
+            "direct-dependency": false,
+            "homepage": "https://github.com/egulias/EmailValidator",
+            "source": "https://github.com/egulias/EmailValidator/tree/2.1.25",
+            "version": "2.1.25",
+            "release-age": "5 years old",
+            "release-date": "2020-12-29T14:50:06+00:00",
+            "latest": "4.0.4",
+            "latest-status": "update-possible",
+            "latest-release-date": "2025-03-06T22:45:56+00:00",
+            "description": "A library for validating emails against several RFCs",
+            "abandoned": false
+        },
+        {
+            "name": "fof/best-answer",
+            "direct-dependency": true,
+            "homepage": "https://friendsofflarum.org",
+            "source": "https://github.com/FriendsOfFlarum/best-answer",
+            "version": "1.6.5",
+            "release-age": "6 months old",
+            "release-date": "2025-08-19T12:24:20+00:00",
+            "latest": "1.7.1",
+            "latest-status": "semver-safe-update",
+            "latest-release-date": "2026-02-12T15:12:04+00:00",
+            "description": "Mark a post as the best answer in a discussion",
+            "abandoned": false
+        },
+        {
+            "name": "fof/upload",
+            "direct-dependency": true,
+            "homepage": "https://friendsofflarum.org",
+            "source": "https://github.com/FriendsOfFlarum/upload",
+            "version": "1.8.8",
+            "release-age": "1 month old",
+            "release-date": "2025-12-23T18:19:01+00:00",
+            "latest": "1.8.9",
+            "latest-status": "semver-safe-update",
+            "latest-release-date": "2026-02-22T10:12:31+00:00",
+            "description": "The file upload extension for the Flarum forum with insane intelligence.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/bus",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-03-07T15:02:42+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-12T15:22:19+00:00",
+            "description": "The Illuminate Bus package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/cache",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-07-22T14:58:32+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-16T18:49:43+00:00",
+            "description": "The Illuminate Cache package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/collections",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-06-23T15:29:49+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-16T14:10:38+00:00",
+            "description": "The Illuminate Collections package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/config",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "4 years old",
+            "release-date": "2022-01-31T15:57:46+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2025-10-26T17:11:19+00:00",
+            "description": "The Illuminate Config package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/console",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-04-21T22:14:18+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-12T15:23:36+00:00",
+            "description": "The Illuminate Console package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/container",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "4 years old",
+            "release-date": "2022-02-02T21:03:35+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-12T16:13:27+00:00",
+            "description": "The Illuminate Container package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/contracts",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "4 years old",
+            "release-date": "2022-01-13T14:47:47+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-10T18:16:44+00:00",
+            "description": "The Illuminate Contracts package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/database",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-08-31T16:16:06+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-17T15:22:28+00:00",
+            "description": "The Illuminate Database package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/events",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "4 years old",
+            "release-date": "2021-09-15T14:32:50+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-28T15:18:32+00:00",
+            "description": "The Illuminate Events package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/filesystem",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "4 years old",
+            "release-date": "2022-01-15T15:00:40+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-13T20:26:32+00:00",
+            "description": "The Illuminate Filesystem package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/hashing",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "4 years old",
+            "release-date": "2021-10-22T13:20:42+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-09T20:42:48+00:00",
+            "description": "The Illuminate Hashing package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/http",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-06-10T18:50:29+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-15T19:14:33+00:00",
+            "description": "The Illuminate Http package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/macroable",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "4 years old",
+            "release-date": "2021-11-16T13:57:03+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2024-07-23T16:31:01+00:00",
+            "description": "The Illuminate Macroable package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/mail",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "4 years old",
+            "release-date": "2022-01-05T15:17:19+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-12T15:26:13+00:00",
+            "description": "The Illuminate Mail package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/pipeline",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "4 years old",
+            "release-date": "2021-03-26T18:39:16+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2025-08-20T13:36:50+00:00",
+            "description": "The Illuminate Pipeline package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/queue",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-07-21T19:36:12+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-15T19:14:33+00:00",
+            "description": "The Illuminate Queue package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/session",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "4 years old",
+            "release-date": "2022-01-13T18:28:06+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-14T23:03:41+00:00",
+            "description": "The Illuminate Session package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/support",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-09-21T21:30:03+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-14T23:03:41+00:00",
+            "description": "The Illuminate Support package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/translation",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-05-02T13:55:33+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-06T12:12:31+00:00",
+            "description": "The Illuminate Translation package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/validation",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-05-30T13:21:10+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-14T23:03:41+00:00",
+            "description": "The Illuminate Validation package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/view",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-04-14T13:47:10+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-14T22:58:48+00:00",
+            "description": "The Illuminate View package.",
+            "abandoned": false
+        },
+        {
+            "name": "intervention/image",
+            "direct-dependency": false,
+            "homepage": "http://image.intervention.io/",
+            "source": "https://github.com/Intervention/image/tree/2.7.2",
+            "version": "2.7.2",
+            "release-age": "3 years old",
+            "release-date": "2022-05-21T17:30:32+00:00",
+            "latest": "3.11.7",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-19T13:11:17+00:00",
+            "description": "Image handling and manipulation library with support for Laravel integration",
+            "abandoned": false
+        },
+        {
+            "name": "justinrainbow/json-schema",
+            "direct-dependency": false,
+            "homepage": "https://github.com/jsonrainbow/json-schema",
+            "source": "https://github.com/jsonrainbow/json-schema/tree/6.6.4",
+            "version": "6.6.4",
+            "release-age": "2 months old",
+            "release-date": "2025-12-19T15:01:32+00:00",
+            "latest": "v6.7.2",
+            "latest-status": "semver-safe-update",
+            "latest-release-date": "2026-02-15T15:06:22+00:00",
+            "description": "A library to validate a json schema.",
+            "abandoned": false
+        },
+        {
+            "name": "laravel/serializable-closure",
+            "direct-dependency": false,
+            "homepage": null,
+            "source": "https://github.com/laravel/serializable-closure",
+            "version": "v1.3.7",
+            "release-age": "1 year old",
+            "release-date": "2024-11-14T18:34:49+00:00",
+            "latest": "v2.0.9",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-03T06:55:34+00:00",
+            "description": "Laravel Serializable Closure provides an easy and secure way to serialize closures in PHP.",
+            "abandoned": false
+        },
+        {
+            "name": "league/flysystem",
+            "direct-dependency": false,
+            "homepage": null,
+            "source": "https://github.com/thephpleague/flysystem/tree/1.1.10",
+            "version": "1.1.10",
+            "release-age": "3 years old",
+            "release-date": "2022-10-04T09:16:37+00:00",
+            "latest": "3.31.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-23T15:38:47+00:00",
+            "description": "Filesystem abstraction: Many filesystems, one API.",
+            "abandoned": false
+        },
+        {
+            "name": "middlewares/utils",
+            "direct-dependency": false,
+            "homepage": "https://github.com/middlewares/utils",
+            "source": "https://github.com/middlewares/utils/tree/v3.3.0",
+            "version": "v3.3.0",
+            "release-age": "4 years old",
+            "release-date": "2021-07-04T17:56:23+00:00",
+            "latest": "v4.0.2",
+            "latest-status": "update-possible",
+            "latest-release-date": "2025-01-23T13:33:55+00:00",
+            "description": "Common utils for PSR-15 middleware packages",
+            "abandoned": false
+        },
+        {
+            "name": "mobiledetect/mobiledetectlib",
+            "direct-dependency": false,
+            "homepage": "https://github.com/serbanghita/Mobile-Detect",
+            "source": "https://github.com/serbanghita/Mobile-Detect/tree/2.8.45",
+            "version": "2.8.45",
+            "release-age": "2 years old",
+            "release-date": "2023-11-07T21:57:25+00:00",
+            "latest": "4.8.10",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-09T16:21:59+00:00",
+            "description": "Mobile_Detect is a lightweight PHP class for detecting mobile devices. It uses the User-Agent string combined with specific HTTP headers to detect the mobile environment.",
+            "abandoned": false
+        },
+        {
+            "name": "monolog/monolog",
+            "direct-dependency": false,
+            "homepage": "http://github.com/Seldaek/monolog",
+            "source": "https://github.com/Seldaek/monolog/tree/1.27.1",
+            "version": "1.27.1",
+            "release-age": "3 years old",
+            "release-date": "2022-06-09T08:53:42+00:00",
+            "latest": "3.10.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-02T08:56:05+00:00",
+            "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
+            "abandoned": false
+        },
+        {
+            "name": "nesbot/carbon",
+            "direct-dependency": false,
+            "homepage": "https://carbon.nesbot.com",
+            "source": "https://github.com/briannesbitt/Carbon",
+            "version": "2.73.0",
+            "release-age": "1 year old",
+            "release-date": "2025-01-08T20:10:23+00:00",
+            "latest": "3.11.1",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-29T09:26:29+00:00",
+            "description": "An API extension for DateTime that supports 281 different languages.",
+            "abandoned": false
+        },
+        {
+            "name": "nikic/fast-route",
+            "direct-dependency": false,
+            "homepage": null,
+            "source": "https://github.com/nikic/FastRoute/tree/master",
+            "version": "v0.6.0",
+            "release-age": "10 years old",
+            "release-date": "2015-06-18T19:15:47+00:00",
+            "latest": "v1.3.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2018-02-13T20:26:39+00:00",
+            "description": "Fast request router for PHP",
+            "abandoned": false
+        },
+        {
+            "name": "opis/closure",
+            "direct-dependency": false,
+            "homepage": "https://opis.io/closure",
+            "source": "https://github.com/opis/closure/tree/3.7.0",
+            "version": "3.7.0",
+            "release-age": "7 months old",
+            "release-date": "2025-07-08T20:30:08+00:00",
+            "latest": "4.4.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2025-11-20T00:20:49+00:00",
+            "description": "A library that can be used to serialize closures (anonymous functions) and arbitrary objects.",
+            "abandoned": false
+        },
+        {
+            "name": "psr/container",
+            "direct-dependency": false,
+            "homepage": "https://github.com/php-fig/container",
+            "source": "https://github.com/php-fig/container/tree/1.1.2",
+            "version": "1.1.2",
+            "release-age": "4 years old",
+            "release-date": "2021-11-05T16:50:12+00:00",
+            "latest": "2.0.2",
+            "latest-status": "update-possible",
+            "latest-release-date": "2021-11-05T16:47:00+00:00",
+            "description": "Common Container Interface (PHP FIG PSR-11)",
+            "abandoned": false
+        },
+        {
+            "name": "psr/http-message",
+            "direct-dependency": false,
+            "homepage": "https://github.com/php-fig/http-message",
+            "source": "https://github.com/php-fig/http-message/tree/1.1",
+            "version": "1.1",
+            "release-age": "2 years old",
+            "release-date": "2023-04-04T09:50:52+00:00",
+            "latest": "2.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2023-04-04T09:54:51+00:00",
+            "description": "Common interface for HTTP messages",
+            "abandoned": false
+        },
+        {
+            "name": "psr/log",
+            "direct-dependency": false,
+            "homepage": "https://github.com/php-fig/log",
+            "source": "https://github.com/php-fig/log/tree/1.1.4",
+            "version": "1.1.4",
+            "release-age": "4 years old",
+            "release-date": "2021-05-03T11:20:27+00:00",
+            "latest": "3.0.2",
+            "latest-status": "update-possible",
+            "latest-release-date": "2024-09-11T13:17:53+00:00",
+            "description": "Common interface for logging libraries",
+            "abandoned": false
+        },
+        {
+            "name": "psr/simple-cache",
+            "direct-dependency": false,
+            "homepage": null,
+            "source": "https://github.com/php-fig/simple-cache/tree/master",
+            "version": "1.0.1",
+            "release-age": "8 years old",
+            "release-date": "2017-10-23T01:57:42+00:00",
+            "latest": "3.0.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2021-10-29T13:26:27+00:00",
+            "description": "Common interfaces for simple caching",
+            "abandoned": false
+        },
+        {
+            "name": "pusher/pusher-php-server",
+            "direct-dependency": false,
+            "homepage": "https://github.com/pusher/pusher-php-server",
+            "source": "https://github.com/pusher/pusher-http-php/tree/master",
+            "version": "2.6.4",
+            "release-age": "8 years old",
+            "release-date": "2017-06-06T16:41:17+00:00",
+            "latest": "7.2.7",
+            "latest-status": "update-possible",
+            "latest-release-date": "2025-01-06T10:56:20+00:00",
+            "description": "Library for interacting with the Pusher REST API",
+            "abandoned": false
+        },
+        {
+            "name": "s9e/regexp-builder",
+            "direct-dependency": false,
+            "homepage": "https://github.com/s9e/RegexpBuilder/",
+            "source": "https://github.com/s9e/RegexpBuilder/tree/1.4.6",
+            "version": "1.4.6",
+            "release-age": "3 years old",
+            "release-date": "2022-03-05T16:22:35+00:00",
+            "latest": "2.1.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2023-02-21T20:42:54+00:00",
+            "description": "Single-purpose library that generates regular expressions that match a list of strings.",
+            "abandoned": false
+        },
+        {
+            "name": "s9e/sweetdom",
+            "direct-dependency": false,
+            "homepage": "https://github.com/s9e/SweetDOM/",
+            "source": "https://github.com/s9e/SweetDOM/tree/2.1.2",
+            "version": "2.1.2",
+            "release-age": "2 years old",
+            "release-date": "2023-10-07T13:06:42+00:00",
+            "latest": "3.4.1",
+            "latest-status": "update-possible",
+            "latest-release-date": "2024-03-23T14:03:01+00:00",
+            "description": "Syntactic sugar for the DOM API with a focus on XSLT 1.0 template manipulation.",
+            "abandoned": false
+        },
+        {
+            "name": "s9e/text-formatter",
+            "direct-dependency": false,
+            "homepage": "https://github.com/s9e/TextFormatter/",
+            "source": "https://github.com/s9e/TextFormatter/tree/2.14.3",
+            "version": "2.14.3",
+            "release-age": "2 years old",
+            "release-date": "2023-11-11T15:27:53+00:00",
+            "latest": "2.19.3",
+            "latest-status": "semver-safe-update",
+            "latest-release-date": "2025-11-14T21:26:59+00:00",
+            "description": "Multi-purpose text formatting and markup library. Plugins offer support for BBCodes, Markdown, emoticons, HTML, embedding third-party media (YouTube, etc...), enhanced typography and more.",
+            "abandoned": false
+        },
+        {
+            "name": "softcreatr/php-mime-detector",
+            "direct-dependency": false,
+            "homepage": "https://1-2.dev",
+            "source": "https://github.com/SoftCreatR/php-mime-detector",
+            "version": "4.0.0",
+            "release-age": "1 year old",
+            "release-date": "2024-09-01T17:19:47+00:00",
+            "latest": "5.1.1",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-09T11:43:48+00:00",
+            "description": "Mime Detector Decoder",
+            "abandoned": false
+        },
+        {
+            "name": "staudenmeir/eloquent-eager-limit",
+            "direct-dependency": false,
+            "homepage": null,
+            "source": "https://github.com/staudenmeir/eloquent-eager-limit/tree/v1.6.1",
+            "version": "v1.6.1",
+            "release-age": "5 years old",
+            "release-date": "2020-11-22T18:13:55+00:00",
+            "latest": "v1.8.3",
+            "latest-status": "semver-safe-update",
+            "latest-release-date": "2023-07-12T21:15:26+00:00",
+            "description": "Laravel Eloquent eager loading with limit",
+            "abandoned": false
+        },
+        {
+            "name": "swiftmailer/swiftmailer",
+            "direct-dependency": false,
+            "homepage": "https://swiftmailer.symfony.com",
+            "source": "https://github.com/swiftmailer/swiftmailer/tree/v6.3.0",
+            "version": "v6.3.0",
+            "release-age": "4 years old",
+            "release-date": "2021-10-18T15:26:12+00:00",
+            "latest": "v6.3.0",
+            "latest-status": "up-to-date",
+            "latest-release-date": "2021-10-18T15:26:12+00:00",
+            "description": "Swiftmailer, free feature-rich PHP mailer",
+            "warning": "Package swiftmailer/swiftmailer is abandoned, you should avoid using it. Use symfony/mailer instead.",
+            "abandoned": "symfony/mailer"
+        },
+        {
+            "name": "symfony/config",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/config/tree/v5.4.46",
+            "version": "v5.4.46",
+            "release-age": "1 year old",
+            "release-date": "2024-10-30T07:58:02+00:00",
+            "latest": "v7.4.4",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-13T11:36:38+00:00",
+            "description": "Helps you find, load, combine, autofill and validate configuration values of any kind",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/console",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/console/tree/v5.4.47",
+            "version": "v5.4.47",
+            "release-age": "1 year old",
+            "release-date": "2024-11-06T11:30:55+00:00",
+            "latest": "v7.4.4",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-13T11:36:38+00:00",
+            "description": "Eases the creation of beautiful and testable command line interfaces",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/error-handler",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/error-handler/tree/v6.3.12",
+            "version": "v6.3.12",
+            "release-age": "2 years old",
+            "release-date": "2024-01-23T14:35:58+00:00",
+            "latest": "v7.4.4",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-20T16:42:42+00:00",
+            "description": "Provides tools to manage errors and ease debugging PHP code",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/event-dispatcher",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/event-dispatcher/tree/v5.4.45",
+            "version": "v5.4.45",
+            "release-age": "1 year old",
+            "release-date": "2024-09-25T14:11:13+00:00",
+            "latest": "v7.4.4",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-05T11:45:34+00:00",
+            "description": "Provides tools that allow your application components to communicate with each other by dispatching events and listening to them",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/filesystem",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/filesystem/tree/v6.4.30",
+            "version": "v6.4.30",
+            "release-age": "2 months old",
+            "release-date": "2025-11-26T14:43:45+00:00",
+            "latest": "v7.4.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2025-11-27T13:27:24+00:00",
+            "description": "Provides basic utilities for the filesystem",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/finder",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/finder/tree/v5.4.45",
+            "version": "v5.4.45",
+            "release-age": "1 year old",
+            "release-date": "2024-09-28T13:32:08+00:00",
+            "latest": "v7.4.5",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-26T15:07:59+00:00",
+            "description": "Finds files and directories via an intuitive fluent interface",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/http-foundation",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/http-foundation/tree/v5.4.50",
+            "version": "v5.4.50",
+            "release-age": "3 months old",
+            "release-date": "2025-11-03T12:58:48+00:00",
+            "latest": "v7.4.5",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-27T16:16:02+00:00",
+            "description": "Defines an object-oriented layer for the HTTP specification",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/http-kernel",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/http-kernel/tree/v5.4.51",
+            "version": "v5.4.51",
+            "release-age": "3 weeks old",
+            "release-date": "2026-01-28T07:10:35+00:00",
+            "latest": "v7.4.5",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-28T10:33:42+00:00",
+            "description": "Provides a structured process for converting a Request into a Response",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/mime",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/mime/tree/v5.4.45",
+            "version": "v5.4.45",
+            "release-age": "1 year old",
+            "release-date": "2024-10-23T20:18:32+00:00",
+            "latest": "v7.4.5",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-27T08:59:58+00:00",
+            "description": "Allows manipulating MIME messages",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/process",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/process/tree/v5.4.51",
+            "version": "v5.4.51",
+            "release-age": "3 weeks old",
+            "release-date": "2026-01-26T15:53:37+00:00",
+            "latest": "v7.4.5",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-26T15:07:59+00:00",
+            "description": "Executes commands in sub-processes",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/string",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/string/tree/v6.4.30",
+            "version": "v6.4.30",
+            "release-age": "3 months old",
+            "release-date": "2025-11-21T18:03:05+00:00",
+            "latest": "v7.4.4",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-12T10:54:30+00:00",
+            "description": "Provides an object-oriented API to strings and deals with bytes, UTF-8 code points and grapheme clusters in a unified way",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/translation",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/translation/tree/v5.4.45",
+            "version": "v5.4.45",
+            "release-age": "1 year old",
+            "release-date": "2024-09-25T14:11:13+00:00",
+            "latest": "v7.4.4",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-13T10:40:19+00:00",
+            "description": "Provides tools to internationalize your application",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/translation-contracts",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/translation-contracts/tree/v2.5.4",
+            "version": "v2.5.4",
+            "release-age": "1 year old",
+            "release-date": "2024-09-25T14:11:13+00:00",
+            "latest": "v3.6.1",
+            "latest-status": "update-possible",
+            "latest-release-date": "2025-07-15T13:41:35+00:00",
+            "description": "Generic abstractions related to translation",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/var-dumper",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/var-dumper/tree/v6.4.32",
+            "version": "v6.4.32",
+            "release-age": "1 month old",
+            "release-date": "2026-01-01T13:34:06+00:00",
+            "latest": "v7.4.4",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-01T22:13:48+00:00",
+            "description": "Provides mechanisms for walking through any arbitrary PHP variable",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/yaml",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/yaml/tree/v5.4.45",
+            "version": "v5.4.45",
+            "release-age": "1 year old",
+            "release-date": "2024-09-25T14:11:13+00:00",
+            "latest": "v7.4.1",
+            "latest-status": "update-possible",
+            "latest-release-date": "2025-12-04T18:11:45+00:00",
+            "description": "Loads and dumps YAML files",
+            "abandoned": false
+        },
+        {
+            "name": "voku/portable-ascii",
+            "direct-dependency": false,
+            "homepage": "https://github.com/voku/portable-ascii",
+            "source": "https://github.com/voku/portable-ascii/tree/1.6.1",
+            "version": "1.6.1",
+            "release-age": "4 years old",
+            "release-date": "2022-01-24T18:55:24+00:00",
+            "latest": "2.0.3",
+            "latest-status": "update-possible",
+            "latest-release-date": "2024-11-21T01:49:47+00:00",
+            "description": "Portable ASCII library - performance optimized (ascii) string functions for php.",
+            "abandoned": false
+        },
+        {
+            "name": "wikimedia/less.php",
+            "direct-dependency": false,
+            "homepage": "https://gerrit.wikimedia.org/g/mediawiki/libs/less.php",
+            "source": "https://github.com/wikimedia/less.php/tree/v3.2.1",
+            "version": "v3.2.1",
+            "release-age": "3 years old",
+            "release-date": "2023-02-03T06:43:41+00:00",
+            "latest": "v5.5.1",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-14T00:12:28+00:00",
+            "description": "PHP port of the LESS processor",
+            "abandoned": false
+        }
+    ]
+}
+  
+[2026-02-22 17:08:43] composer.INFO: outdated --format --minor-only
+{
+    "installed": [
+        {
+            "name": "doctrine/cache",
+            "direct-dependency": false,
+            "homepage": "https://www.doctrine-project.org/projects/cache.html",
+            "source": "https://github.com/doctrine/cache/tree/2.2.0",
+            "version": "2.2.0",
+            "release-age": "3 years old",
+            "release-date": "2022-05-20T20:07:39+00:00",
+            "latest": "2.2.0",
+            "latest-status": "up-to-date",
+            "latest-release-date": "2022-05-20T20:07:39+00:00",
+            "description": "PHP Doctrine Cache library is a popular cache implementation that supports many different drivers such as redis, memcache, apc, mongodb and others.",
+            "warning": "Package doctrine/cache is abandoned, you should avoid using it. No replacement was suggested.",
+            "abandoned": true
+        },
+        {
+            "name": "fof/best-answer",
+            "direct-dependency": true,
+            "homepage": "https://friendsofflarum.org",
+            "source": "https://github.com/FriendsOfFlarum/best-answer",
+            "version": "1.6.5",
+            "release-age": "6 months old",
+            "release-date": "2025-08-19T12:24:20+00:00",
+            "latest": "1.7.1",
+            "latest-status": "semver-safe-update",
+            "latest-release-date": "2026-02-12T15:12:04+00:00",
+            "description": "Mark a post as the best answer in a discussion",
+            "abandoned": false
+        },
+        {
+            "name": "fof/upload",
+            "direct-dependency": true,
+            "homepage": "https://friendsofflarum.org",
+            "source": "https://github.com/FriendsOfFlarum/upload",
+            "version": "1.8.8",
+            "release-age": "1 month old",
+            "release-date": "2025-12-23T18:19:01+00:00",
+            "latest": "1.8.9",
+            "latest-status": "semver-safe-update",
+            "latest-release-date": "2026-02-22T10:12:31+00:00",
+            "description": "The file upload extension for the Flarum forum with insane intelligence.",
+            "abandoned": false
+        },
+        {
+            "name": "justinrainbow/json-schema",
+            "direct-dependency": false,
+            "homepage": "https://github.com/jsonrainbow/json-schema",
+            "source": "https://github.com/jsonrainbow/json-schema/tree/6.6.4",
+            "version": "6.6.4",
+            "release-age": "2 months old",
+            "release-date": "2025-12-19T15:01:32+00:00",
+            "latest": "v6.7.2",
+            "latest-status": "semver-safe-update",
+            "latest-release-date": "2026-02-15T15:06:22+00:00",
+            "description": "A library to validate a json schema.",
+            "abandoned": false
+        },
+        {
+            "name": "s9e/text-formatter",
+            "direct-dependency": false,
+            "homepage": "https://github.com/s9e/TextFormatter/",
+            "source": "https://github.com/s9e/TextFormatter/tree/2.14.3",
+            "version": "2.14.3",
+            "release-age": "2 years old",
+            "release-date": "2023-11-11T15:27:53+00:00",
+            "latest": "2.19.3",
+            "latest-status": "semver-safe-update",
+            "latest-release-date": "2025-11-14T21:26:59+00:00",
+            "description": "Multi-purpose text formatting and markup library. Plugins offer support for BBCodes, Markdown, emoticons, HTML, embedding third-party media (YouTube, etc...), enhanced typography and more.",
+            "abandoned": false
+        },
+        {
+            "name": "staudenmeir/eloquent-eager-limit",
+            "direct-dependency": false,
+            "homepage": null,
+            "source": "https://github.com/staudenmeir/eloquent-eager-limit/tree/v1.6.1",
+            "version": "v1.6.1",
+            "release-age": "5 years old",
+            "release-date": "2020-11-22T18:13:55+00:00",
+            "latest": "v1.8.3",
+            "latest-status": "semver-safe-update",
+            "latest-release-date": "2023-07-12T21:15:26+00:00",
+            "description": "Laravel Eloquent eager loading with limit",
+            "abandoned": false
+        },
+        {
+            "name": "swiftmailer/swiftmailer",
+            "direct-dependency": false,
+            "homepage": "https://swiftmailer.symfony.com",
+            "source": "https://github.com/swiftmailer/swiftmailer/tree/v6.3.0",
+            "version": "v6.3.0",
+            "release-age": "4 years old",
+            "release-date": "2021-10-18T15:26:12+00:00",
+            "latest": "v6.3.0",
+            "latest-status": "up-to-date",
+            "latest-release-date": "2021-10-18T15:26:12+00:00",
+            "description": "Swiftmailer, free feature-rich PHP mailer",
+            "warning": "Package swiftmailer/swiftmailer is abandoned, you should avoid using it. Use symfony/mailer instead.",
+            "abandoned": "symfony/mailer"
+        },
+        {
+            "name": "symfony/error-handler",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/error-handler/tree/v6.3.12",
+            "version": "v6.3.12",
+            "release-age": "2 years old",
+            "release-date": "2024-01-23T14:35:58+00:00",
+            "latest": "v6.4.32",
+            "latest-status": "semver-safe-update",
+            "latest-release-date": "2026-01-19T19:28:19+00:00",
+            "description": "Provides tools to manage errors and ease debugging PHP code",
+            "abandoned": false
+        }
+    ]
+}
+  
+[2026-02-22 17:08:57] composer.INFO: require 'fof/upload:*'
+/var/www/flarum/composer.json has been updated
+Running composer update fof/upload
+Loading composer repositories with package information
+Updating dependencies
+Lock file operations: 0 installs, 1 update, 0 removals
+  - Upgrading fof/upload (1.8.8 => 1.8.9)
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 170 installs, 0 updates, 0 removals
+  - Downloading clarkwinkelmann/flarum-ext-composer-page (1.1.1)
+  - Downloading clarkwinkelmann/flarum-local-extenders (1.0.1)
+  - Downloading fof/upload (1.8.9)
+ 0/3 [>---------------------------]   0%
+ 3/3 [============================] 100%
+  - Installing axy/backtrace (2.0.0): Extracting archive
+  - Installing wikimedia/less.php (v3.2.1): Extracting archive
+  - Installing symfony/polyfill-ctype (v1.33.0): Extracting archive
+  - Installing symfony/deprecation-contracts (v3.6.0): Extracting archive
+  - Installing symfony/yaml (v5.4.45): Extracting archive
+  - Installing symfony/translation-contracts (v2.5.4): Extracting archive
+  - Installing symfony/polyfill-php80 (v1.33.0): Extracting archive
+  - Installing symfony/polyfill-iconv (v1.33.0): Extracting archive
+  - Installing symfony/polyfill-mbstring (v1.33.0): Extracting archive
+  - Installing symfony/translation (v5.4.45): Extracting archive
+  - Installing symfony/polyfill-intl-messageformatter (v1.33.0): Extracting archive
+  - Installing symfony/polyfill-intl-normalizer (v1.33.0): Extracting archive
+  - Installing symfony/polyfill-intl-idn (v1.33.0): Extracting archive
+  - Installing symfony/mime (v5.4.45): Extracting archive
+  - Installing psr/event-dispatcher (1.0.0): Extracting archive
+  - Installing symfony/event-dispatcher-contracts (v3.6.0): Extracting archive
+  - Installing symfony/event-dispatcher (v5.4.45): Extracting archive
+  - Installing symfony/polyfill-intl-grapheme (v1.33.0): Extracting archive
+  - Installing symfony/string (v6.4.30): Extracting archive
+  - Installing psr/container (1.1.2): Extracting archive
+  - Installing symfony/service-contracts (v3.6.1): Extracting archive
+  - Installing symfony/polyfill-php73 (v1.33.0): Extracting archive
+  - Installing symfony/console (v5.4.47): Extracting archive
+  - Installing symfony/polyfill-php81 (v1.33.0): Extracting archive
+  - Installing symfony/filesystem (v6.4.30): Extracting archive
+  - Installing symfony/config (v5.4.46): Extracting archive
+  - Installing sycho/errors (3.0.0): Extracting archive
+  - Installing sycho/codecs-base64vlq (2.0.0): Extracting archive
+  - Installing sycho/sourcemap (2.0.0): Extracting archive
+  - Installing sycho/json-api (v0.5.2): Extracting archive
+  - Installing voku/portable-ascii (1.6.1): Extracting archive
+  - Installing psr/clock (1.0.0): Extracting archive
+  - Installing carbonphp/carbon-doctrine-types (1.0.0): Extracting archive
+  - Installing nesbot/carbon (2.73.0): Extracting archive
+  - Installing illuminate/macroable (v8.83.27): Extracting archive
+  - Installing psr/simple-cache (1.0.1): Extracting archive
+  - Installing illuminate/contracts (v8.83.27): Extracting archive
+  - Installing illuminate/collections (v8.83.27): Extracting archive
+  - Installing doctrine/inflector (2.1.0): Extracting archive
+  - Installing illuminate/support (v8.83.27): Extracting archive
+  - Installing illuminate/container (v8.83.27): Extracting archive
+  - Installing illuminate/database (v8.83.27): Extracting archive
+  - Installing staudenmeir/eloquent-eager-limit (v1.6.1): Extracting archive
+  - Installing s9e/sweetdom (2.1.2): Extracting archive
+  - Installing s9e/regexp-builder (1.4.6): Extracting archive
+  - Installing s9e/text-formatter (2.14.3): Extracting archive
+  - Installing psr/http-message (1.1): Extracting archive
+  - Installing psr/http-server-handler (1.0.2): Extracting archive
+  - Installing psr/http-server-middleware (1.0.2): Extracting archive
+  - Installing nikic/fast-route (v0.6.0): Extracting archive
+  - Installing psr/log (1.1.4): Extracting archive
+  - Installing monolog/monolog (1.27.1): Extracting archive
+  - Installing psr/http-factory (1.1.0): Extracting archive
+  - Installing middlewares/utils (v3.3.0): Extracting archive
+  - Installing middlewares/request-handler (v2.1.0): Extracting archive
+  - Installing middlewares/base-path-router (v2.1.0): Extracting archive
+  - Installing middlewares/base-path (v2.2.0): Extracting archive
+  - Installing matthiasmullie/path-converter (1.1.3): Extracting archive
+  - Installing matthiasmullie/minify (1.3.75): Extracting archive
+  - Installing league/mime-type-detection (1.16.0): Extracting archive
+  - Installing league/flysystem (1.1.10): Extracting archive
+  - Installing laminas/laminas-escaper (2.18.0): Extracting archive
+  - Installing fig/http-message-util (1.1.5): Extracting archive
+  - Installing laminas/laminas-stratigility (4.3.0): Extracting archive
+  - Installing ralouphie/getallheaders (3.0.3): Extracting archive
+  - Installing guzzlehttp/psr7 (2.8.0): Extracting archive
+  - Installing laminas/laminas-diactoros (3.8.0): Extracting archive
+  - Installing laminas/laminas-httphandlerrunner (2.13.0): Extracting archive
+  - Installing mobiledetect/mobiledetectlib (2.8.45): Extracting archive
+  - Installing jaybizzle/crawler-detect (v1.3.7): Extracting archive
+  - Installing jenssegers/agent (v2.6.4): Extracting archive
+  - Installing intervention/image (2.7.2): Extracting archive
+  - Installing symfony/finder (v5.4.45): Extracting archive
+  - Installing illuminate/filesystem (v8.83.27): Extracting archive
+  - Installing illuminate/pipeline (v8.83.27): Extracting archive
+  - Installing illuminate/bus (v8.83.27): Extracting archive
+  - Installing illuminate/events (v8.83.27): Extracting archive
+  - Installing illuminate/view (v8.83.27): Extracting archive
+  - Installing symfony/http-foundation (v5.4.50): Extracting archive
+  - Installing illuminate/translation (v8.83.27): Extracting archive
+  - Installing doctrine/lexer (1.2.3): Extracting archive
+  - Installing egulias/email-validator (2.1.25): Extracting archive
+  - Installing illuminate/validation (v8.83.27): Extracting archive
+  - Installing illuminate/session (v8.83.27): Extracting archive
+  - Installing symfony/process (v5.4.51): Extracting archive
+  - Installing ramsey/collection (2.1.1): Extracting archive
+  - Installing brick/math (0.14.8): Extracting archive
+  - Installing ramsey/uuid (4.9.2): Extracting archive
+  - Installing opis/closure (3.7.0): Extracting archive
+  - Installing laravel/serializable-closure (v1.3.7): Extracting archive
+  - Installing illuminate/console (v8.83.27): Extracting archive
+  - Installing illuminate/queue (v8.83.27): Extracting archive
+  - Installing symfony/css-selector (v7.4.0): Extracting archive
+  - Installing tijsverkoyen/css-to-inline-styles (v2.4.0): Extracting archive
+  - Installing swiftmailer/swiftmailer (v6.3.0): Extracting archive
+  - Installing nette/utils (v4.1.3): Extracting archive
+  - Installing nette/schema (v1.3.4): Extracting archive
+  - Installing dflydev/dot-access-data (v3.0.3): Extracting archive
+  - Installing league/config (v1.2.0): Extracting archive
+  - Installing league/commonmark (2.8.0): Extracting archive
+  - Installing illuminate/mail (v8.83.27): Extracting archive
+  - Installing illuminate/hashing (v8.83.27): Extracting archive
+  - Installing illuminate/config (v8.83.27): Extracting archive
+  - Installing illuminate/cache (v8.83.27): Extracting archive
+  - Installing psr/http-client (1.0.3): Extracting archive
+  - Installing guzzlehttp/promises (2.3.0): Extracting archive
+  - Installing guzzlehttp/guzzle (7.10.0): Extracting archive
+  - Installing filp/whoops (2.18.4): Extracting archive
+  - Installing franzl/whoops-middleware (2.0.0): Extracting archive
+  - Installing dragonmantank/cron-expression (v3.6.0): Extracting archive
+  - Installing doctrine/deprecations (1.1.6): Extracting archive
+  - Installing doctrine/event-manager (1.2.0): Extracting archive
+  - Installing doctrine/cache (2.2.0): Extracting archive
+  - Installing doctrine/dbal (2.13.9): Extracting archive
+  - Installing dflydev/fig-cookies (v3.2.0): Extracting archive
+  - Installing components/font-awesome (5.15.4): Extracting archive
+  - Installing flarum/core (v1.8.13): Extracting archive
+  - Installing clarkwinkelmann/flarum-ext-composer-page (1.1.1): Extracting archive
+  - Installing clarkwinkelmann/flarum-local-extenders (1.0.1): Extracting archive
+  - Installing composer/ca-bundle (1.5.10): Extracting archive
+  - Installing composer/pcre (3.3.2): Extracting archive
+  - Installing composer/class-map-generator (1.7.1): Extracting archive
+  - Installing composer/metadata-minifier (1.0.0): Extracting archive
+  - Installing composer/semver (3.4.4): Extracting archive
+  - Installing composer/spdx-licenses (1.5.9): Extracting archive
+  - Installing composer/xdebug-handler (3.0.5): Extracting archive
+  - Installing flarum-lang/utils (1.0.1): Extracting archive
+  - Installing flarum-lang/spanish (1.13.0): Extracting archive
+  - Installing flarum/flags (v1.8.2): Extracting archive
+  - Installing flarum/approval (v1.8.2): Extracting archive
+  - Installing flarum/akismet (v1.8.1): Extracting archive
+  - Installing flarum/bbcode (v1.8.0): Extracting archive
+  - Installing flarum/emoji (v1.8.1): Extracting archive
+  - Installing symfony/polyfill-php84 (v1.33.0): Extracting archive
+  - Installing seld/signal-handler (2.0.2): Extracting archive
+  - Installing seld/phar-utils (1.2.1): Extracting archive
+  - Installing seld/jsonlint (1.11.0): Extracting archive
+  - Installing react/promise (v3.3.0): Extracting archive
+  - Installing marc-mabe/php-enum (v4.7.2): Extracting archive
+  - Installing justinrainbow/json-schema (6.6.4): Extracting archive
+  - Installing composer/composer (2.9.5): Extracting archive
+  - Installing flarum/extension-manager (v1.0.7): Extracting archive
+  - Installing flarum/lang-english (v1.8.0): Extracting archive
+  - Installing flarum/likes (v1.8.1): Extracting archive
+  - Installing flarum/lock (v1.8.2): Extracting archive
+  - Installing flarum/markdown (v1.8.1): Extracting archive
+  - Installing flarum/mentions (v1.8.5): Extracting archive
+  - Installing flarum/nicknames (v1.8.2): Extracting archive
+  - Installing pusher/pusher-php-server (2.6.4): Extracting archive
+  - Installing flarum/pusher (v1.8.1): Extracting archive
+  - Installing flarum/statistics (v1.8.1): Extracting archive
+  - Installing flarum/sticky (v1.8.2): Extracting archive
+  - Installing flarum/subscriptions (v1.8.1): Extracting archive
+  - Installing flarum/suspend (v1.8.5): Extracting archive
+  - Installing flarum/tags (v1.8.6): Extracting archive
+  - Installing fof/best-answer (1.6.5): Extracting archive
+  - Installing fof/custom-footer (1.1.2): Extracting archive
+  - Installing fof/formatting (1.1.2): Extracting archive
+  - Installing fof/frontpage (1.2.0): Extracting archive
+  - Installing softcreatr/php-mime-detector (4.0.0): Extracting archive
+  - Installing enshrined/svg-sanitize (0.22.0): Extracting archive
+  - Installing fof/upload (1.8.9): Extracting archive
+  - Installing afrux/forum-widgets-core (v0.1.7): Extracting archive
+  - Installing justoverclock/custom-html-widget (0.1.4): Extracting archive
+  - Installing justoverclock/popular-tags (0.1.3): Extracting archive
+  - Installing symfony/var-dumper (v6.4.32): Extracting archive
+  - Installing symfony/error-handler (v6.3.12): Extracting archive
+  - Installing symfony/http-kernel (v5.4.51): Extracting archive
+  - Installing illuminate/http (v8.83.27): Extracting archive
+  - Installing nearata/flarum-ext-minecraft-avatars (v2.1.1): Extracting archive
+   0/170 [>---------------------------]   0%
+  30/170 [====>-----------------------]  17%
+  48/170 [=======>--------------------]  28%
+  66/170 [==========>-----------------]  38%
+  79/170 [=============>--------------]  46%
+  92/170 [===============>------------]  54%
+ 102/170 [================>-----------]  60%
+ 121/170 [===================>--------]  71%
+ 136/170 [======================>-----]  80%
+ 156/170 [=========================>--]  91%
+ 170/170 [============================] 100%
+<warning>Package doctrine/cache is abandoned, you should avoid using it. No replacement was suggested.</warning>
+<warning>Package swiftmailer/swiftmailer is abandoned, you should avoid using it. Use symfony/mailer instead.</warning>
+Generating autoload files
+96 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+No security vulnerability advisories found.
+  
+[2026-02-22 17:09:03] composer.INFO: outdated --format
+{
+    "installed": [
+        {
+            "name": "axy/backtrace",
+            "direct-dependency": false,
+            "homepage": "https://github.com/axypro/backtrace",
+            "source": "https://github.com/axypro/backtrace/tree/2.0.0",
+            "version": "2.0.0",
+            "release-age": "7 years old",
+            "release-date": "2019-02-02T18:01:31+00:00",
+            "latest": "3.0.1",
+            "latest-status": "update-possible",
+            "latest-release-date": "2023-03-16T11:02:09+00:00",
+            "description": "Tracing in PHP",
+            "abandoned": false
+        },
+        {
+            "name": "brick/math",
+            "direct-dependency": false,
+            "homepage": null,
+            "source": "https://github.com/brick/math/tree/0.14.8",
+            "version": "0.14.8",
+            "release-age": "from last week",
+            "release-date": "2026-02-10T14:33:43+00:00",
+            "latest": "0.15.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-20T15:19:18+00:00",
+            "description": "Arbitrary-precision arithmetic library",
+            "abandoned": false
+        },
+        {
+            "name": "carbonphp/carbon-doctrine-types",
+            "direct-dependency": false,
+            "homepage": null,
+            "source": "https://github.com/CarbonPHP/carbon-doctrine-types/tree/1.0.0",
+            "version": "1.0.0",
+            "release-age": "2 years old",
+            "release-date": "2023-10-01T12:35:29+00:00",
+            "latest": "3.2.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2024-02-09T16:56:22+00:00",
+            "description": "Types to use Carbon in Doctrine",
+            "abandoned": false
+        },
+        {
+            "name": "components/font-awesome",
+            "direct-dependency": false,
+            "homepage": null,
+            "source": "https://github.com/components/font-awesome/tree/5.15.4",
+            "version": "5.15.4",
+            "release-age": "4 years old",
+            "release-date": "2021-08-15T10:31:24+00:00",
+            "latest": "6.5.2",
+            "latest-status": "update-possible",
+            "latest-release-date": "2024-04-08T15:15:22+00:00",
+            "description": "Font Awesome, the iconic SVG, font, and CSS framework.",
+            "abandoned": false
+        },
+        {
+            "name": "doctrine/cache",
+            "direct-dependency": false,
+            "homepage": "https://www.doctrine-project.org/projects/cache.html",
+            "source": "https://github.com/doctrine/cache/tree/2.2.0",
+            "version": "2.2.0",
+            "release-age": "3 years old",
+            "release-date": "2022-05-20T20:07:39+00:00",
+            "latest": "2.2.0",
+            "latest-status": "up-to-date",
+            "latest-release-date": "2022-05-20T20:07:39+00:00",
+            "description": "PHP Doctrine Cache library is a popular cache implementation that supports many different drivers such as redis, memcache, apc, mongodb and others.",
+            "warning": "Package doctrine/cache is abandoned, you should avoid using it. No replacement was suggested.",
+            "abandoned": true
+        },
+        {
+            "name": "doctrine/dbal",
+            "direct-dependency": false,
+            "homepage": "https://www.doctrine-project.org/projects/dbal.html",
+            "source": "https://github.com/doctrine/dbal/tree/2.13.9",
+            "version": "2.13.9",
+            "release-age": "3 years old",
+            "release-date": "2022-05-02T20:28:55+00:00",
+            "latest": "4.4.1",
+            "latest-status": "update-possible",
+            "latest-release-date": "2025-12-04T10:11:03+00:00",
+            "description": "Powerful PHP database abstraction layer (DBAL) with many features for database schema introspection and management.",
+            "abandoned": false
+        },
+        {
+            "name": "doctrine/event-manager",
+            "direct-dependency": false,
+            "homepage": "https://www.doctrine-project.org/projects/event-manager.html",
+            "source": "https://github.com/doctrine/event-manager/tree/1.2.0",
+            "version": "1.2.0",
+            "release-age": "3 years old",
+            "release-date": "2022-10-12T20:51:15+00:00",
+            "latest": "2.1.1",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-29T07:11:08+00:00",
+            "description": "The Doctrine Event Manager is a simple PHP event system that was built to be used with the various Doctrine projects.",
+            "abandoned": false
+        },
+        {
+            "name": "doctrine/lexer",
+            "direct-dependency": false,
+            "homepage": "https://www.doctrine-project.org/projects/lexer.html",
+            "source": "https://github.com/doctrine/lexer/tree/1.2.3",
+            "version": "1.2.3",
+            "release-age": "3 years old",
+            "release-date": "2022-02-28T11:07:21+00:00",
+            "latest": "3.0.1",
+            "latest-status": "update-possible",
+            "latest-release-date": "2024-02-05T11:56:58+00:00",
+            "description": "PHP Doctrine Lexer parser library that can be used in Top-Down, Recursive Descent Parsers.",
+            "abandoned": false
+        },
+        {
+            "name": "egulias/email-validator",
+            "direct-dependency": false,
+            "homepage": "https://github.com/egulias/EmailValidator",
+            "source": "https://github.com/egulias/EmailValidator/tree/2.1.25",
+            "version": "2.1.25",
+            "release-age": "5 years old",
+            "release-date": "2020-12-29T14:50:06+00:00",
+            "latest": "4.0.4",
+            "latest-status": "update-possible",
+            "latest-release-date": "2025-03-06T22:45:56+00:00",
+            "description": "A library for validating emails against several RFCs",
+            "abandoned": false
+        },
+        {
+            "name": "fof/best-answer",
+            "direct-dependency": true,
+            "homepage": "https://friendsofflarum.org",
+            "source": "https://github.com/FriendsOfFlarum/best-answer",
+            "version": "1.6.5",
+            "release-age": "6 months old",
+            "release-date": "2025-08-19T12:24:20+00:00",
+            "latest": "1.7.1",
+            "latest-status": "semver-safe-update",
+            "latest-release-date": "2026-02-12T15:12:04+00:00",
+            "description": "Mark a post as the best answer in a discussion",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/bus",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-03-07T15:02:42+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-12T15:22:19+00:00",
+            "description": "The Illuminate Bus package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/cache",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-07-22T14:58:32+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-16T18:49:43+00:00",
+            "description": "The Illuminate Cache package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/collections",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-06-23T15:29:49+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-16T14:10:38+00:00",
+            "description": "The Illuminate Collections package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/config",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "4 years old",
+            "release-date": "2022-01-31T15:57:46+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2025-10-26T17:11:19+00:00",
+            "description": "The Illuminate Config package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/console",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-04-21T22:14:18+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-12T15:23:36+00:00",
+            "description": "The Illuminate Console package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/container",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "4 years old",
+            "release-date": "2022-02-02T21:03:35+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-12T16:13:27+00:00",
+            "description": "The Illuminate Container package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/contracts",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "4 years old",
+            "release-date": "2022-01-13T14:47:47+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-10T18:16:44+00:00",
+            "description": "The Illuminate Contracts package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/database",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-08-31T16:16:06+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-17T15:22:28+00:00",
+            "description": "The Illuminate Database package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/events",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "4 years old",
+            "release-date": "2021-09-15T14:32:50+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-28T15:18:32+00:00",
+            "description": "The Illuminate Events package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/filesystem",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "4 years old",
+            "release-date": "2022-01-15T15:00:40+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-13T20:26:32+00:00",
+            "description": "The Illuminate Filesystem package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/hashing",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "4 years old",
+            "release-date": "2021-10-22T13:20:42+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-09T20:42:48+00:00",
+            "description": "The Illuminate Hashing package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/http",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-06-10T18:50:29+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-15T19:14:33+00:00",
+            "description": "The Illuminate Http package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/macroable",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "4 years old",
+            "release-date": "2021-11-16T13:57:03+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2024-07-23T16:31:01+00:00",
+            "description": "The Illuminate Macroable package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/mail",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "4 years old",
+            "release-date": "2022-01-05T15:17:19+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-12T15:26:13+00:00",
+            "description": "The Illuminate Mail package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/pipeline",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "4 years old",
+            "release-date": "2021-03-26T18:39:16+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2025-08-20T13:36:50+00:00",
+            "description": "The Illuminate Pipeline package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/queue",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-07-21T19:36:12+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-15T19:14:33+00:00",
+            "description": "The Illuminate Queue package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/session",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "4 years old",
+            "release-date": "2022-01-13T18:28:06+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-14T23:03:41+00:00",
+            "description": "The Illuminate Session package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/support",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-09-21T21:30:03+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-14T23:03:41+00:00",
+            "description": "The Illuminate Support package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/translation",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-05-02T13:55:33+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-06T12:12:31+00:00",
+            "description": "The Illuminate Translation package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/validation",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-05-30T13:21:10+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-14T23:03:41+00:00",
+            "description": "The Illuminate Validation package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/view",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-04-14T13:47:10+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-14T22:58:48+00:00",
+            "description": "The Illuminate View package.",
+            "abandoned": false
+        },
+        {
+            "name": "intervention/image",
+            "direct-dependency": false,
+            "homepage": "http://image.intervention.io/",
+            "source": "https://github.com/Intervention/image/tree/2.7.2",
+            "version": "2.7.2",
+            "release-age": "3 years old",
+            "release-date": "2022-05-21T17:30:32+00:00",
+            "latest": "3.11.7",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-19T13:11:17+00:00",
+            "description": "Image handling and manipulation library with support for Laravel integration",
+            "abandoned": false
+        },
+        {
+            "name": "justinrainbow/json-schema",
+            "direct-dependency": false,
+            "homepage": "https://github.com/jsonrainbow/json-schema",
+            "source": "https://github.com/jsonrainbow/json-schema/tree/6.6.4",
+            "version": "6.6.4",
+            "release-age": "2 months old",
+            "release-date": "2025-12-19T15:01:32+00:00",
+            "latest": "v6.7.2",
+            "latest-status": "semver-safe-update",
+            "latest-release-date": "2026-02-15T15:06:22+00:00",
+            "description": "A library to validate a json schema.",
+            "abandoned": false
+        },
+        {
+            "name": "laravel/serializable-closure",
+            "direct-dependency": false,
+            "homepage": null,
+            "source": "https://github.com/laravel/serializable-closure",
+            "version": "v1.3.7",
+            "release-age": "1 year old",
+            "release-date": "2024-11-14T18:34:49+00:00",
+            "latest": "v2.0.9",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-03T06:55:34+00:00",
+            "description": "Laravel Serializable Closure provides an easy and secure way to serialize closures in PHP.",
+            "abandoned": false
+        },
+        {
+            "name": "league/flysystem",
+            "direct-dependency": false,
+            "homepage": null,
+            "source": "https://github.com/thephpleague/flysystem/tree/1.1.10",
+            "version": "1.1.10",
+            "release-age": "3 years old",
+            "release-date": "2022-10-04T09:16:37+00:00",
+            "latest": "3.31.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-23T15:38:47+00:00",
+            "description": "Filesystem abstraction: Many filesystems, one API.",
+            "abandoned": false
+        },
+        {
+            "name": "middlewares/utils",
+            "direct-dependency": false,
+            "homepage": "https://github.com/middlewares/utils",
+            "source": "https://github.com/middlewares/utils/tree/v3.3.0",
+            "version": "v3.3.0",
+            "release-age": "4 years old",
+            "release-date": "2021-07-04T17:56:23+00:00",
+            "latest": "v4.0.2",
+            "latest-status": "update-possible",
+            "latest-release-date": "2025-01-23T13:33:55+00:00",
+            "description": "Common utils for PSR-15 middleware packages",
+            "abandoned": false
+        },
+        {
+            "name": "mobiledetect/mobiledetectlib",
+            "direct-dependency": false,
+            "homepage": "https://github.com/serbanghita/Mobile-Detect",
+            "source": "https://github.com/serbanghita/Mobile-Detect/tree/2.8.45",
+            "version": "2.8.45",
+            "release-age": "2 years old",
+            "release-date": "2023-11-07T21:57:25+00:00",
+            "latest": "4.8.10",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-09T16:21:59+00:00",
+            "description": "Mobile_Detect is a lightweight PHP class for detecting mobile devices. It uses the User-Agent string combined with specific HTTP headers to detect the mobile environment.",
+            "abandoned": false
+        },
+        {
+            "name": "monolog/monolog",
+            "direct-dependency": false,
+            "homepage": "http://github.com/Seldaek/monolog",
+            "source": "https://github.com/Seldaek/monolog/tree/1.27.1",
+            "version": "1.27.1",
+            "release-age": "3 years old",
+            "release-date": "2022-06-09T08:53:42+00:00",
+            "latest": "3.10.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-02T08:56:05+00:00",
+            "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
+            "abandoned": false
+        },
+        {
+            "name": "nesbot/carbon",
+            "direct-dependency": false,
+            "homepage": "https://carbon.nesbot.com",
+            "source": "https://github.com/briannesbitt/Carbon",
+            "version": "2.73.0",
+            "release-age": "1 year old",
+            "release-date": "2025-01-08T20:10:23+00:00",
+            "latest": "3.11.1",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-29T09:26:29+00:00",
+            "description": "An API extension for DateTime that supports 281 different languages.",
+            "abandoned": false
+        },
+        {
+            "name": "nikic/fast-route",
+            "direct-dependency": false,
+            "homepage": null,
+            "source": "https://github.com/nikic/FastRoute/tree/master",
+            "version": "v0.6.0",
+            "release-age": "10 years old",
+            "release-date": "2015-06-18T19:15:47+00:00",
+            "latest": "v1.3.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2018-02-13T20:26:39+00:00",
+            "description": "Fast request router for PHP",
+            "abandoned": false
+        },
+        {
+            "name": "opis/closure",
+            "direct-dependency": false,
+            "homepage": "https://opis.io/closure",
+            "source": "https://github.com/opis/closure/tree/3.7.0",
+            "version": "3.7.0",
+            "release-age": "7 months old",
+            "release-date": "2025-07-08T20:30:08+00:00",
+            "latest": "4.4.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2025-11-20T00:20:49+00:00",
+            "description": "A library that can be used to serialize closures (anonymous functions) and arbitrary objects.",
+            "abandoned": false
+        },
+        {
+            "name": "psr/container",
+            "direct-dependency": false,
+            "homepage": "https://github.com/php-fig/container",
+            "source": "https://github.com/php-fig/container/tree/1.1.2",
+            "version": "1.1.2",
+            "release-age": "4 years old",
+            "release-date": "2021-11-05T16:50:12+00:00",
+            "latest": "2.0.2",
+            "latest-status": "update-possible",
+            "latest-release-date": "2021-11-05T16:47:00+00:00",
+            "description": "Common Container Interface (PHP FIG PSR-11)",
+            "abandoned": false
+        },
+        {
+            "name": "psr/http-message",
+            "direct-dependency": false,
+            "homepage": "https://github.com/php-fig/http-message",
+            "source": "https://github.com/php-fig/http-message/tree/1.1",
+            "version": "1.1",
+            "release-age": "2 years old",
+            "release-date": "2023-04-04T09:50:52+00:00",
+            "latest": "2.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2023-04-04T09:54:51+00:00",
+            "description": "Common interface for HTTP messages",
+            "abandoned": false
+        },
+        {
+            "name": "psr/log",
+            "direct-dependency": false,
+            "homepage": "https://github.com/php-fig/log",
+            "source": "https://github.com/php-fig/log/tree/1.1.4",
+            "version": "1.1.4",
+            "release-age": "4 years old",
+            "release-date": "2021-05-03T11:20:27+00:00",
+            "latest": "3.0.2",
+            "latest-status": "update-possible",
+            "latest-release-date": "2024-09-11T13:17:53+00:00",
+            "description": "Common interface for logging libraries",
+            "abandoned": false
+        },
+        {
+            "name": "psr/simple-cache",
+            "direct-dependency": false,
+            "homepage": null,
+            "source": "https://github.com/php-fig/simple-cache/tree/master",
+            "version": "1.0.1",
+            "release-age": "8 years old",
+            "release-date": "2017-10-23T01:57:42+00:00",
+            "latest": "3.0.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2021-10-29T13:26:27+00:00",
+            "description": "Common interfaces for simple caching",
+            "abandoned": false
+        },
+        {
+            "name": "pusher/pusher-php-server",
+            "direct-dependency": false,
+            "homepage": "https://github.com/pusher/pusher-php-server",
+            "source": "https://github.com/pusher/pusher-http-php/tree/master",
+            "version": "2.6.4",
+            "release-age": "8 years old",
+            "release-date": "2017-06-06T16:41:17+00:00",
+            "latest": "7.2.7",
+            "latest-status": "update-possible",
+            "latest-release-date": "2025-01-06T10:56:20+00:00",
+            "description": "Library for interacting with the Pusher REST API",
+            "abandoned": false
+        },
+        {
+            "name": "s9e/regexp-builder",
+            "direct-dependency": false,
+            "homepage": "https://github.com/s9e/RegexpBuilder/",
+            "source": "https://github.com/s9e/RegexpBuilder/tree/1.4.6",
+            "version": "1.4.6",
+            "release-age": "3 years old",
+            "release-date": "2022-03-05T16:22:35+00:00",
+            "latest": "2.1.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2023-02-21T20:42:54+00:00",
+            "description": "Single-purpose library that generates regular expressions that match a list of strings.",
+            "abandoned": false
+        },
+        {
+            "name": "s9e/sweetdom",
+            "direct-dependency": false,
+            "homepage": "https://github.com/s9e/SweetDOM/",
+            "source": "https://github.com/s9e/SweetDOM/tree/2.1.2",
+            "version": "2.1.2",
+            "release-age": "2 years old",
+            "release-date": "2023-10-07T13:06:42+00:00",
+            "latest": "3.4.1",
+            "latest-status": "update-possible",
+            "latest-release-date": "2024-03-23T14:03:01+00:00",
+            "description": "Syntactic sugar for the DOM API with a focus on XSLT 1.0 template manipulation.",
+            "abandoned": false
+        },
+        {
+            "name": "s9e/text-formatter",
+            "direct-dependency": false,
+            "homepage": "https://github.com/s9e/TextFormatter/",
+            "source": "https://github.com/s9e/TextFormatter/tree/2.14.3",
+            "version": "2.14.3",
+            "release-age": "2 years old",
+            "release-date": "2023-11-11T15:27:53+00:00",
+            "latest": "2.19.3",
+            "latest-status": "semver-safe-update",
+            "latest-release-date": "2025-11-14T21:26:59+00:00",
+            "description": "Multi-purpose text formatting and markup library. Plugins offer support for BBCodes, Markdown, emoticons, HTML, embedding third-party media (YouTube, etc...), enhanced typography and more.",
+            "abandoned": false
+        },
+        {
+            "name": "softcreatr/php-mime-detector",
+            "direct-dependency": false,
+            "homepage": "https://1-2.dev",
+            "source": "https://github.com/SoftCreatR/php-mime-detector",
+            "version": "4.0.0",
+            "release-age": "1 year old",
+            "release-date": "2024-09-01T17:19:47+00:00",
+            "latest": "5.1.1",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-09T11:43:48+00:00",
+            "description": "Mime Detector Decoder",
+            "abandoned": false
+        },
+        {
+            "name": "staudenmeir/eloquent-eager-limit",
+            "direct-dependency": false,
+            "homepage": null,
+            "source": "https://github.com/staudenmeir/eloquent-eager-limit/tree/v1.6.1",
+            "version": "v1.6.1",
+            "release-age": "5 years old",
+            "release-date": "2020-11-22T18:13:55+00:00",
+            "latest": "v1.8.3",
+            "latest-status": "semver-safe-update",
+            "latest-release-date": "2023-07-12T21:15:26+00:00",
+            "description": "Laravel Eloquent eager loading with limit",
+            "abandoned": false
+        },
+        {
+            "name": "swiftmailer/swiftmailer",
+            "direct-dependency": false,
+            "homepage": "https://swiftmailer.symfony.com",
+            "source": "https://github.com/swiftmailer/swiftmailer/tree/v6.3.0",
+            "version": "v6.3.0",
+            "release-age": "4 years old",
+            "release-date": "2021-10-18T15:26:12+00:00",
+            "latest": "v6.3.0",
+            "latest-status": "up-to-date",
+            "latest-release-date": "2021-10-18T15:26:12+00:00",
+            "description": "Swiftmailer, free feature-rich PHP mailer",
+            "warning": "Package swiftmailer/swiftmailer is abandoned, you should avoid using it. Use symfony/mailer instead.",
+            "abandoned": "symfony/mailer"
+        },
+        {
+            "name": "symfony/config",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/config/tree/v5.4.46",
+            "version": "v5.4.46",
+            "release-age": "1 year old",
+            "release-date": "2024-10-30T07:58:02+00:00",
+            "latest": "v7.4.4",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-13T11:36:38+00:00",
+            "description": "Helps you find, load, combine, autofill and validate configuration values of any kind",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/console",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/console/tree/v5.4.47",
+            "version": "v5.4.47",
+            "release-age": "1 year old",
+            "release-date": "2024-11-06T11:30:55+00:00",
+            "latest": "v7.4.4",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-13T11:36:38+00:00",
+            "description": "Eases the creation of beautiful and testable command line interfaces",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/error-handler",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/error-handler/tree/v6.3.12",
+            "version": "v6.3.12",
+            "release-age": "2 years old",
+            "release-date": "2024-01-23T14:35:58+00:00",
+            "latest": "v7.4.4",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-20T16:42:42+00:00",
+            "description": "Provides tools to manage errors and ease debugging PHP code",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/event-dispatcher",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/event-dispatcher/tree/v5.4.45",
+            "version": "v5.4.45",
+            "release-age": "1 year old",
+            "release-date": "2024-09-25T14:11:13+00:00",
+            "latest": "v7.4.4",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-05T11:45:34+00:00",
+            "description": "Provides tools that allow your application components to communicate with each other by dispatching events and listening to them",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/filesystem",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/filesystem/tree/v6.4.30",
+            "version": "v6.4.30",
+            "release-age": "2 months old",
+            "release-date": "2025-11-26T14:43:45+00:00",
+            "latest": "v7.4.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2025-11-27T13:27:24+00:00",
+            "description": "Provides basic utilities for the filesystem",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/finder",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/finder/tree/v5.4.45",
+            "version": "v5.4.45",
+            "release-age": "1 year old",
+            "release-date": "2024-09-28T13:32:08+00:00",
+            "latest": "v7.4.5",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-26T15:07:59+00:00",
+            "description": "Finds files and directories via an intuitive fluent interface",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/http-foundation",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/http-foundation/tree/v5.4.50",
+            "version": "v5.4.50",
+            "release-age": "3 months old",
+            "release-date": "2025-11-03T12:58:48+00:00",
+            "latest": "v7.4.5",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-27T16:16:02+00:00",
+            "description": "Defines an object-oriented layer for the HTTP specification",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/http-kernel",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/http-kernel/tree/v5.4.51",
+            "version": "v5.4.51",
+            "release-age": "3 weeks old",
+            "release-date": "2026-01-28T07:10:35+00:00",
+            "latest": "v7.4.5",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-28T10:33:42+00:00",
+            "description": "Provides a structured process for converting a Request into a Response",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/mime",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/mime/tree/v5.4.45",
+            "version": "v5.4.45",
+            "release-age": "1 year old",
+            "release-date": "2024-10-23T20:18:32+00:00",
+            "latest": "v7.4.5",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-27T08:59:58+00:00",
+            "description": "Allows manipulating MIME messages",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/process",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/process/tree/v5.4.51",
+            "version": "v5.4.51",
+            "release-age": "3 weeks old",
+            "release-date": "2026-01-26T15:53:37+00:00",
+            "latest": "v7.4.5",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-26T15:07:59+00:00",
+            "description": "Executes commands in sub-processes",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/string",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/string/tree/v6.4.30",
+            "version": "v6.4.30",
+            "release-age": "3 months old",
+            "release-date": "2025-11-21T18:03:05+00:00",
+            "latest": "v7.4.4",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-12T10:54:30+00:00",
+            "description": "Provides an object-oriented API to strings and deals with bytes, UTF-8 code points and grapheme clusters in a unified way",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/translation",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/translation/tree/v5.4.45",
+            "version": "v5.4.45",
+            "release-age": "1 year old",
+            "release-date": "2024-09-25T14:11:13+00:00",
+            "latest": "v7.4.4",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-13T10:40:19+00:00",
+            "description": "Provides tools to internationalize your application",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/translation-contracts",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/translation-contracts/tree/v2.5.4",
+            "version": "v2.5.4",
+            "release-age": "1 year old",
+            "release-date": "2024-09-25T14:11:13+00:00",
+            "latest": "v3.6.1",
+            "latest-status": "update-possible",
+            "latest-release-date": "2025-07-15T13:41:35+00:00",
+            "description": "Generic abstractions related to translation",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/var-dumper",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/var-dumper/tree/v6.4.32",
+            "version": "v6.4.32",
+            "release-age": "1 month old",
+            "release-date": "2026-01-01T13:34:06+00:00",
+            "latest": "v7.4.4",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-01T22:13:48+00:00",
+            "description": "Provides mechanisms for walking through any arbitrary PHP variable",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/yaml",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/yaml/tree/v5.4.45",
+            "version": "v5.4.45",
+            "release-age": "1 year old",
+            "release-date": "2024-09-25T14:11:13+00:00",
+            "latest": "v7.4.1",
+            "latest-status": "update-possible",
+            "latest-release-date": "2025-12-04T18:11:45+00:00",
+            "description": "Loads and dumps YAML files",
+            "abandoned": false
+        },
+        {
+            "name": "voku/portable-ascii",
+            "direct-dependency": false,
+            "homepage": "https://github.com/voku/portable-ascii",
+            "source": "https://github.com/voku/portable-ascii/tree/1.6.1",
+            "version": "1.6.1",
+            "release-age": "4 years old",
+            "release-date": "2022-01-24T18:55:24+00:00",
+            "latest": "2.0.3",
+            "latest-status": "update-possible",
+            "latest-release-date": "2024-11-21T01:49:47+00:00",
+            "description": "Portable ASCII library - performance optimized (ascii) string functions for php.",
+            "abandoned": false
+        },
+        {
+            "name": "wikimedia/less.php",
+            "direct-dependency": false,
+            "homepage": "https://gerrit.wikimedia.org/g/mediawiki/libs/less.php",
+            "source": "https://github.com/wikimedia/less.php/tree/v3.2.1",
+            "version": "v3.2.1",
+            "release-age": "3 years old",
+            "release-date": "2023-02-03T06:43:41+00:00",
+            "latest": "v5.5.1",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-14T00:12:28+00:00",
+            "description": "PHP port of the LESS processor",
+            "abandoned": false
+        }
+    ]
+}
+  
+[2026-02-22 17:09:04] composer.INFO: outdated --format --minor-only
+{
+    "installed": [
+        {
+            "name": "doctrine/cache",
+            "direct-dependency": false,
+            "homepage": "https://www.doctrine-project.org/projects/cache.html",
+            "source": "https://github.com/doctrine/cache/tree/2.2.0",
+            "version": "2.2.0",
+            "release-age": "3 years old",
+            "release-date": "2022-05-20T20:07:39+00:00",
+            "latest": "2.2.0",
+            "latest-status": "up-to-date",
+            "latest-release-date": "2022-05-20T20:07:39+00:00",
+            "description": "PHP Doctrine Cache library is a popular cache implementation that supports many different drivers such as redis, memcache, apc, mongodb and others.",
+            "warning": "Package doctrine/cache is abandoned, you should avoid using it. No replacement was suggested.",
+            "abandoned": true
+        },
+        {
+            "name": "fof/best-answer",
+            "direct-dependency": true,
+            "homepage": "https://friendsofflarum.org",
+            "source": "https://github.com/FriendsOfFlarum/best-answer",
+            "version": "1.6.5",
+            "release-age": "6 months old",
+            "release-date": "2025-08-19T12:24:20+00:00",
+            "latest": "1.7.1",
+            "latest-status": "semver-safe-update",
+            "latest-release-date": "2026-02-12T15:12:04+00:00",
+            "description": "Mark a post as the best answer in a discussion",
+            "abandoned": false
+        },
+        {
+            "name": "justinrainbow/json-schema",
+            "direct-dependency": false,
+            "homepage": "https://github.com/jsonrainbow/json-schema",
+            "source": "https://github.com/jsonrainbow/json-schema/tree/6.6.4",
+            "version": "6.6.4",
+            "release-age": "2 months old",
+            "release-date": "2025-12-19T15:01:32+00:00",
+            "latest": "v6.7.2",
+            "latest-status": "semver-safe-update",
+            "latest-release-date": "2026-02-15T15:06:22+00:00",
+            "description": "A library to validate a json schema.",
+            "abandoned": false
+        },
+        {
+            "name": "s9e/text-formatter",
+            "direct-dependency": false,
+            "homepage": "https://github.com/s9e/TextFormatter/",
+            "source": "https://github.com/s9e/TextFormatter/tree/2.14.3",
+            "version": "2.14.3",
+            "release-age": "2 years old",
+            "release-date": "2023-11-11T15:27:53+00:00",
+            "latest": "2.19.3",
+            "latest-status": "semver-safe-update",
+            "latest-release-date": "2025-11-14T21:26:59+00:00",
+            "description": "Multi-purpose text formatting and markup library. Plugins offer support for BBCodes, Markdown, emoticons, HTML, embedding third-party media (YouTube, etc...), enhanced typography and more.",
+            "abandoned": false
+        },
+        {
+            "name": "staudenmeir/eloquent-eager-limit",
+            "direct-dependency": false,
+            "homepage": null,
+            "source": "https://github.com/staudenmeir/eloquent-eager-limit/tree/v1.6.1",
+            "version": "v1.6.1",
+            "release-age": "5 years old",
+            "release-date": "2020-11-22T18:13:55+00:00",
+            "latest": "v1.8.3",
+            "latest-status": "semver-safe-update",
+            "latest-release-date": "2023-07-12T21:15:26+00:00",
+            "description": "Laravel Eloquent eager loading with limit",
+            "abandoned": false
+        },
+        {
+            "name": "swiftmailer/swiftmailer",
+            "direct-dependency": false,
+            "homepage": "https://swiftmailer.symfony.com",
+            "source": "https://github.com/swiftmailer/swiftmailer/tree/v6.3.0",
+            "version": "v6.3.0",
+            "release-age": "4 years old",
+            "release-date": "2021-10-18T15:26:12+00:00",
+            "latest": "v6.3.0",
+            "latest-status": "up-to-date",
+            "latest-release-date": "2021-10-18T15:26:12+00:00",
+            "description": "Swiftmailer, free feature-rich PHP mailer",
+            "warning": "Package swiftmailer/swiftmailer is abandoned, you should avoid using it. Use symfony/mailer instead.",
+            "abandoned": "symfony/mailer"
+        },
+        {
+            "name": "symfony/error-handler",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/error-handler/tree/v6.3.12",
+            "version": "v6.3.12",
+            "release-age": "2 years old",
+            "release-date": "2024-01-23T14:35:58+00:00",
+            "latest": "v6.4.32",
+            "latest-status": "semver-safe-update",
+            "latest-release-date": "2026-01-19T19:28:19+00:00",
+            "description": "Provides tools to manage errors and ease debugging PHP code",
+            "abandoned": false
+        }
+    ]
+}
+  
+[2026-02-22 17:10:26] composer.ERROR: require 'fof/pretty-mail:*' -W
+/var/www/flarum/composer.json has been updated
+Running composer update fof/pretty-mail --with-all-dependencies
+Loading composer repositories with package information
+Updating dependencies
+Your requirements could not be resolved to an installable set of packages.
+
+  Problem 1
+    - Root composer.json requires fof/pretty-mail *, found fof/pretty-mail[0.1.0, ..., 0.4.0, 1.0.0, ..., 1.1.2] but these were not loaded, because they are affected by security advisories ("PKSA-zqkh-gtty-c5yv"). Go to https://packagist.org/security-advisories/ to find advisory details. To ignore the advisories, add them to the audit "ignore" config. To turn the feature off entirely, you can set "block-insecure" to false in your "audit" config.
+
+
+Installation failed, reverting /var/www/flarum/composer.json and /var/www/flarum/composer.lock to their original content.
+  
+[2026-02-22 17:11:22] composer.INFO: require 'fof/best-answer:*'
+/var/www/flarum/composer.json has been updated
+Running composer update fof/best-answer
+Loading composer repositories with package information
+Updating dependencies
+Lock file operations: 0 installs, 1 update, 0 removals
+  - Upgrading fof/best-answer (1.6.5 => 1.7.1)
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 170 installs, 0 updates, 0 removals
+  - Downloading fof/best-answer (1.7.1)
+ 0/1 [>---------------------------]   0%
+ 1/1 [============================] 100%
+  - Installing axy/backtrace (2.0.0): Extracting archive
+  - Installing wikimedia/less.php (v3.2.1): Extracting archive
+  - Installing symfony/polyfill-ctype (v1.33.0): Extracting archive
+  - Installing symfony/deprecation-contracts (v3.6.0): Extracting archive
+  - Installing symfony/yaml (v5.4.45): Extracting archive
+  - Installing symfony/translation-contracts (v2.5.4): Extracting archive
+  - Installing symfony/polyfill-php80 (v1.33.0): Extracting archive
+  - Installing symfony/polyfill-iconv (v1.33.0): Extracting archive
+  - Installing symfony/polyfill-mbstring (v1.33.0): Extracting archive
+  - Installing symfony/translation (v5.4.45): Extracting archive
+  - Installing symfony/polyfill-intl-messageformatter (v1.33.0): Extracting archive
+  - Installing symfony/polyfill-intl-normalizer (v1.33.0): Extracting archive
+  - Installing symfony/polyfill-intl-idn (v1.33.0): Extracting archive
+  - Installing symfony/mime (v5.4.45): Extracting archive
+  - Installing psr/event-dispatcher (1.0.0): Extracting archive
+  - Installing symfony/event-dispatcher-contracts (v3.6.0): Extracting archive
+  - Installing symfony/event-dispatcher (v5.4.45): Extracting archive
+  - Installing symfony/polyfill-intl-grapheme (v1.33.0): Extracting archive
+  - Installing symfony/string (v6.4.30): Extracting archive
+  - Installing psr/container (1.1.2): Extracting archive
+  - Installing symfony/service-contracts (v3.6.1): Extracting archive
+  - Installing symfony/polyfill-php73 (v1.33.0): Extracting archive
+  - Installing symfony/console (v5.4.47): Extracting archive
+  - Installing symfony/polyfill-php81 (v1.33.0): Extracting archive
+  - Installing symfony/filesystem (v6.4.30): Extracting archive
+  - Installing symfony/config (v5.4.46): Extracting archive
+  - Installing sycho/errors (3.0.0): Extracting archive
+  - Installing sycho/codecs-base64vlq (2.0.0): Extracting archive
+  - Installing sycho/sourcemap (2.0.0): Extracting archive
+  - Installing sycho/json-api (v0.5.2): Extracting archive
+  - Installing voku/portable-ascii (1.6.1): Extracting archive
+  - Installing psr/clock (1.0.0): Extracting archive
+  - Installing carbonphp/carbon-doctrine-types (1.0.0): Extracting archive
+  - Installing nesbot/carbon (2.73.0): Extracting archive
+  - Installing illuminate/macroable (v8.83.27): Extracting archive
+  - Installing psr/simple-cache (1.0.1): Extracting archive
+  - Installing illuminate/contracts (v8.83.27): Extracting archive
+  - Installing illuminate/collections (v8.83.27): Extracting archive
+  - Installing doctrine/inflector (2.1.0): Extracting archive
+  - Installing illuminate/support (v8.83.27): Extracting archive
+  - Installing illuminate/container (v8.83.27): Extracting archive
+  - Installing illuminate/database (v8.83.27): Extracting archive
+  - Installing staudenmeir/eloquent-eager-limit (v1.6.1): Extracting archive
+  - Installing s9e/sweetdom (2.1.2): Extracting archive
+  - Installing s9e/regexp-builder (1.4.6): Extracting archive
+  - Installing s9e/text-formatter (2.14.3): Extracting archive
+  - Installing psr/http-message (1.1): Extracting archive
+  - Installing psr/http-server-handler (1.0.2): Extracting archive
+  - Installing psr/http-server-middleware (1.0.2): Extracting archive
+  - Installing nikic/fast-route (v0.6.0): Extracting archive
+  - Installing psr/log (1.1.4): Extracting archive
+  - Installing monolog/monolog (1.27.1): Extracting archive
+  - Installing psr/http-factory (1.1.0): Extracting archive
+  - Installing middlewares/utils (v3.3.0): Extracting archive
+  - Installing middlewares/request-handler (v2.1.0): Extracting archive
+  - Installing middlewares/base-path-router (v2.1.0): Extracting archive
+  - Installing middlewares/base-path (v2.2.0): Extracting archive
+  - Installing matthiasmullie/path-converter (1.1.3): Extracting archive
+  - Installing matthiasmullie/minify (1.3.75): Extracting archive
+  - Installing league/mime-type-detection (1.16.0): Extracting archive
+  - Installing league/flysystem (1.1.10): Extracting archive
+  - Installing laminas/laminas-escaper (2.18.0): Extracting archive
+  - Installing fig/http-message-util (1.1.5): Extracting archive
+  - Installing laminas/laminas-stratigility (4.3.0): Extracting archive
+  - Installing ralouphie/getallheaders (3.0.3): Extracting archive
+  - Installing guzzlehttp/psr7 (2.8.0): Extracting archive
+  - Installing laminas/laminas-diactoros (3.8.0): Extracting archive
+  - Installing laminas/laminas-httphandlerrunner (2.13.0): Extracting archive
+  - Installing mobiledetect/mobiledetectlib (2.8.45): Extracting archive
+  - Installing jaybizzle/crawler-detect (v1.3.7): Extracting archive
+  - Installing jenssegers/agent (v2.6.4): Extracting archive
+  - Installing intervention/image (2.7.2): Extracting archive
+  - Installing symfony/finder (v5.4.45): Extracting archive
+  - Installing illuminate/filesystem (v8.83.27): Extracting archive
+  - Installing illuminate/pipeline (v8.83.27): Extracting archive
+  - Installing illuminate/bus (v8.83.27): Extracting archive
+  - Installing illuminate/events (v8.83.27): Extracting archive
+  - Installing illuminate/view (v8.83.27): Extracting archive
+  - Installing symfony/http-foundation (v5.4.50): Extracting archive
+  - Installing illuminate/translation (v8.83.27): Extracting archive
+  - Installing doctrine/lexer (1.2.3): Extracting archive
+  - Installing egulias/email-validator (2.1.25): Extracting archive
+  - Installing illuminate/validation (v8.83.27): Extracting archive
+  - Installing illuminate/session (v8.83.27): Extracting archive
+  - Installing symfony/process (v5.4.51): Extracting archive
+  - Installing ramsey/collection (2.1.1): Extracting archive
+  - Installing brick/math (0.14.8): Extracting archive
+  - Installing ramsey/uuid (4.9.2): Extracting archive
+  - Installing opis/closure (3.7.0): Extracting archive
+  - Installing laravel/serializable-closure (v1.3.7): Extracting archive
+  - Installing illuminate/console (v8.83.27): Extracting archive
+  - Installing illuminate/queue (v8.83.27): Extracting archive
+  - Installing symfony/css-selector (v7.4.0): Extracting archive
+  - Installing tijsverkoyen/css-to-inline-styles (v2.4.0): Extracting archive
+  - Installing swiftmailer/swiftmailer (v6.3.0): Extracting archive
+  - Installing nette/utils (v4.1.3): Extracting archive
+  - Installing nette/schema (v1.3.4): Extracting archive
+  - Installing dflydev/dot-access-data (v3.0.3): Extracting archive
+  - Installing league/config (v1.2.0): Extracting archive
+  - Installing league/commonmark (2.8.0): Extracting archive
+  - Installing illuminate/mail (v8.83.27): Extracting archive
+  - Installing illuminate/hashing (v8.83.27): Extracting archive
+  - Installing illuminate/config (v8.83.27): Extracting archive
+  - Installing illuminate/cache (v8.83.27): Extracting archive
+  - Installing psr/http-client (1.0.3): Extracting archive
+  - Installing guzzlehttp/promises (2.3.0): Extracting archive
+  - Installing guzzlehttp/guzzle (7.10.0): Extracting archive
+  - Installing filp/whoops (2.18.4): Extracting archive
+  - Installing franzl/whoops-middleware (2.0.0): Extracting archive
+  - Installing dragonmantank/cron-expression (v3.6.0): Extracting archive
+  - Installing doctrine/deprecations (1.1.6): Extracting archive
+  - Installing doctrine/event-manager (1.2.0): Extracting archive
+  - Installing doctrine/cache (2.2.0): Extracting archive
+  - Installing doctrine/dbal (2.13.9): Extracting archive
+  - Installing dflydev/fig-cookies (v3.2.0): Extracting archive
+  - Installing components/font-awesome (5.15.4): Extracting archive
+  - Installing flarum/core (v1.8.13): Extracting archive
+  - Installing clarkwinkelmann/flarum-ext-composer-page (1.1.1): Extracting archive
+  - Installing clarkwinkelmann/flarum-local-extenders (1.0.1): Extracting archive
+  - Installing composer/ca-bundle (1.5.10): Extracting archive
+  - Installing composer/pcre (3.3.2): Extracting archive
+  - Installing composer/class-map-generator (1.7.1): Extracting archive
+  - Installing composer/metadata-minifier (1.0.0): Extracting archive
+  - Installing composer/semver (3.4.4): Extracting archive
+  - Installing composer/spdx-licenses (1.5.9): Extracting archive
+  - Installing composer/xdebug-handler (3.0.5): Extracting archive
+  - Installing flarum-lang/utils (1.0.1): Extracting archive
+  - Installing flarum-lang/spanish (1.13.0): Extracting archive
+  - Installing flarum/flags (v1.8.2): Extracting archive
+  - Installing flarum/approval (v1.8.2): Extracting archive
+  - Installing flarum/akismet (v1.8.1): Extracting archive
+  - Installing flarum/bbcode (v1.8.0): Extracting archive
+  - Installing flarum/emoji (v1.8.1): Extracting archive
+  - Installing symfony/polyfill-php84 (v1.33.0): Extracting archive
+  - Installing seld/signal-handler (2.0.2): Extracting archive
+  - Installing seld/phar-utils (1.2.1): Extracting archive
+  - Installing seld/jsonlint (1.11.0): Extracting archive
+  - Installing react/promise (v3.3.0): Extracting archive
+  - Installing marc-mabe/php-enum (v4.7.2): Extracting archive
+  - Installing justinrainbow/json-schema (6.6.4): Extracting archive
+  - Installing composer/composer (2.9.5): Extracting archive
+  - Installing flarum/extension-manager (v1.0.7): Extracting archive
+  - Installing flarum/lang-english (v1.8.0): Extracting archive
+  - Installing flarum/likes (v1.8.1): Extracting archive
+  - Installing flarum/lock (v1.8.2): Extracting archive
+  - Installing flarum/markdown (v1.8.1): Extracting archive
+  - Installing flarum/mentions (v1.8.5): Extracting archive
+  - Installing flarum/nicknames (v1.8.2): Extracting archive
+  - Installing pusher/pusher-php-server (2.6.4): Extracting archive
+  - Installing flarum/pusher (v1.8.1): Extracting archive
+  - Installing flarum/statistics (v1.8.1): Extracting archive
+  - Installing flarum/sticky (v1.8.2): Extracting archive
+  - Installing flarum/subscriptions (v1.8.1): Extracting archive
+  - Installing flarum/suspend (v1.8.5): Extracting archive
+  - Installing flarum/tags (v1.8.6): Extracting archive
+  - Installing fof/best-answer (1.7.1): Extracting archive
+  - Installing fof/custom-footer (1.1.2): Extracting archive
+  - Installing fof/formatting (1.1.2): Extracting archive
+  - Installing fof/frontpage (1.2.0): Extracting archive
+  - Installing softcreatr/php-mime-detector (4.0.0): Extracting archive
+  - Installing enshrined/svg-sanitize (0.22.0): Extracting archive
+  - Installing fof/upload (1.8.9): Extracting archive
+  - Installing afrux/forum-widgets-core (v0.1.7): Extracting archive
+  - Installing justoverclock/custom-html-widget (0.1.4): Extracting archive
+  - Installing justoverclock/popular-tags (0.1.3): Extracting archive
+  - Installing symfony/var-dumper (v6.4.32): Extracting archive
+  - Installing symfony/error-handler (v6.3.12): Extracting archive
+  - Installing symfony/http-kernel (v5.4.51): Extracting archive
+  - Installing illuminate/http (v8.83.27): Extracting archive
+  - Installing nearata/flarum-ext-minecraft-avatars (v2.1.1): Extracting archive
+   0/170 [>---------------------------]   0%
+  30/170 [====>-----------------------]  17%
+  48/170 [=======>--------------------]  28%
+  68/170 [===========>----------------]  40%
+  93/170 [===============>------------]  54%
+ 110/170 [==================>---------]  64%
+ 123/170 [====================>-------]  72%
+ 139/170 [======================>-----]  81%
+ 158/170 [==========================>-]  92%
+ 170/170 [============================] 100%
+<warning>Package doctrine/cache is abandoned, you should avoid using it. No replacement was suggested.</warning>
+<warning>Package swiftmailer/swiftmailer is abandoned, you should avoid using it. Use symfony/mailer instead.</warning>
+Generating autoload files
+96 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+No security vulnerability advisories found.
+  
+[2026-02-22 17:11:28] composer.INFO: outdated --format
+{
+    "installed": [
+        {
+            "name": "axy/backtrace",
+            "direct-dependency": false,
+            "homepage": "https://github.com/axypro/backtrace",
+            "source": "https://github.com/axypro/backtrace/tree/2.0.0",
+            "version": "2.0.0",
+            "release-age": "7 years old",
+            "release-date": "2019-02-02T18:01:31+00:00",
+            "latest": "3.0.1",
+            "latest-status": "update-possible",
+            "latest-release-date": "2023-03-16T11:02:09+00:00",
+            "description": "Tracing in PHP",
+            "abandoned": false
+        },
+        {
+            "name": "brick/math",
+            "direct-dependency": false,
+            "homepage": null,
+            "source": "https://github.com/brick/math/tree/0.14.8",
+            "version": "0.14.8",
+            "release-age": "from last week",
+            "release-date": "2026-02-10T14:33:43+00:00",
+            "latest": "0.15.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-20T15:19:18+00:00",
+            "description": "Arbitrary-precision arithmetic library",
+            "abandoned": false
+        },
+        {
+            "name": "carbonphp/carbon-doctrine-types",
+            "direct-dependency": false,
+            "homepage": null,
+            "source": "https://github.com/CarbonPHP/carbon-doctrine-types/tree/1.0.0",
+            "version": "1.0.0",
+            "release-age": "2 years old",
+            "release-date": "2023-10-01T12:35:29+00:00",
+            "latest": "3.2.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2024-02-09T16:56:22+00:00",
+            "description": "Types to use Carbon in Doctrine",
+            "abandoned": false
+        },
+        {
+            "name": "components/font-awesome",
+            "direct-dependency": false,
+            "homepage": null,
+            "source": "https://github.com/components/font-awesome/tree/5.15.4",
+            "version": "5.15.4",
+            "release-age": "4 years old",
+            "release-date": "2021-08-15T10:31:24+00:00",
+            "latest": "6.5.2",
+            "latest-status": "update-possible",
+            "latest-release-date": "2024-04-08T15:15:22+00:00",
+            "description": "Font Awesome, the iconic SVG, font, and CSS framework.",
+            "abandoned": false
+        },
+        {
+            "name": "doctrine/cache",
+            "direct-dependency": false,
+            "homepage": "https://www.doctrine-project.org/projects/cache.html",
+            "source": "https://github.com/doctrine/cache/tree/2.2.0",
+            "version": "2.2.0",
+            "release-age": "3 years old",
+            "release-date": "2022-05-20T20:07:39+00:00",
+            "latest": "2.2.0",
+            "latest-status": "up-to-date",
+            "latest-release-date": "2022-05-20T20:07:39+00:00",
+            "description": "PHP Doctrine Cache library is a popular cache implementation that supports many different drivers such as redis, memcache, apc, mongodb and others.",
+            "warning": "Package doctrine/cache is abandoned, you should avoid using it. No replacement was suggested.",
+            "abandoned": true
+        },
+        {
+            "name": "doctrine/dbal",
+            "direct-dependency": false,
+            "homepage": "https://www.doctrine-project.org/projects/dbal.html",
+            "source": "https://github.com/doctrine/dbal/tree/2.13.9",
+            "version": "2.13.9",
+            "release-age": "3 years old",
+            "release-date": "2022-05-02T20:28:55+00:00",
+            "latest": "4.4.1",
+            "latest-status": "update-possible",
+            "latest-release-date": "2025-12-04T10:11:03+00:00",
+            "description": "Powerful PHP database abstraction layer (DBAL) with many features for database schema introspection and management.",
+            "abandoned": false
+        },
+        {
+            "name": "doctrine/event-manager",
+            "direct-dependency": false,
+            "homepage": "https://www.doctrine-project.org/projects/event-manager.html",
+            "source": "https://github.com/doctrine/event-manager/tree/1.2.0",
+            "version": "1.2.0",
+            "release-age": "3 years old",
+            "release-date": "2022-10-12T20:51:15+00:00",
+            "latest": "2.1.1",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-29T07:11:08+00:00",
+            "description": "The Doctrine Event Manager is a simple PHP event system that was built to be used with the various Doctrine projects.",
+            "abandoned": false
+        },
+        {
+            "name": "doctrine/lexer",
+            "direct-dependency": false,
+            "homepage": "https://www.doctrine-project.org/projects/lexer.html",
+            "source": "https://github.com/doctrine/lexer/tree/1.2.3",
+            "version": "1.2.3",
+            "release-age": "3 years old",
+            "release-date": "2022-02-28T11:07:21+00:00",
+            "latest": "3.0.1",
+            "latest-status": "update-possible",
+            "latest-release-date": "2024-02-05T11:56:58+00:00",
+            "description": "PHP Doctrine Lexer parser library that can be used in Top-Down, Recursive Descent Parsers.",
+            "abandoned": false
+        },
+        {
+            "name": "egulias/email-validator",
+            "direct-dependency": false,
+            "homepage": "https://github.com/egulias/EmailValidator",
+            "source": "https://github.com/egulias/EmailValidator/tree/2.1.25",
+            "version": "2.1.25",
+            "release-age": "5 years old",
+            "release-date": "2020-12-29T14:50:06+00:00",
+            "latest": "4.0.4",
+            "latest-status": "update-possible",
+            "latest-release-date": "2025-03-06T22:45:56+00:00",
+            "description": "A library for validating emails against several RFCs",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/bus",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-03-07T15:02:42+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-12T15:22:19+00:00",
+            "description": "The Illuminate Bus package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/cache",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-07-22T14:58:32+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-16T18:49:43+00:00",
+            "description": "The Illuminate Cache package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/collections",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-06-23T15:29:49+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-16T14:10:38+00:00",
+            "description": "The Illuminate Collections package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/config",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "4 years old",
+            "release-date": "2022-01-31T15:57:46+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2025-10-26T17:11:19+00:00",
+            "description": "The Illuminate Config package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/console",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-04-21T22:14:18+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-12T15:23:36+00:00",
+            "description": "The Illuminate Console package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/container",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "4 years old",
+            "release-date": "2022-02-02T21:03:35+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-12T16:13:27+00:00",
+            "description": "The Illuminate Container package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/contracts",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "4 years old",
+            "release-date": "2022-01-13T14:47:47+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-10T18:16:44+00:00",
+            "description": "The Illuminate Contracts package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/database",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-08-31T16:16:06+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-17T15:22:28+00:00",
+            "description": "The Illuminate Database package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/events",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "4 years old",
+            "release-date": "2021-09-15T14:32:50+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-28T15:18:32+00:00",
+            "description": "The Illuminate Events package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/filesystem",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "4 years old",
+            "release-date": "2022-01-15T15:00:40+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-13T20:26:32+00:00",
+            "description": "The Illuminate Filesystem package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/hashing",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "4 years old",
+            "release-date": "2021-10-22T13:20:42+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-09T20:42:48+00:00",
+            "description": "The Illuminate Hashing package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/http",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-06-10T18:50:29+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-15T19:14:33+00:00",
+            "description": "The Illuminate Http package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/macroable",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "4 years old",
+            "release-date": "2021-11-16T13:57:03+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2024-07-23T16:31:01+00:00",
+            "description": "The Illuminate Macroable package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/mail",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "4 years old",
+            "release-date": "2022-01-05T15:17:19+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-12T15:26:13+00:00",
+            "description": "The Illuminate Mail package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/pipeline",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "4 years old",
+            "release-date": "2021-03-26T18:39:16+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2025-08-20T13:36:50+00:00",
+            "description": "The Illuminate Pipeline package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/queue",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-07-21T19:36:12+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-15T19:14:33+00:00",
+            "description": "The Illuminate Queue package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/session",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "4 years old",
+            "release-date": "2022-01-13T18:28:06+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-14T23:03:41+00:00",
+            "description": "The Illuminate Session package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/support",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-09-21T21:30:03+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-14T23:03:41+00:00",
+            "description": "The Illuminate Support package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/translation",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-05-02T13:55:33+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-06T12:12:31+00:00",
+            "description": "The Illuminate Translation package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/validation",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-05-30T13:21:10+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-14T23:03:41+00:00",
+            "description": "The Illuminate Validation package.",
+            "abandoned": false
+        },
+        {
+            "name": "illuminate/view",
+            "direct-dependency": false,
+            "homepage": "https://laravel.com",
+            "source": "https://github.com/laravel/framework",
+            "version": "v8.83.27",
+            "release-age": "3 years old",
+            "release-date": "2022-04-14T13:47:10+00:00",
+            "latest": "v12.52.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-14T22:58:48+00:00",
+            "description": "The Illuminate View package.",
+            "abandoned": false
+        },
+        {
+            "name": "intervention/image",
+            "direct-dependency": false,
+            "homepage": "http://image.intervention.io/",
+            "source": "https://github.com/Intervention/image/tree/2.7.2",
+            "version": "2.7.2",
+            "release-age": "3 years old",
+            "release-date": "2022-05-21T17:30:32+00:00",
+            "latest": "3.11.7",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-19T13:11:17+00:00",
+            "description": "Image handling and manipulation library with support for Laravel integration",
+            "abandoned": false
+        },
+        {
+            "name": "justinrainbow/json-schema",
+            "direct-dependency": false,
+            "homepage": "https://github.com/jsonrainbow/json-schema",
+            "source": "https://github.com/jsonrainbow/json-schema/tree/6.6.4",
+            "version": "6.6.4",
+            "release-age": "2 months old",
+            "release-date": "2025-12-19T15:01:32+00:00",
+            "latest": "v6.7.2",
+            "latest-status": "semver-safe-update",
+            "latest-release-date": "2026-02-15T15:06:22+00:00",
+            "description": "A library to validate a json schema.",
+            "abandoned": false
+        },
+        {
+            "name": "laravel/serializable-closure",
+            "direct-dependency": false,
+            "homepage": null,
+            "source": "https://github.com/laravel/serializable-closure",
+            "version": "v1.3.7",
+            "release-age": "1 year old",
+            "release-date": "2024-11-14T18:34:49+00:00",
+            "latest": "v2.0.9",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-03T06:55:34+00:00",
+            "description": "Laravel Serializable Closure provides an easy and secure way to serialize closures in PHP.",
+            "abandoned": false
+        },
+        {
+            "name": "league/flysystem",
+            "direct-dependency": false,
+            "homepage": null,
+            "source": "https://github.com/thephpleague/flysystem/tree/1.1.10",
+            "version": "1.1.10",
+            "release-age": "3 years old",
+            "release-date": "2022-10-04T09:16:37+00:00",
+            "latest": "3.31.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-23T15:38:47+00:00",
+            "description": "Filesystem abstraction: Many filesystems, one API.",
+            "abandoned": false
+        },
+        {
+            "name": "middlewares/utils",
+            "direct-dependency": false,
+            "homepage": "https://github.com/middlewares/utils",
+            "source": "https://github.com/middlewares/utils/tree/v3.3.0",
+            "version": "v3.3.0",
+            "release-age": "4 years old",
+            "release-date": "2021-07-04T17:56:23+00:00",
+            "latest": "v4.0.2",
+            "latest-status": "update-possible",
+            "latest-release-date": "2025-01-23T13:33:55+00:00",
+            "description": "Common utils for PSR-15 middleware packages",
+            "abandoned": false
+        },
+        {
+            "name": "mobiledetect/mobiledetectlib",
+            "direct-dependency": false,
+            "homepage": "https://github.com/serbanghita/Mobile-Detect",
+            "source": "https://github.com/serbanghita/Mobile-Detect/tree/2.8.45",
+            "version": "2.8.45",
+            "release-age": "2 years old",
+            "release-date": "2023-11-07T21:57:25+00:00",
+            "latest": "4.8.10",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-09T16:21:59+00:00",
+            "description": "Mobile_Detect is a lightweight PHP class for detecting mobile devices. It uses the User-Agent string combined with specific HTTP headers to detect the mobile environment.",
+            "abandoned": false
+        },
+        {
+            "name": "monolog/monolog",
+            "direct-dependency": false,
+            "homepage": "http://github.com/Seldaek/monolog",
+            "source": "https://github.com/Seldaek/monolog/tree/1.27.1",
+            "version": "1.27.1",
+            "release-age": "3 years old",
+            "release-date": "2022-06-09T08:53:42+00:00",
+            "latest": "3.10.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-02T08:56:05+00:00",
+            "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
+            "abandoned": false
+        },
+        {
+            "name": "nesbot/carbon",
+            "direct-dependency": false,
+            "homepage": "https://carbon.nesbot.com",
+            "source": "https://github.com/briannesbitt/Carbon",
+            "version": "2.73.0",
+            "release-age": "1 year old",
+            "release-date": "2025-01-08T20:10:23+00:00",
+            "latest": "3.11.1",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-29T09:26:29+00:00",
+            "description": "An API extension for DateTime that supports 281 different languages.",
+            "abandoned": false
+        },
+        {
+            "name": "nikic/fast-route",
+            "direct-dependency": false,
+            "homepage": null,
+            "source": "https://github.com/nikic/FastRoute/tree/master",
+            "version": "v0.6.0",
+            "release-age": "10 years old",
+            "release-date": "2015-06-18T19:15:47+00:00",
+            "latest": "v1.3.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2018-02-13T20:26:39+00:00",
+            "description": "Fast request router for PHP",
+            "abandoned": false
+        },
+        {
+            "name": "opis/closure",
+            "direct-dependency": false,
+            "homepage": "https://opis.io/closure",
+            "source": "https://github.com/opis/closure/tree/3.7.0",
+            "version": "3.7.0",
+            "release-age": "7 months old",
+            "release-date": "2025-07-08T20:30:08+00:00",
+            "latest": "4.4.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2025-11-20T00:20:49+00:00",
+            "description": "A library that can be used to serialize closures (anonymous functions) and arbitrary objects.",
+            "abandoned": false
+        },
+        {
+            "name": "psr/container",
+            "direct-dependency": false,
+            "homepage": "https://github.com/php-fig/container",
+            "source": "https://github.com/php-fig/container/tree/1.1.2",
+            "version": "1.1.2",
+            "release-age": "4 years old",
+            "release-date": "2021-11-05T16:50:12+00:00",
+            "latest": "2.0.2",
+            "latest-status": "update-possible",
+            "latest-release-date": "2021-11-05T16:47:00+00:00",
+            "description": "Common Container Interface (PHP FIG PSR-11)",
+            "abandoned": false
+        },
+        {
+            "name": "psr/http-message",
+            "direct-dependency": false,
+            "homepage": "https://github.com/php-fig/http-message",
+            "source": "https://github.com/php-fig/http-message/tree/1.1",
+            "version": "1.1",
+            "release-age": "2 years old",
+            "release-date": "2023-04-04T09:50:52+00:00",
+            "latest": "2.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2023-04-04T09:54:51+00:00",
+            "description": "Common interface for HTTP messages",
+            "abandoned": false
+        },
+        {
+            "name": "psr/log",
+            "direct-dependency": false,
+            "homepage": "https://github.com/php-fig/log",
+            "source": "https://github.com/php-fig/log/tree/1.1.4",
+            "version": "1.1.4",
+            "release-age": "4 years old",
+            "release-date": "2021-05-03T11:20:27+00:00",
+            "latest": "3.0.2",
+            "latest-status": "update-possible",
+            "latest-release-date": "2024-09-11T13:17:53+00:00",
+            "description": "Common interface for logging libraries",
+            "abandoned": false
+        },
+        {
+            "name": "psr/simple-cache",
+            "direct-dependency": false,
+            "homepage": null,
+            "source": "https://github.com/php-fig/simple-cache/tree/master",
+            "version": "1.0.1",
+            "release-age": "8 years old",
+            "release-date": "2017-10-23T01:57:42+00:00",
+            "latest": "3.0.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2021-10-29T13:26:27+00:00",
+            "description": "Common interfaces for simple caching",
+            "abandoned": false
+        },
+        {
+            "name": "pusher/pusher-php-server",
+            "direct-dependency": false,
+            "homepage": "https://github.com/pusher/pusher-php-server",
+            "source": "https://github.com/pusher/pusher-http-php/tree/master",
+            "version": "2.6.4",
+            "release-age": "8 years old",
+            "release-date": "2017-06-06T16:41:17+00:00",
+            "latest": "7.2.7",
+            "latest-status": "update-possible",
+            "latest-release-date": "2025-01-06T10:56:20+00:00",
+            "description": "Library for interacting with the Pusher REST API",
+            "abandoned": false
+        },
+        {
+            "name": "s9e/regexp-builder",
+            "direct-dependency": false,
+            "homepage": "https://github.com/s9e/RegexpBuilder/",
+            "source": "https://github.com/s9e/RegexpBuilder/tree/1.4.6",
+            "version": "1.4.6",
+            "release-age": "3 years old",
+            "release-date": "2022-03-05T16:22:35+00:00",
+            "latest": "2.1.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2023-02-21T20:42:54+00:00",
+            "description": "Single-purpose library that generates regular expressions that match a list of strings.",
+            "abandoned": false
+        },
+        {
+            "name": "s9e/sweetdom",
+            "direct-dependency": false,
+            "homepage": "https://github.com/s9e/SweetDOM/",
+            "source": "https://github.com/s9e/SweetDOM/tree/2.1.2",
+            "version": "2.1.2",
+            "release-age": "2 years old",
+            "release-date": "2023-10-07T13:06:42+00:00",
+            "latest": "3.4.1",
+            "latest-status": "update-possible",
+            "latest-release-date": "2024-03-23T14:03:01+00:00",
+            "description": "Syntactic sugar for the DOM API with a focus on XSLT 1.0 template manipulation.",
+            "abandoned": false
+        },
+        {
+            "name": "s9e/text-formatter",
+            "direct-dependency": false,
+            "homepage": "https://github.com/s9e/TextFormatter/",
+            "source": "https://github.com/s9e/TextFormatter/tree/2.14.3",
+            "version": "2.14.3",
+            "release-age": "2 years old",
+            "release-date": "2023-11-11T15:27:53+00:00",
+            "latest": "2.19.3",
+            "latest-status": "semver-safe-update",
+            "latest-release-date": "2025-11-14T21:26:59+00:00",
+            "description": "Multi-purpose text formatting and markup library. Plugins offer support for BBCodes, Markdown, emoticons, HTML, embedding third-party media (YouTube, etc...), enhanced typography and more.",
+            "abandoned": false
+        },
+        {
+            "name": "softcreatr/php-mime-detector",
+            "direct-dependency": false,
+            "homepage": "https://1-2.dev",
+            "source": "https://github.com/SoftCreatR/php-mime-detector",
+            "version": "4.0.0",
+            "release-age": "1 year old",
+            "release-date": "2024-09-01T17:19:47+00:00",
+            "latest": "5.1.1",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-09T11:43:48+00:00",
+            "description": "Mime Detector Decoder",
+            "abandoned": false
+        },
+        {
+            "name": "staudenmeir/eloquent-eager-limit",
+            "direct-dependency": false,
+            "homepage": null,
+            "source": "https://github.com/staudenmeir/eloquent-eager-limit/tree/v1.6.1",
+            "version": "v1.6.1",
+            "release-age": "5 years old",
+            "release-date": "2020-11-22T18:13:55+00:00",
+            "latest": "v1.8.3",
+            "latest-status": "semver-safe-update",
+            "latest-release-date": "2023-07-12T21:15:26+00:00",
+            "description": "Laravel Eloquent eager loading with limit",
+            "abandoned": false
+        },
+        {
+            "name": "swiftmailer/swiftmailer",
+            "direct-dependency": false,
+            "homepage": "https://swiftmailer.symfony.com",
+            "source": "https://github.com/swiftmailer/swiftmailer/tree/v6.3.0",
+            "version": "v6.3.0",
+            "release-age": "4 years old",
+            "release-date": "2021-10-18T15:26:12+00:00",
+            "latest": "v6.3.0",
+            "latest-status": "up-to-date",
+            "latest-release-date": "2021-10-18T15:26:12+00:00",
+            "description": "Swiftmailer, free feature-rich PHP mailer",
+            "warning": "Package swiftmailer/swiftmailer is abandoned, you should avoid using it. Use symfony/mailer instead.",
+            "abandoned": "symfony/mailer"
+        },
+        {
+            "name": "symfony/config",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/config/tree/v5.4.46",
+            "version": "v5.4.46",
+            "release-age": "1 year old",
+            "release-date": "2024-10-30T07:58:02+00:00",
+            "latest": "v7.4.4",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-13T11:36:38+00:00",
+            "description": "Helps you find, load, combine, autofill and validate configuration values of any kind",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/console",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/console/tree/v5.4.47",
+            "version": "v5.4.47",
+            "release-age": "1 year old",
+            "release-date": "2024-11-06T11:30:55+00:00",
+            "latest": "v7.4.4",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-13T11:36:38+00:00",
+            "description": "Eases the creation of beautiful and testable command line interfaces",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/error-handler",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/error-handler/tree/v6.3.12",
+            "version": "v6.3.12",
+            "release-age": "2 years old",
+            "release-date": "2024-01-23T14:35:58+00:00",
+            "latest": "v7.4.4",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-20T16:42:42+00:00",
+            "description": "Provides tools to manage errors and ease debugging PHP code",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/event-dispatcher",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/event-dispatcher/tree/v5.4.45",
+            "version": "v5.4.45",
+            "release-age": "1 year old",
+            "release-date": "2024-09-25T14:11:13+00:00",
+            "latest": "v7.4.4",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-05T11:45:34+00:00",
+            "description": "Provides tools that allow your application components to communicate with each other by dispatching events and listening to them",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/filesystem",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/filesystem/tree/v6.4.30",
+            "version": "v6.4.30",
+            "release-age": "2 months old",
+            "release-date": "2025-11-26T14:43:45+00:00",
+            "latest": "v7.4.0",
+            "latest-status": "update-possible",
+            "latest-release-date": "2025-11-27T13:27:24+00:00",
+            "description": "Provides basic utilities for the filesystem",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/finder",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/finder/tree/v5.4.45",
+            "version": "v5.4.45",
+            "release-age": "1 year old",
+            "release-date": "2024-09-28T13:32:08+00:00",
+            "latest": "v7.4.5",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-26T15:07:59+00:00",
+            "description": "Finds files and directories via an intuitive fluent interface",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/http-foundation",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/http-foundation/tree/v5.4.50",
+            "version": "v5.4.50",
+            "release-age": "3 months old",
+            "release-date": "2025-11-03T12:58:48+00:00",
+            "latest": "v7.4.5",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-27T16:16:02+00:00",
+            "description": "Defines an object-oriented layer for the HTTP specification",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/http-kernel",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/http-kernel/tree/v5.4.51",
+            "version": "v5.4.51",
+            "release-age": "3 weeks old",
+            "release-date": "2026-01-28T07:10:35+00:00",
+            "latest": "v7.4.5",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-28T10:33:42+00:00",
+            "description": "Provides a structured process for converting a Request into a Response",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/mime",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/mime/tree/v5.4.45",
+            "version": "v5.4.45",
+            "release-age": "1 year old",
+            "release-date": "2024-10-23T20:18:32+00:00",
+            "latest": "v7.4.5",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-27T08:59:58+00:00",
+            "description": "Allows manipulating MIME messages",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/process",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/process/tree/v5.4.51",
+            "version": "v5.4.51",
+            "release-age": "3 weeks old",
+            "release-date": "2026-01-26T15:53:37+00:00",
+            "latest": "v7.4.5",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-26T15:07:59+00:00",
+            "description": "Executes commands in sub-processes",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/string",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/string/tree/v6.4.30",
+            "version": "v6.4.30",
+            "release-age": "3 months old",
+            "release-date": "2025-11-21T18:03:05+00:00",
+            "latest": "v7.4.4",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-12T10:54:30+00:00",
+            "description": "Provides an object-oriented API to strings and deals with bytes, UTF-8 code points and grapheme clusters in a unified way",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/translation",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/translation/tree/v5.4.45",
+            "version": "v5.4.45",
+            "release-age": "1 year old",
+            "release-date": "2024-09-25T14:11:13+00:00",
+            "latest": "v7.4.4",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-13T10:40:19+00:00",
+            "description": "Provides tools to internationalize your application",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/translation-contracts",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/translation-contracts/tree/v2.5.4",
+            "version": "v2.5.4",
+            "release-age": "1 year old",
+            "release-date": "2024-09-25T14:11:13+00:00",
+            "latest": "v3.6.1",
+            "latest-status": "update-possible",
+            "latest-release-date": "2025-07-15T13:41:35+00:00",
+            "description": "Generic abstractions related to translation",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/var-dumper",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/var-dumper/tree/v6.4.32",
+            "version": "v6.4.32",
+            "release-age": "1 month old",
+            "release-date": "2026-01-01T13:34:06+00:00",
+            "latest": "v7.4.4",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-01-01T22:13:48+00:00",
+            "description": "Provides mechanisms for walking through any arbitrary PHP variable",
+            "abandoned": false
+        },
+        {
+            "name": "symfony/yaml",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/yaml/tree/v5.4.45",
+            "version": "v5.4.45",
+            "release-age": "1 year old",
+            "release-date": "2024-09-25T14:11:13+00:00",
+            "latest": "v7.4.1",
+            "latest-status": "update-possible",
+            "latest-release-date": "2025-12-04T18:11:45+00:00",
+            "description": "Loads and dumps YAML files",
+            "abandoned": false
+        },
+        {
+            "name": "voku/portable-ascii",
+            "direct-dependency": false,
+            "homepage": "https://github.com/voku/portable-ascii",
+            "source": "https://github.com/voku/portable-ascii/tree/1.6.1",
+            "version": "1.6.1",
+            "release-age": "4 years old",
+            "release-date": "2022-01-24T18:55:24+00:00",
+            "latest": "2.0.3",
+            "latest-status": "update-possible",
+            "latest-release-date": "2024-11-21T01:49:47+00:00",
+            "description": "Portable ASCII library - performance optimized (ascii) string functions for php.",
+            "abandoned": false
+        },
+        {
+            "name": "wikimedia/less.php",
+            "direct-dependency": false,
+            "homepage": "https://gerrit.wikimedia.org/g/mediawiki/libs/less.php",
+            "source": "https://github.com/wikimedia/less.php/tree/v3.2.1",
+            "version": "v3.2.1",
+            "release-age": "3 years old",
+            "release-date": "2023-02-03T06:43:41+00:00",
+            "latest": "v5.5.1",
+            "latest-status": "update-possible",
+            "latest-release-date": "2026-02-14T00:12:28+00:00",
+            "description": "PHP port of the LESS processor",
+            "abandoned": false
+        }
+    ]
+}
+  
+[2026-02-22 17:11:28] composer.INFO: outdated --format --minor-only
+{
+    "installed": [
+        {
+            "name": "doctrine/cache",
+            "direct-dependency": false,
+            "homepage": "https://www.doctrine-project.org/projects/cache.html",
+            "source": "https://github.com/doctrine/cache/tree/2.2.0",
+            "version": "2.2.0",
+            "release-age": "3 years old",
+            "release-date": "2022-05-20T20:07:39+00:00",
+            "latest": "2.2.0",
+            "latest-status": "up-to-date",
+            "latest-release-date": "2022-05-20T20:07:39+00:00",
+            "description": "PHP Doctrine Cache library is a popular cache implementation that supports many different drivers such as redis, memcache, apc, mongodb and others.",
+            "warning": "Package doctrine/cache is abandoned, you should avoid using it. No replacement was suggested.",
+            "abandoned": true
+        },
+        {
+            "name": "justinrainbow/json-schema",
+            "direct-dependency": false,
+            "homepage": "https://github.com/jsonrainbow/json-schema",
+            "source": "https://github.com/jsonrainbow/json-schema/tree/6.6.4",
+            "version": "6.6.4",
+            "release-age": "2 months old",
+            "release-date": "2025-12-19T15:01:32+00:00",
+            "latest": "v6.7.2",
+            "latest-status": "semver-safe-update",
+            "latest-release-date": "2026-02-15T15:06:22+00:00",
+            "description": "A library to validate a json schema.",
+            "abandoned": false
+        },
+        {
+            "name": "s9e/text-formatter",
+            "direct-dependency": false,
+            "homepage": "https://github.com/s9e/TextFormatter/",
+            "source": "https://github.com/s9e/TextFormatter/tree/2.14.3",
+            "version": "2.14.3",
+            "release-age": "2 years old",
+            "release-date": "2023-11-11T15:27:53+00:00",
+            "latest": "2.19.3",
+            "latest-status": "semver-safe-update",
+            "latest-release-date": "2025-11-14T21:26:59+00:00",
+            "description": "Multi-purpose text formatting and markup library. Plugins offer support for BBCodes, Markdown, emoticons, HTML, embedding third-party media (YouTube, etc...), enhanced typography and more.",
+            "abandoned": false
+        },
+        {
+            "name": "staudenmeir/eloquent-eager-limit",
+            "direct-dependency": false,
+            "homepage": null,
+            "source": "https://github.com/staudenmeir/eloquent-eager-limit/tree/v1.6.1",
+            "version": "v1.6.1",
+            "release-age": "5 years old",
+            "release-date": "2020-11-22T18:13:55+00:00",
+            "latest": "v1.8.3",
+            "latest-status": "semver-safe-update",
+            "latest-release-date": "2023-07-12T21:15:26+00:00",
+            "description": "Laravel Eloquent eager loading with limit",
+            "abandoned": false
+        },
+        {
+            "name": "swiftmailer/swiftmailer",
+            "direct-dependency": false,
+            "homepage": "https://swiftmailer.symfony.com",
+            "source": "https://github.com/swiftmailer/swiftmailer/tree/v6.3.0",
+            "version": "v6.3.0",
+            "release-age": "4 years old",
+            "release-date": "2021-10-18T15:26:12+00:00",
+            "latest": "v6.3.0",
+            "latest-status": "up-to-date",
+            "latest-release-date": "2021-10-18T15:26:12+00:00",
+            "description": "Swiftmailer, free feature-rich PHP mailer",
+            "warning": "Package swiftmailer/swiftmailer is abandoned, you should avoid using it. Use symfony/mailer instead.",
+            "abandoned": "symfony/mailer"
+        },
+        {
+            "name": "symfony/error-handler",
+            "direct-dependency": false,
+            "homepage": "https://symfony.com",
+            "source": "https://github.com/symfony/error-handler/tree/v6.3.12",
+            "version": "v6.3.12",
+            "release-age": "2 years old",
+            "release-date": "2024-01-23T14:35:58+00:00",
+            "latest": "v6.4.32",
+            "latest-status": "semver-safe-update",
+            "latest-release-date": "2026-01-19T19:28:19+00:00",
+            "description": "Provides tools to manage errors and ease debugging PHP code",
+            "abandoned": false
+        }
+    ]
+}
+  

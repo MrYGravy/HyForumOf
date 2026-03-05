@@ -1,0 +1,152 @@
+/* ==========================================================
+   HyLeveling — Admin HUD Theme (v2 “no mercy”)
+   - mata logo viejo (incluye background-image)
+   - pone banner arriba con /assets/hylevelingadmin.png
+   - reduce espacios feos
+   ========================================================== */
+
+:root{
+  --hl-admin-heroH: 150px;
+  --hl-admin-bg: #0b0f16;
+  --hl-admin-card: rgba(17,27,44,.78);
+  --hl-admin-border: rgba(255,255,255,.10);
+  --hl-admin-text: rgba(255,255,255,.92);
+  --hl-admin-muted: rgba(255,255,255,.62);
+}
+
+/* ---------- Base ---------- */
+html, body{
+  background: var(--hl-admin-bg) !important;
+}
+
+/* Asegura que esto SOLO afecte al admin */
+body.App--admin{
+  background: var(--hl-admin-bg) !important;
+}
+
+/* ==========================================================
+   A) MATA BRANDING/LOGO DEL ADMIN (IMG, SVG, TEXTO, BACKGROUND)
+   ========================================================== */
+
+/* 1) Cualquier imagen o svg dentro del nav admin */
+body.App--admin .AdminNav img,
+body.App--admin .AdminNav svg{
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* 2) Si el logo es BACKGROUND en algún wrapper */
+body.App--admin .AdminNav .App-title,
+body.App--admin .AdminNav .App-titleControl,
+body.App--admin .AdminNav .App-header,
+body.App--admin .AdminNav .App-navDrawerHeader,
+body.App--admin .AdminNav .App-branding{
+  background: transparent !important;
+  background-image: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+/* 3) Si es texto “HYLEVELING” pintado */
+body.App--admin .AdminNav .App-title,
+body.App--admin .AdminNav .App-titleControl{
+  color: transparent !important;
+  text-shadow: none !important;
+}
+
+/* 4) Colapsa espacio del header del nav si quedaba vacío */
+body.App--admin .AdminNav .App-header,
+body.App--admin .AdminNav .App-navDrawerHeader{
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* (Por si hay un bloque “logo” con padding propio) */
+body.App--admin .AdminNav .App-branding{
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* ==========================================================
+   B) BANNER/HUD ARRIBA (SIN BUG, NO AL FONDO)
+   ========================================================== */
+
+/* Evita pseudo fondos previos */
+body.App--admin .App-content::before,
+body.App--admin .AdminPage-content::before{
+  content: none !important;
+}
+
+/* Reserva espacio para el banner */
+body.App--admin .App-content,
+body.App--admin .AdminPage-content{
+  position: relative !important;
+  padding-top: var(--hl-admin-heroH) !important;
+}
+
+/* Banner real */
+body.App--admin .App-content::after,
+body.App--admin .AdminPage-content::after{
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  top: 0;
+  height: var(--hl-admin-heroH);
+  z-index: 5;
+  pointer-events: none;
+
+  background: url("/assets/hylevelingadmin.png") center/cover no-repeat;
+  border-bottom: 1px solid var(--hl-admin-border);
+  box-shadow: 0 25px 90px rgba(0,0,0,.55);
+}
+
+/* Overlay elegante para que se lea todo */
+body.App--admin .App-content,
+body.App--admin .AdminPage-content{
+  background:
+    radial-gradient(1100px 420px at 12% 0%, rgba(168,85,247,.15), transparent 60%),
+    radial-gradient(900px 380px at 88% 0%, rgba(34,211,238,.12), transparent 60%),
+    linear-gradient(180deg, rgba(11,15,22,.92) 0%, rgba(11,15,22,.88) 100%) !important;
+}
+
+/* ==========================================================
+   C) “NO MÁS ESPACIOS FEOS” / CARDS
+   ========================================================== */
+
+body.App--admin .container{
+  max-width: 1240px !important;
+}
+
+body.App--admin .AdminContent,
+body.App--admin .AdminPage-content{
+  color: var(--hl-admin-text) !important;
+}
+
+/* Cards/paneles */
+body.App--admin .DashboardWidget,
+body.App--admin .Form,
+body.App--admin .ExtensionPage,
+body.App--admin .PermissionsPage,
+body.App--admin .BasicsPage,
+body.App--admin .AppearancePage{
+  background: var(--hl-admin-card) !important;
+  border: 1px solid var(--hl-admin-border) !important;
+  border-radius: 18px !important;
+}
+
+/* Botones */
+body.App--admin .Button{
+  border-radius: 12px !important;
+}
+
+/* Textos suaves */
+body.App--admin .helpText,
+body.App--admin .Checkbox-label,
+body.App--admin .Form-group label{
+  color: var(--hl-admin-muted) !important;
+}
+

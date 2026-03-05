@@ -1,0 +1,30 @@
+{
+    "name": "miforums/reset-password-redesign",
+    "description": "Rediseño de la página de restablecimiento de contraseña con validación visual en tiempo real.",
+    "type": "flarum-extension",
+    "require": {
+        "flarum/core": "^1.8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "MiForums\\ResetPasswordRedesign\\": "src/"
+        }
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Reset Password Redesign",
+            "category": "theme",
+            "icon": {
+                "name": "fas fa-lock",
+                "backgroundColor": "#8b5cf6",
+                "color": "#fff"
+            }
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mi Forums"
+        }
+    ]
+}

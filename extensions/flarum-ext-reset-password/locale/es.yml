@@ -1,0 +1,23 @@
+es:
+  miforums-reset-password:
+    forum:
+      title: "Nueva contraseña"
+      subtitle: "Crea una contraseña segura para proteger tu cuenta en el foro."
+      requirements_title: "Requisitos de seguridad"
+      req1: "Mínimo 8 caracteres de longitud"
+      req2: "Al menos una letra mayúscula y una minúscula"
+      req3: "Al menos un número o símbolo especial"
+      req4: "Ambas contraseñas deben coincidir exactamente"
+      new_password: "Contraseña nueva"
+      new_password_placeholder: "Ingresa tu nueva contraseña"
+      confirm_password: "Confirmar contraseña"
+      confirm_placeholder: "Repite tu nueva contraseña"
+      strength_label: "Seguridad:"
+      strength_weak: "Débil"
+      strength_medium: "Moderada"
+      strength_strong: "Fuerte"
+      passwords_match: "Las contraseñas coinciden"
+      passwords_no_match: "Las contraseñas no coinciden"
+      save_button: "Guardar nueva contraseña"
+      saved: "✓ Contraseña actualizada"
+      back_to_login: "Volver al inicio de sesión"

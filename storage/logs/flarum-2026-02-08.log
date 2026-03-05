@@ -1,0 +1,7 @@
+[2026-02-08 15:42:50] flarum.ERROR: Symfony\Component\Console\Exception\CommandNotFoundException: Command "down" is not defined. in /var/www/flarum/vendor/symfony/console/Application.php:720
+Stack trace:
+#0 /var/www/flarum/vendor/symfony/console/Application.php(259): Symfony\Component\Console\Application->find()
+#1 /var/www/flarum/vendor/symfony/console/Application.php(171): Symfony\Component\Console\Application->doRun()
+#2 /var/www/flarum/vendor/flarum/core/src/Console/Server.php(42): Symfony\Component\Console\Application->run()
+#3 /var/www/flarum/flarum(24): Flarum\Console\Server->listen()
+#4 {main}  

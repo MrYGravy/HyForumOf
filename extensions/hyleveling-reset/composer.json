@@ -1,0 +1,18 @@
+{
+  "name": "hyleveling/reset",
+  "type": "flarum-extension",
+  "description": "Estilos Reset Password HyLeveling",
+  "autoload": {
+    "psr-4": {
+      "HyLeveling\\Reset\\": "src/"
+    }
+  },
+  "require": {
+    "flarum/core": "*"
+  },
+  "extra": {
+    "flarum-extension": {
+      "title": "HyLeveling Reset"
+    }
+  }
+}

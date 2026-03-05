@@ -1,0 +1,68 @@
+{
+    "name": "flarum/flarum",
+    "description": "Delightfully simple forum software.",
+    "type": "project",
+    "keywords": ["forum", "discussion"],
+    "homepage": "https://flarum.org/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Flarum",
+            "email": "info@flarum.org",
+            "homepage": "https://flarum.org/team"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/flarum/core/issues",
+        "source": "https://github.com/flarum/flarum",
+        "docs": "https://docs.flarum.org/"
+    },
+    "require": {
+        "clarkwinkelmann/flarum-ext-composer-page": "^1.1",
+        "clarkwinkelmann/flarum-local-extenders": "^1.0",
+        "flarum-lang/spanish": "*",
+        "flarum/akismet": "*",
+        "flarum/approval": "*",
+        "flarum/bbcode": "*",
+        "flarum/core": "^1.8",
+        "flarum/emoji": "*",
+        "flarum/extension-manager": "^1.0",
+        "flarum/flags": "*",
+        "flarum/lang-english": "*",
+        "flarum/likes": "*",
+        "flarum/lock": "*",
+        "flarum/markdown": "*",
+        "flarum/mentions": "*",
+        "flarum/nicknames": "*",
+        "flarum/pusher": "*",
+        "flarum/statistics": "*",
+        "flarum/sticky": "*",
+        "flarum/subscriptions": "*",
+        "flarum/suspend": "*",
+        "flarum/tags": "*",
+        "fof/best-answer": "*",
+        "fof/custom-footer": "*",
+        "fof/formatting": "*",
+        "fof/frontpage": "*",
+        "fof/pretty-mail": "^1.1",
+        "fof/upload": "*",
+        "ianm/twofactor": "*",
+        "justoverclock/custom-html-widget": "*",
+        "justoverclock/popular-tags": "*",
+        "miforums/reset-password-redesign": "*@dev",
+        "nearata/flarum-ext-minecraft-avatars": "*"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./extensions/flarum-ext-reset-password"
+        }
+    ],
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "audit": {
+            "ignore": ["PKSA-zqkh-gtty-c5yv"]
+        }
+    }
+}

@@ -1,0 +1,47 @@
+<?php
+
+/*
+ * This file is part of ianm/twofactor.
+ *
+ * Copyright (c) 2023 IanM.
+ *
+ * For the full copyright and license information, please view the LICENSE.md
+ * file that was distributed with this source code.
+ */
+
+namespace IanM\TwoFactor\Trait;
+
+use Flarum\User\User;
+use IanM\TwoFactor\Contracts\TotpInterface;
+use IanM\TwoFactor\Model\TwoFactor;
+
+trait TwoFactorAuthenticationTrait
+{
+    protected TotpInterface $totp;
+
+    protected function twoFactorActive(User &$user): ?bool
+    {
+        if ($user->isGuest()) {
+            return false;
+        }
+
+        /** @var TwoFactor|null $twoFactor */
+        $twoFactor = $user->twoFactor;
+
+        return $twoFactor?->is_active;
+    }
+
+    protected function retrieveTwoFactorTokenFrom(?string $source): ?string
+    {
+        if (empty($source)) {
+            return null;
+        }
+
+        return $source;
+    }
+
+    protected function isTokenActive(?string $token, User $user): bool
+    {
+        return $token && $this->totp->verify($user->twoFactor->secret, $token, $user);
+    }
+}

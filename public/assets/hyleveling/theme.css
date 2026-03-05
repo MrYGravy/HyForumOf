@@ -1,0 +1,2896 @@
+/* Anti-FOUC: pinta oscuro instantáneo mientras carga el resto */
+html, body{
+  background:#0b0f16 !important;
+  color: rgba(255,255,255,.92) !important;
+}
+.App{
+  background: transparent !important;
+}
+
+/* -------------------------
+   0) Theme tokens
+   ------------------------- */
+:root{
+  --hl-bg: #0b0f16;
+  --hl-bg2:#0f1624;
+
+  --hl-surface: rgba(255,255,255,.035);
+  --hl-surface2: rgba(255,255,255,.055);
+
+  --hl-card: rgba(255,255,255,.045);
+  --hl-cardHover: rgba(255,255,255,.070);
+
+  --hl-border: rgba(255,255,255,.10);
+  --hl-border2: rgba(255,255,255,.16);
+
+  --hl-text: rgba(255,255,255,.92);
+  --hl-muted: rgba(255,255,255,.62);
+
+  --hl-accent:#a855f7;  /* purple */
+  --hl-accent2:#22d3ee; /* cyan */
+  --hl-good:#22c55e;
+  --hl-warn:#f59e0b;
+  --hl-bad:#ef4444;
+
+  --hl-shadow: 0 14px 45px rgba(0,0,0,.30);
+  --hl-shadow2: 0 22px 70px rgba(0,0,0,.40);
+
+  --hl-radius: 18px;
+  --hl-radius-sm: 14px;
+
+  /* HERO */
+  --hl-hero-h: 260px;
+  --hl-hero-img: url("/assets/header.png");
+
+  /* Motion */
+  --hl-ease: cubic-bezier(.2,.9,.2,1);
+}
+
+/* -------------------------
+   1) Base background (Hytale aura)
+   ------------------------- */
+html, body{
+  background:
+    radial-gradient(1100px 520px at 12% 0%, rgba(168,85,247,.18), transparent 62%),
+    radial-gradient(900px 520px at 88% 8%, rgba(34,211,238,.13), transparent 58%),
+    radial-gradient(900px 900px at 50% 120%, rgba(168,85,247,.10), transparent 55%),
+    linear-gradient(180deg, var(--hl-bg) 0%, #070a10 100%);
+  color: var(--hl-text);
+}
+
+a{ color: rgba(168,85,247,.95); }
+a:hover{ color: rgba(34,211,238,.95); }
+
+::selection{
+  background: rgba(168,85,247,.25);
+  color: var(--hl-text);
+}
+
+/* -------------------------
+   2) Sticky Header (glass)
+   ------------------------- */
+.App-header{
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: rgba(10, 14, 22, 0.72);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(12px);
+}
+
+/* Slight glow line under header */
+.App-header:after{
+  content:"";
+  display:block;
+  height:1px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(168,85,247,.35),
+    rgba(34,211,238,.25),
+    transparent
+  );
+  opacity:.65;
+}
+
+.Header-title a{
+  font-weight: 900;
+  letter-spacing: .6px;
+  text-shadow: 0 0 18px rgba(168,85,247,.18);
+}
+
+/* Search */
+.Search-input input{
+  background: rgba(255,255,255,.06) !important;
+  border: 1px solid rgba(255,255,255,.10) !important;
+  border-radius: var(--hl-radius-sm) !important;
+  color: var(--hl-text) !important;
+  transition: border-color .18s var(--hl-ease), box-shadow .18s var(--hl-ease);
+}
+.Search-input input:focus{
+  border-color: rgba(34,211,238,.35) !important;
+  box-shadow: 0 0 0 3px rgba(34,211,238,.12);
+}
+.Search-input input::placeholder{ color: rgba(255,255,255,.45); }
+
+/* Header buttons */
+.Header-primary .Button,
+.Header-secondary .Button{
+  border-radius: var(--hl-radius-sm);
+}
+
+/* -------------------------
+   3) FULL-WIDTH HERO Banner (under header)
+   ------------------------- */
+.App{
+  position: relative;
+}
+
+/* Banner */
+.App:before{
+  content:"";
+  display:block;
+  width:100%;
+  height: var(--hl-hero-h);
+  background: var(--hl-hero-img) center top / cover no-repeat;
+  background-color: var(--hl-bg);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+/* Hytale “aura fog” overlay + subtle moving glow */
+.App:after{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height: var(--hl-hero-h);
+  pointer-events:none;
+  background:
+    radial-gradient(900px 260px at 30% 25%, rgba(168,85,247,.18), transparent 60%),
+    radial-gradient(900px 260px at 75% 25%, rgba(34,211,238,.12), transparent 60%),
+    linear-gradient(to bottom, rgba(11,15,22,.10), rgba(11,15,22,.65));
+  mix-blend-mode: screen;
+  opacity:.75;
+  animation: hlHeroGlow 6.5s ease-in-out infinite alternate;
+}
+
+@keyframes hlHeroGlow{
+  0%{ opacity:.58; filter: blur(0px); }
+  100%{ opacity:.78; filter: blur(1px); }
+}
+
+/* Blend the bottom into content */
+.App-content{
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 18px 14px 26px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Give content a soft “lift” off the hero */
+.App-content:before{
+  content:"";
+  display:block;
+  height: 14px;
+  margin-top: -10px;
+  border-radius: 999px;
+  background: radial-gradient(closest-side, rgba(0,0,0,.55), transparent 70%);
+  opacity:.65;
+}
+
+/* Responsive hero */
+@media (max-width: 900px){
+  :root{ --hl-hero-h: 190px; }
+}
+@media (max-width: 520px){
+  :root{ --hl-hero-h: 155px; }
+}
+
+/* -------------------------
+   4) Buttons (premium)
+   ------------------------- */
+.Button{
+  border-radius: var(--hl-radius-sm);
+  border: 1px solid rgba(255,255,255,.10);
+  transition: transform .14s var(--hl-ease), box-shadow .14s var(--hl-ease), background .14s var(--hl-ease), border-color .14s var(--hl-ease);
+}
+
+.Button--primary{
+  background: linear-gradient(90deg, rgba(168,85,247,.95), rgba(34,211,238,.85));
+  border: 0;
+  color: #0b0f16;
+  font-weight: 900;
+  box-shadow: 0 16px 42px rgba(168,85,247,.18);
+}
+.Button--primary:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 22px 60px rgba(34,211,238,.16);
+  filter: brightness(1.03);
+}
+.Button:active{ transform: translateY(0px) scale(.99); }
+
+/* -------------------------
+   5) Sidebar panel (glass card)
+   ------------------------- */
+.IndexSidebar{
+  background: rgba(255,255,255,.030);
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: var(--hl-radius);
+  padding: 12px;
+  box-shadow: var(--hl-shadow);
+  backdrop-filter: blur(10px);
+}
+
+.IndexPage .sideNav .Button,
+.IndexPage .sideNav .Dropdown-toggle{
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: var(--hl-radius-sm);
+}
+.IndexPage .sideNav .Button:hover,
+.IndexPage .sideNav .Dropdown-toggle:hover{
+  background: rgba(168,85,247,.10);
+  border-color: rgba(168,85,247,.35);
+  box-shadow: 0 12px 28px rgba(0,0,0,.22);
+  transform: translateY(-1px);
+}
+
+/* -------------------------
+   6) Toolbar buttons (All discussions / Following / Tags)
+   ------------------------- */
+.IndexPage .IndexPage-toolbar .ButtonGroup .Button,
+.IndexPage .IndexPage-toolbar .ButtonGroup .Dropdown-toggle{
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: var(--hl-radius-sm);
+  margin-right: 8px;
+}
+
+.IndexPage .IndexPage-toolbar .ButtonGroup .Button:hover,
+.IndexPage .IndexPage-toolbar .ButtonGroup .Dropdown-toggle:hover{
+  border-color: rgba(34,211,238,.35);
+  background: rgba(34,211,238,.08);
+}
+
+/* -------------------------
+   7) Discussion list = premium cards + hover glow
+   ------------------------- */
+.DiscussionList{
+  background: rgba(255,255,255,.02);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: var(--hl-radius);
+  padding: 12px;
+}
+
+.DiscussionListItem{
+  background: rgba(255,255,255,.045);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: var(--hl-radius);
+  margin: 5px 0;
+  overflow: hidden;
+  box-shadow: var(--hl-shadow);
+  position: relative;
+  transition: transform .16s var(--hl-ease), box-shadow .16s var(--hl-ease), border-color .16s var(--hl-ease), background .16s var(--hl-ease);
+}
+
+/* “Shine” sweep on hover */
+.DiscussionListItem:before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background: linear-gradient(120deg, transparent 0%, rgba(34,211,238,.10) 35%, rgba(168,85,247,.12) 55%, transparent 72%);
+  transform: translateX(-120%);
+  opacity:0;
+  transition: transform .55s var(--hl-ease), opacity .25s var(--hl-ease);
+  pointer-events:none;
+}
+
+.DiscussionListItem:hover{
+  border-color: rgba(168,85,247,.40);
+  box-shadow: var(--hl-shadow2);
+  background: rgba(255,255,255,.060);
+  transform: translateY(-2px);
+}
+.DiscussionListItem:hover:before{
+  transform: translateX(120%);
+  opacity:1;
+}
+
+.DiscussionListItem-title{ font-weight: 850; letter-spacing: .2px; }
+.DiscussionListItem-author,
+.DiscussionListItem-info{ color: var(--hl-muted); }
+
+.DiscussionListItem--unread .DiscussionListItem-title{
+  text-shadow: 0 0 16px rgba(168,85,247,.22);
+}
+
+/* -------------------------
+   8) Posts
+   ------------------------- */
+.Post{
+  background: linear-gradient(180deg, rgba(17,27,44,.86), rgba(14,23,39,.86));
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: var(--hl-radius);
+  box-shadow: var(--hl-shadow);
+}
+.Post-header{ border-bottom: 1px solid rgba(255,255,255,.06); }
+.Post-body{ color: rgba(255,255,255,.88); line-height: 1.65; }
+
+/* -------------------------
+   9) Composer
+   ------------------------- */
+.Composer{
+  background: rgba(10,14,22,.72);
+  border-top: 1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(12px);
+}
+textarea, input, select{ color: var(--hl-text); }
+
+/* -------------------------
+   10) Tags chips (clean)
+   ------------------------- */
+.TagLabel{
+  border-radius: 999px;
+  padding: 3px 10px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+}
+
+/* -------------------------
+   11) Tags Page tiles (Hytale “portal cards”)
+   ------------------------- */
+.TagsPage .TagsPage-list,
+.TagsPage .TagTiles{
+  background: rgba(255,255,255,.02);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: var(--hl-radius);
+  padding: 14px;
+}
+
+/* Tile base */
+.TagsPage .TagTiles > li{
+  border-radius: var(--hl-radius);
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: var(--hl-shadow);
+  overflow: hidden;
+  position: relative;
+  transition: transform .16s var(--hl-ease), box-shadow .16s var(--hl-ease), border-color .16s var(--hl-ease);
+}
+
+/* Portal glow overlay */
+.TagsPage .TagTiles > li:before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background:
+    radial-gradient(280px 180px at 30% 30%, rgba(168,85,247,.22), transparent 65%),
+    radial-gradient(280px 180px at 70% 35%, rgba(34,211,238,.16), transparent 65%),
+    linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  opacity:.95;
+  pointer-events:none;
+}
+
+.TagsPage .TagTiles > li:hover{
+  transform: translateY(-3px);
+  border-color: rgba(168,85,247,.45);
+  box-shadow: var(--hl-shadow2);
+}
+
+/* Text */
+.TagsPage .TagTile{ background: transparent !important; }
+.TagsPage .TagTile-name{
+  color: rgba(255,255,255,.94);
+  font-weight: 900;
+  letter-spacing: .2px;
+  text-shadow: 0 0 18px rgba(0,0,0,.35);
+}
+.TagsPage .TagTile-description{ color: rgba(255,255,255,.62); }
+
+/* -------------------------
+   12) Dropdowns / menus
+   ------------------------- */
+.Dropdown-menu{
+  background: rgba(11,15,22,.94);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  box-shadow: var(--hl-shadow);
+}
+.Dropdown-menu > li > a{ color: rgba(255,255,255,.85); }
+.Dropdown-menu > li > a:hover{ background: rgba(168,85,247,.12); }
+
+/* -------------------------
+   13) Avatars / Alerts
+   ------------------------- */
+.Avatar{
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+}
+.Alert{
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+}
+
+/* -------------------------
+   14) Small UX polish
+   ------------------------- */
+hr{ opacity:.9; }
+
+/* ==========================================================
+   TAG BACKGROUNDS (robusto) — por URL del tag
+   + Texto abajo centrado
+   ========================================================== */
+
+/* Base: la tarjeta debe poder “contener” overlays */
+.TagsPage .TagTiles > li{
+  position: relative;
+  overflow: hidden;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Overlay oscuro para legibilidad */
+.TagsPage .TagTiles > li::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background: linear-gradient(to bottom, rgba(5,8,12,.15), rgba(5,8,12,.82));
+  z-index: 1;
+}
+
+/* Tu glow anterior (si existe) que NO lave la imagen */
+.TagsPage .TagTiles > li::before{
+  opacity: .25 !important;
+  z-index: 0 !important;
+}
+
+/* Texto ABAJO + CENTRADO */
+.TagsPage .TagTiles > li > .TagTile{
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  min-height: 155px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 16px 14px 18px;
+  text-align: center;
+}
+
+/* Nombre + descripción */
+.TagsPage .TagTiles > li .TagTile-name{
+  font-weight: 900;
+  letter-spacing: .2px;
+  text-shadow: 0 10px 22px rgba(0,0,0,.65);
+  margin: 0;
+}
+
+.TagsPage .TagTiles > li .TagTile-description{
+  margin-top: 6px;
+  opacity: .9;
+}
+
+/* Si tu tile tiene icono */
+.TagsPage .TagTiles > li .TagTile-icon{
+  margin: 0 0 8px 0;
+}
+
+/* =========================
+   IMÁGENES POR TAG (slug en URL)
+   ========================= */
+.TagsPage .TagTiles > li:has(a[href*="/t/general"]) {
+  background-image: url("https://forum.hyleveling.net/assets/files/2026-02-08/1770573652-804172-general.png") !important;
+}
+.TagsPage .TagTiles > li:has(a[href*="/t/anuncios"]) {
+  background-image: url("https://forum.hyleveling.net/assets/files/2026-02-08/1770573665-115839-anuncios.png") !important;
+}
+.TagsPage .TagTiles > li:has(a[href*="/t/soporte"]) {
+  background-image: url("https://forum.hyleveling.net/assets/files/2026-02-08/1770577292-168673-soporte.png") !important;
+}
+.TagsPage .TagTiles > li:has(a[href*="/t/gu-as"]) {
+  background-image: url("https://forum.hyleveling.net/assets/files/2026-02-08/1770577232-236109-guias.png") !important;
+}
+.TagsPage .TagTiles > li:has(a[href*="/t/sugerencias"]) {
+  background-image: url("https://forum.hyleveling.net/assets/files/2026-02-08/1770575748-263937-sugerencias.png") !important;
+}
+.TagsPage .TagTiles > li:has(a[href*="/t/reportes"]) {
+  background-image: url("https://forum.hyleveling.net/assets/files/2026-02-08/1770573661-813702-reportes.png") !important;
+}
+.TagsPage .TagTiles > li:has(a[href*="/t/off-topic"]),
+.TagsPage .TagTiles > li:has(a[href*="/t/offtopic"]) {
+  background-image: url("https://forum.hyleveling.net/assets/files/2026-02-08/1770573658-863527-offtopic.png") !important;
+}
+
+/* ==========================================================
+   TAG TILES — Texto ABAJO + CENTRADO (FIX REAL)
+   ========================================================== */
+.TagsPage .TagTiles > li{
+  position: relative;
+  display: flex;
+}
+
+.TagsPage .TagTiles > li > a,
+.TagsPage .TagTiles > li .TagTile{
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  padding: 18px 16px;
+}
+
+.TagsPage .TagTiles > li .TagTile-name{
+  margin-top: auto !important;
+  width: 100%;
+  text-align: center;
+}
+
+.TagsPage .TagTiles > li .TagTile-description{
+  width: 100%;
+  text-align: center;
+  margin: 6px 0 0 !important;
+  opacity: .9;
+}
+
+/* Overlay más oscuro abajo */
+.TagsPage .TagTiles > li::after{
+  background: linear-gradient(
+    to bottom,
+    rgba(5,8,12,.10),
+    rgba(5,8,12,.85)
+  ) !important;
+}
+
+/* ==========================================================
+   HOTFIX EXTRA: "Guías" robusto (slash + acento URL)
+   (no rompe nada si ya funciona)
+   ========================================================== */
+.TagsPage .TagTiles > li:has(a[href*="/t/guias/"]),
+.TagsPage .TagTiles > li:has(a[href*="/t/gu%C3%ADas"]) {
+  background-image: url("https://forum.hyleveling.net/assets/files/2026-02-08/1770577232-236109-guias.png") !important;
+}
+
+/* ==========================================================
+   ADD-ON: TAG TILES — HOVER PRO + ANIMADO (compatible con tu CSS)
+   ========================================================== */
+.TagsPage .TagTiles > li{
+  transform: translateZ(0);
+  will-change: transform, box-shadow, filter, border-color;
+  transition:
+    transform .18s var(--hl-ease),
+    box-shadow .22s var(--hl-ease),
+    border-color .18s var(--hl-ease),
+    filter .22s var(--hl-ease),
+    background-size .45s var(--hl-ease);
+  cursor: pointer;
+}
+
+/* Zoom leve de la imagen */
+.TagsPage .TagTiles > li{ background-size: 100% !important; }
+.TagsPage .TagTiles > li:hover{ background-size: 108% !important; }
+
+/* Lift + glow */
+.TagsPage .TagTiles > li:hover{
+  transform: translateY(-6px) scale(1.012);
+  border-color: rgba(34,211,238,.45) !important;
+  box-shadow:
+    0 18px 60px rgba(0,0,0,.55),
+    0 0 0 1px rgba(168,85,247,.18),
+    0 0 34px rgba(34,211,238,.10);
+  filter: brightness(1.06) saturate(1.10);
+}
+
+/* Animación del portal glow (tu ::before) */
+.TagsPage .TagTiles > li::before{
+  transition: opacity .22s var(--hl-ease), filter .22s var(--hl-ease);
+  filter: blur(.2px);
+}
+.TagsPage .TagTiles > li:hover::before{
+  opacity: .55 !important;
+  filter: blur(1px);
+}
+
+/* Overlay: deja ver más imagen al hover (tu ::after) */
+.TagsPage .TagTiles > li::after{
+  transition: opacity .22s var(--hl-ease);
+}
+.TagsPage .TagTiles > li:hover::after{
+  opacity: .88;
+}
+
+/* Shine sweep usando pseudo del link/tile (no toca ::before/::after del LI) */
+.TagsPage .TagTiles > li > a,
+.TagsPage .TagTiles > li .TagTile{
+  position: relative;
+  overflow: hidden;
+}
+
+.TagsPage .TagTiles > li > a::before,
+.TagsPage .TagTiles > li .TagTile::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  pointer-events:none;
+  z-index: 3;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(34,211,238,.14) 35%,
+    rgba(168,85,247,.16) 55%,
+    transparent 75%
+  );
+  transform: translateX(-130%) skewX(-12deg);
+  opacity: 0;
+  transition: transform .60s var(--hl-ease), opacity .22s var(--hl-ease);
+}
+
+.TagsPage .TagTiles > li:hover > a::before,
+.TagsPage .TagTiles > li:hover .TagTile::before{
+  transform: translateX(130%) skewX(-12deg);
+  opacity: 1;
+}
+
+/* Texto más pro al hover */
+.TagsPage .TagTiles > li .TagTile-name,
+.TagsPage .TagTiles > li .TagTile-description{
+  transition: transform .18s var(--hl-ease), text-shadow .18s var(--hl-ease), opacity .18s var(--hl-ease);
+}
+
+.TagsPage .TagTiles > li:hover .TagTile-name{
+  transform: translateY(-2px);
+  text-shadow:
+    0 18px 30px rgba(0,0,0,.75),
+    0 0 14px rgba(34,211,238,.12);
+}
+
+.TagsPage .TagTiles > li:hover .TagTile-description{
+  transform: translateY(-2px);
+  opacity: 1;
+}
+
+/* Click feedback */
+.TagsPage .TagTiles > li:active{
+  transform: translateY(-3px) scale(1.006);
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce){
+  .TagsPage .TagTiles > li,
+  .TagsPage .TagTiles > li *,
+  .TagsPage .TagTiles > li::before,
+  .TagsPage .TagTiles > li::after{
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+
+
+
+
+
+
+/* ==========================================================
+   FIX: texto negro escondido en TagTile (última actividad / meta)
+   Pegar AL FINAL
+   ========================================================== */
+
+/* 1) Oculta metadata típica de tiles (tiempo/último post/contadores) */
+.TagsPage .TagTile-latest,
+.TagsPage .TagTile-lastPosted,
+.TagsPage .TagTile-activity,
+.TagsPage .TagTile-stats,
+.TagsPage .TagTile-meta,
+.TagsPage .TagTile-info,
+.TagsPage .TagTile-count,
+.TagsPage .TagTile-counts,
+.TagsPage .TagTile-discussionCount,
+.TagsPage .TagTile-postCount{
+  display: none !important;
+}
+
+/* 2) Si el tema mete textos sueltos dentro del tile, los neutralizamos */
+.TagsPage .TagTiles > li *{
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 3) Fallback agresivo: cualquier “meta” dentro del tile que quede abajo */
+.TagsPage .TagTiles > li [class*="meta"],
+.TagsPage .TagTiles > li [class*="Meta"],
+.TagsPage .TagTiles > li [class*="stats"],
+.TagsPage .TagTiles > li [class*="Stats"],
+.TagsPage .TagTiles > li [class*="latest"],
+.TagsPage .TagTiles > li [class*="Latest"],
+.TagsPage .TagTiles > li [class*="last"],
+.TagsPage .TagTiles > li [class*="Last"],
+.TagsPage .TagTiles > li time{
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+
+
+
+/* ==========================================================
+   FINAL FIX: TagTiles — UNA sola placa elegante + sin barras extra
+   Pegar AL FINAL (override definitivo)
+   ========================================================== */
+
+/* Asegura stacking correcto */
+.TagsPage .TagTiles > li > a,
+.TagsPage .TagTiles > li .TagTile{
+  position: relative;
+  z-index: 2;
+}
+
+/* Mata cualquier “pill” aplicado antes al name/description */
+.TagsPage .TagTiles > li .TagTile-name,
+.TagsPage .TagTiles > li .TagTile-description{
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Oculta descripción vacía / wrappers que generan “barra fantasma” */
+.TagsPage .TagTiles > li .TagTile-description:empty,
+.TagsPage .TagTiles > li .TagTile-description:empty{
+  display: none !important;
+}
+
+/* En algunos temas meten un bloque meta vacío */
+.TagsPage .TagTiles > li [class*="TagTile-"]:empty{
+  display: none !important;
+}
+
+/* Creamos UNA sola placa en el contenedor del link/tile */
+.TagsPage .TagTiles > li > a,
+.TagsPage .TagTiles > li .TagTile{
+  /* ya tienes flex abajo y centrado, no lo tocamos */
+}
+
+/* Placa: se aplica SOLO al bloque del nombre (y si hay desc, se suma debajo) */
+.TagsPage .TagTiles > li .TagTile-name{
+  display: inline-flex !important;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px !important;
+  border-radius: 999px;
+  background: rgba(0,0,0,.18) !important;
+  border: 1px solid rgba(255,255,255,.10) !important;
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.06);
+}
+
+/* Texto blanco elegante */
+.TagsPage .TagTiles > li .TagTile-name{
+  color: rgba(255,255,255,.97) !important;
+  font-weight: 900 !important;
+  letter-spacing: .25px;
+  opacity: 1 !important;
+  text-shadow:
+    0 14px 26px rgba(0,0,0,.78),
+    0 2px 0 rgba(0,0,0,.35) !important;
+}
+
+/* Descripción: si la usas, que quede como segunda línea sin crear placa fantasma */
+.TagsPage .TagTiles > li .TagTile-description{
+  display: inline-block !important;
+  margin-top: 10px !important;
+  padding: 8px 14px !important;
+  border-radius: 999px;
+  background: rgba(0,0,0,.14) !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+  color: rgba(255,255,255,.78) !important;
+  text-shadow: 0 12px 22px rgba(0,0,0,.72) !important;
+  opacity: 1 !important;
+}
+
+/* Icono limpio */
+.TagsPage .TagTiles > li .TagTile-icon{
+  opacity: .92;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.45));
+}
+
+/* Hover: premium, sin neón */
+.TagsPage .TagTiles > li:hover .TagTile-name{
+  background: rgba(0,0,0,.14) !important;
+  border-color: rgba(255,255,255,.14) !important;
+  color: rgba(255,255,255,.99) !important;
+}
+
+/* Si había hover cyan de antes, lo anulamos */
+.TagsPage .TagTiles > li:hover .TagTile-name{
+  color: rgba(255,255,255,.99) !important;
+}
+/* ==========================================================
+   FIX: Centrar texto en las placas de TagTiles
+   Pegar AL FINAL
+   ========================================================== */
+
+/* Centra todo el contenido del tile */
+.TagsPage .TagTiles > li > a,
+.TagsPage .TagTiles > li .TagTile{
+  text-align: center !important;
+  align-items: center !important;
+}
+
+/* Centra la placa del nombre y su contenido */
+.TagsPage .TagTiles > li .TagTile-name{
+  justify-content: center !important;  /* centra icono + texto */
+  text-align: center !important;
+  width: auto !important;
+}
+
+/* Si hay descripción, también centrada */
+.TagsPage .TagTiles > li .TagTile-description{
+  text-align: center !important;
+}
+
+
+
+
+
+/* ==========================================================
+   TAG PAGE / LISTA — Ultra bonito + gamer + centrado (SCOPED)
+   SOLO: Index / Tags / TagPage
+   REEMPLAZA tu bloque anterior por este
+   ========================================================== */
+
+/* Scope general (no ensucia DiscussionPage ni Composer) */
+.IndexPage .App-content,
+.TagsPage .App-content,
+.TagPage .App-content{
+  max-width: 1220px !important;
+}
+
+/* -------------------------
+   1) HERO SOLO en Index/Tags/TagPage (no DiscussionHero)
+   ------------------------- */
+.IndexPage .Hero,
+.TagsPage .Hero,
+.TagPage .Hero,
+.TagPage .TagHero{
+  position: relative !important;
+  margin: 18px auto 18px !important;
+  max-width: 1220px !important;
+  border-radius: 22px !important;
+  overflow: hidden !important;
+
+  background: rgba(255,255,255,.03) !important;
+  border: 1px solid rgba(255,255,255,.10) !important;
+  box-shadow: 0 18px 60px rgba(0,0,0,.45) !important;
+  backdrop-filter: blur(14px);
+}
+
+/* aura + scanline suave (solo esas páginas) */
+.IndexPage .Hero::before,
+.TagsPage .Hero::before,
+.TagPage .Hero::before,
+.TagPage .TagHero::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  pointer-events:none;
+  background:
+    radial-gradient(900px 300px at 20% 15%, rgba(168,85,247,.22), transparent 55%),
+    radial-gradient(900px 300px at 80% 15%, rgba(34,211,238,.16), transparent 55%),
+    linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.03) 0 1px, transparent 1px 12px);
+  opacity: .95;
+  z-index: 0;
+}
+
+/* oscurece un poco para que el texto se lea siempre */
+.IndexPage .Hero::after,
+.TagsPage .Hero::after,
+.TagPage .Hero::after,
+.TagPage .TagHero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background: linear-gradient(to bottom, rgba(0,0,0,.22), rgba(0,0,0,.45));
+  z-index: 0;
+}
+
+.IndexPage .Hero .container,
+.TagsPage .Hero .container,
+.TagPage .Hero .container,
+.TagPage .TagHero .container{
+  position: relative;
+  z-index: 1;
+  padding: 26px 18px !important;
+  text-align: center !important;
+}
+
+/* Título centrado y “gamey” */
+.IndexPage .Hero-title,
+.TagsPage .Hero-title,
+.TagPage .Hero-title,
+.TagPage .TagHero-title{
+  font-weight: 950 !important;
+  letter-spacing: .6px !important;
+  color: rgba(255,255,255,.96) !important;
+  text-shadow:
+    0 22px 40px rgba(0,0,0,.70),
+    0 0 18px rgba(168,85,247,.14),
+    0 0 18px rgba(34,211,238,.10) !important;
+  margin: 0 auto !important;
+}
+
+/* Descripción */
+.TagPage .TagHero-description,
+.IndexPage .Hero-subtitle,
+.IndexPage .Hero-description,
+.TagsPage .Hero-subtitle,
+.TagsPage .Hero-description,
+.TagPage .Hero-subtitle,
+.TagPage .Hero-description{
+  margin: 10px auto 0 !important;
+  max-width: 820px;
+  color: rgba(255,255,255,.72) !important;
+  text-shadow: 0 16px 28px rgba(0,0,0,.70);
+}
+
+/* -------------------------
+   3) Toolbar (Start a Discussion / Latest)
+   ------------------------- */
+.IndexPage .IndexPage-toolbar,
+.TagPage .IndexPage-toolbar{
+  margin-top: 12px !important;
+  margin-bottom: 14px !important;
+}
+
+.IndexPage .IndexPage-toolbar .ButtonGroup,
+.TagPage .IndexPage-toolbar .ButtonGroup{
+  gap: 10px;
+}
+
+/* Botones tipo “chip gamer” */
+.IndexPage .IndexPage-toolbar .Button,
+.IndexPage .IndexPage-toolbar .Dropdown-toggle,
+.TagPage .IndexPage-toolbar .Button,
+.TagPage .IndexPage-toolbar .Dropdown-toggle{
+  border-radius: 14px !important;
+  padding: 10px 14px !important;
+  background: rgba(255,255,255,.045) !important;
+  border: 1px solid rgba(255,255,255,.10) !important;
+  color: rgba(255,255,255,.86) !important;
+  box-shadow: 0 10px 24px rgba(0,0,0,.22);
+  transition: transform .14s var(--hl-ease), box-shadow .14s var(--hl-ease), border-color .14s var(--hl-ease), background .14s var(--hl-ease);
+}
+
+.IndexPage .IndexPage-toolbar .Button:hover,
+.IndexPage .IndexPage-toolbar .Dropdown-toggle:hover,
+.TagPage .IndexPage-toolbar .Button:hover,
+.TagPage .IndexPage-toolbar .Dropdown-toggle:hover{
+  transform: translateY(-2px);
+  background: rgba(34,211,238,.08) !important;
+  border-color: rgba(34,211,238,.22) !important;
+  box-shadow: 0 18px 38px rgba(0,0,0,.30);
+}
+
+/* CTA principal SOLO en toolbar (no global) */
+.IndexPage .IndexPage-toolbar .Button--primary,
+.TagPage .IndexPage-toolbar .Button--primary{
+  background: linear-gradient(90deg, rgba(168,85,247,.95), rgba(34,211,238,.85)) !important;
+  color: #0b0f16 !important;
+  font-weight: 950 !important;
+  border: 0 !important;
+  box-shadow: 0 18px 42px rgba(168,85,247,.18);
+}
+.IndexPage .IndexPage-toolbar .Button--primary:hover,
+.TagPage .IndexPage-toolbar .Button--primary:hover{
+  filter: brightness(1.05);
+  box-shadow: 0 26px 66px rgba(34,211,238,.16);
+}
+
+/* -------------------------
+   4) Sidebar (menú tags)
+   ------------------------- */
+.IndexPage .IndexSidebar,
+.TagPage .IndexSidebar{
+  background: rgba(255,255,255,.025) !important;
+  border: 1px solid rgba(255,255,255,.09) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 18px 55px rgba(0,0,0,.35) !important;
+}
+
+.IndexPage .IndexSidebar .Button,
+.IndexPage .IndexSidebar .Dropdown-toggle,
+.TagPage .IndexSidebar .Button,
+.TagPage .IndexSidebar .Dropdown-toggle{
+  background: rgba(255,255,255,.04) !important;
+  border: 1px solid rgba(255,255,255,.10) !important;
+  color: rgba(255,255,255,.84) !important;
+}
+
+.IndexPage .IndexSidebar .TagLink,
+.TagPage .IndexSidebar .TagLink{
+  background: rgba(255,255,255,.03) !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+  border-radius: 14px !important;
+  padding: 10px 12px !important;
+  margin: 8px 0 !important;
+  transition: transform .14s var(--hl-ease), box-shadow .14s var(--hl-ease), border-color .14s var(--hl-ease), background .14s var(--hl-ease);
+}
+.IndexPage .IndexSidebar .TagLink:hover,
+.TagPage .IndexSidebar .TagLink:hover{
+  transform: translateY(-2px);
+  background: rgba(168,85,247,.08) !important;
+  border-color: rgba(168,85,247,.22) !important;
+  box-shadow: 0 14px 30px rgba(0,0,0,.25);
+}
+.IndexPage .IndexSidebar .TagLink.active,
+.IndexPage .IndexSidebar .TagLink--active,
+.TagPage .IndexSidebar .TagLink.active,
+.TagPage .IndexSidebar .TagLink--active{
+  background: rgba(34,211,238,.09) !important;
+  border-color: rgba(34,211,238,.22) !important;
+  box-shadow: 0 16px 34px rgba(34,211,238,.10);
+}
+
+/* -------------------------
+   5) Lista de discusiones (cards)
+   ------------------------- */
+.IndexPage .DiscussionList,
+.TagPage .DiscussionList{
+  background: rgba(255,255,255,.018) !important;
+  border: 1px solid rgba(255,255,255,.06) !important;
+  border-radius: 22px !important;
+  padding: 14px !important;
+  box-shadow: 0 18px 55px rgba(0,0,0,.35);
+}
+
+.IndexPage .DiscussionListItem,
+.TagPage .DiscussionListItem{
+  background: rgba(255,255,255,.042) !important;
+  border: 1px solid rgba(255,255,255,.09) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 14px 40px rgba(0,0,0,.30);
+  transition: transform .16s var(--hl-ease), box-shadow .16s var(--hl-ease), border-color .16s var(--hl-ease), background .16s var(--hl-ease);
+}
+
+.IndexPage .DiscussionListItem:hover,
+.TagPage .DiscussionListItem:hover{
+  transform: translateY(-3px);
+  background: rgba(255,255,255,.055) !important;
+  border-color: rgba(34,211,238,.22) !important;
+  box-shadow: 0 24px 75px rgba(0,0,0,.45);
+}
+
+/* Título y meta legibles */
+.IndexPage .DiscussionListItem-title,
+.TagPage .DiscussionListItem-title{
+  color: rgba(255,255,255,.95) !important;
+  font-weight: 900 !important;
+  letter-spacing: .25px;
+}
+.IndexPage .DiscussionListItem-info,
+.IndexPage .DiscussionListItem-author,
+.TagPage .DiscussionListItem-info,
+.TagPage .DiscussionListItem-author{
+  color: rgba(255,255,255,.70) !important;
+}
+
+/* Tag chips dentro de la discusión */
+.IndexPage .DiscussionListItem .TagLabel,
+.TagPage .DiscussionListItem .TagLabel{
+  background: rgba(0,0,0,.18) !important;
+  border-color: rgba(255,255,255,.10) !important;
+}
+
+/* -------------------------
+   6) Pequeños arreglos de alineación
+   ------------------------- */
+.IndexPage .IndexPage-toolbar,
+.IndexPage .DiscussionList,
+.IndexPage .IndexSidebar,
+.TagPage .IndexPage-toolbar,
+.TagPage .DiscussionList,
+.TagPage .IndexSidebar{
+  transform: translateZ(0);
+}
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================
+   DISCUSSION VIEW (dentro de un tema) — Gamer limpio y pro
+   Pegar AL FINAL
+   ========================================================== */
+
+/* -------------------------
+   2) Layout general del topic
+   ------------------------- */
+.DiscussionPage .App-content{
+  max-width: 1220px !important;
+}
+.DiscussionPage .DiscussionPage-stream{
+  margin-top: 10px !important;
+}
+
+/* -------------------------
+   3) Cards de posts (más gamer y legibles)
+   ------------------------- */
+.Post{
+  border-radius: 20px !important;
+  border: 1px solid rgba(255,255,255,.09) !important;
+  background: rgba(255,255,255,.035) !important;
+  box-shadow: 0 18px 60px rgba(0,0,0,.38) !important;
+  overflow: hidden;
+}
+
+/* Barra superior sutil */
+.Post-header{
+  border-bottom: 1px solid rgba(255,255,255,.06) !important;
+  background: linear-gradient(90deg, rgba(168,85,247,.06), rgba(34,211,238,.05)) !important;
+}
+
+/* Texto más claro */
+.Post-body{
+  color: rgba(255,255,255,.88) !important;
+}
+.Post-body a{
+  color: rgba(34,211,238,.92) !important;
+}
+.Post-body a:hover{
+  color: rgba(168,85,247,.95) !important;
+}
+
+/* Meta del post (autor/tiempo) más limpio */
+.PostUser-name,
+.PostMeta{
+  color: rgba(255,255,255,.78) !important;
+}
+.PostMeta-time{
+  color: rgba(255,255,255,.60) !important;
+}
+
+/* Avatar más pro */
+.Avatar{
+  border-radius: 16px !important;
+  box-shadow: 0 12px 28px rgba(0,0,0,.35) !important;
+}
+
+/* -------------------------
+   4) Reply INLINE (la caja que se te ve recortada)
+   - FIX real: Flarum usa wrappers raros + el avatar empuja el editor
+   - No tocamos ComposerBody global
+   ------------------------- */
+
+/* Contenedor del reply block (inline) */
+.DiscussionReplyBlock{
+  background: rgba(255,255,255,.03) !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+  box-shadow: 0 18px 55px rgba(0,0,0,.35) !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+}
+
+/* Layout tipo Discord: avatar fijo + editor que ocupa TODO */
+.DiscussionReplyBlock .ComposerBody{
+  display: flex !important;
+  gap: 12px !important;
+  align-items: stretch !important;
+  padding: 14px !important;
+  border-radius: 20px !important;
+}
+
+/* Avatar no debe comerse el espacio del editor */
+.DiscussionReplyBlock .ComposerBody-avatar{
+  flex: 0 0 auto !important;
+  align-self: flex-start !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Contenido/editor ocupa el resto (FIX “cajita recortada”) */
+.DiscussionReplyBlock .ComposerBody-content{
+  flex: 1 1 auto !important;
+  min-width: 0 !important; /* CLAVE para que no se “encaje” */
+}
+
+/* Editor wrapper full width */
+.DiscussionReplyBlock .ComposerBody-editor{
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* TextEditor wrappers full width */
+.DiscussionReplyBlock .TextEditor,
+.DiscussionReplyBlock .TextEditor-editorContainer,
+.DiscussionReplyBlock .ComposerBody-mentionsWrapper,
+.DiscussionReplyBlock .ComposerBody-emojiWrapper{
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  display: block !important;
+  box-sizing: border-box !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Textarea estilo Discord (inline) */
+.DiscussionReplyBlock textarea.FormControl.TextEditor-editor,
+.DiscussionReplyBlock textarea{
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+
+  background: rgba(0,0,0,.18) !important;
+  border: 1px solid rgba(255,255,255,.10) !important;
+  border-radius: 14px !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.05) !important;
+
+  color: rgba(255,255,255,.92) !important;
+  padding: 14px 14px 12px !important;
+  min-height: 110px !important; /* inline más compacto */
+  line-height: 1.6 !important;
+
+  resize: vertical;
+}
+.DiscussionReplyBlock textarea::placeholder{
+  color: rgba(255,255,255,.50) !important;
+}
+
+/* Toolbar del inline (si aparece) limpia */
+.DiscussionReplyBlock .TextEditor-controls{
+  margin-top: 10px !important;
+  padding-top: 10px !important;
+  border-top: 1px solid rgba(255,255,255,.08) !important;
+}
+
+/* Importante: NO tocar ComposerBody global (dock) */
+.ComposerBody{
+  border-radius: initial !important;
+}
+
+/* Si quieres estilo para el dock, apúntalo SOLO a #composer */
+#composer textarea.FormControl.TextEditor-editor{
+  color: rgba(255,255,255,.92) !important;
+}
+
+/* -------------------------
+   5) Columna derecha (Reply / Follow / timeline)
+   ------------------------- */
+.DiscussionPage-nav{
+  background: rgba(255,255,255,.02) !important;
+  border: 1px solid rgba(255,255,255,.07) !important;
+  border-radius: 20px !important;
+  padding: 14px !important;
+  box-shadow: 0 18px 55px rgba(0,0,0,.32) !important;
+}
+
+/* Botones más consistentes */
+.DiscussionPage-nav .Button,
+.DiscussionPage-nav .Dropdown-toggle{
+  border-radius: 14px !important;
+  background: rgba(255,255,255,.045) !important;
+  border: 1px solid rgba(255,255,255,.10) !important;
+  color: rgba(255,255,255,.86) !important;
+  transition: transform .14s var(--hl-ease), box-shadow .14s var(--hl-ease), border-color .14s var(--hl-ease), background .14s var(--hl-ease);
+}
+.DiscussionPage-nav .Button:hover,
+.DiscussionPage-nav .Dropdown-toggle:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(0,0,0,.28);
+  border-color: rgba(34,211,238,.18) !important;
+  background: rgba(34,211,238,.07) !important;
+}
+
+/* CTA Reply con gradiente (igual al resto del theme) */
+.DiscussionPage-nav .Button--primary{
+  background: linear-gradient(90deg, rgba(168,85,247,.95), rgba(34,211,238,.85)) !important;
+  border: 0 !important;
+  color: #0b0f16 !important;
+  font-weight: 950 !important;
+}
+
+/* Timeline más limpio */
+.DiscussionPage-nav .Scrubber{
+  opacity: .9;
+}
+.DiscussionPage-nav .Scrubber a{
+  color: rgba(255,255,255,.70) !important;
+}
+.DiscussionPage-nav .Scrubber a:hover{
+  color: rgba(255,255,255,.92) !important;
+}
+
+/* -------------------------
+   6) Espaciado general para que “respire”
+   ------------------------- */
+.DiscussionPage-stream .Post{
+  margin-bottom: 18px !important;
+}
+
+/* ==========================================================
+   HERO PIXEL-ART (gamer) + FIX VISIBILIDAD (Flarum)
+   Pegar AL FINAL (reemplaza tu bloque actual por este)
+   ========================================================== */
+
+/* Base hero */
+.Hero,
+.DiscussionHero{
+  max-width: 1220px !important;
+  margin: 16px auto 14px !important;
+  border-radius: 0 !important; /* pixel style */
+  position: relative !important;
+  overflow: hidden !important;
+
+  background: linear-gradient(90deg, rgba(168,85,247,.10), rgba(34,211,238,.08)) !important;
+  border: 0 !important;
+  box-shadow: 0 24px 80px rgba(0,0,0,.55) !important;
+}
+
+/* Pixel frame (doble borde) */
+.Hero::before,
+.DiscussionHero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(#0000,#0000) padding-box,
+    linear-gradient(90deg, rgba(168,85,247,.55), rgba(34,211,238,.40)) border-box;
+  border: 3px solid transparent;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.10),
+    inset 0 0 0 4px rgba(0,0,0,.35);
+  z-index:0;
+  animation: hlFrameShift 6.5s ease-in-out infinite alternate;
+}
+
+@keyframes hlFrameShift{
+  0%{ filter: hue-rotate(0deg); }
+  100%{ filter: hue-rotate(10deg); }
+}
+
+/* Scanlines + aura (menos negro para que se lea) */
+.Hero .container,
+.DiscussionHero .container{
+  position: relative;
+  z-index: 1;
+  padding: 18px 18px !important;
+  text-align: center !important;
+
+  background:
+    radial-gradient(900px 260px at 20% 10%, rgba(168,85,247,.28), transparent 60%),
+    radial-gradient(900px 260px at 80% 10%, rgba(34,211,238,.18), transparent 60%),
+    linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.26)),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,.030) 0px,
+      rgba(255,255,255,.030) 1px,
+      transparent 2px,
+      transparent 6px
+    ) !important;
+}
+
+/* Títulos reales (Tag/Discusión) — súper visibles */
+.Hero-title,
+.DiscussionHero-title,
+.DiscussionHero-title a,
+.DiscussionHero .DiscussionHero-title,
+.DiscussionHero .DiscussionHero-title a{
+  display: inline-block !important;
+  margin: 0 auto !important;
+  padding: 10px 18px !important;
+  border-radius: 0 !important;
+
+  color: rgba(255,255,255,.99) !important;
+  opacity: 1 !important;
+
+  font-weight: 950 !important;
+  letter-spacing: .9px !important;
+  text-transform: uppercase !important;
+  font-size: clamp(18px, 2.2vw, 30px) !important;
+
+  background: rgba(0,0,0,.18) !important;
+  border: 1px solid rgba(255,255,255,.14) !important;
+
+  text-shadow:
+    2px 0 0 rgba(0,0,0,.88),
+    0 2px 0 rgba(0,0,0,.88),
+    2px 2px 0 rgba(0,0,0,.92),
+    0 18px 40px rgba(0,0,0,.70),
+    0 0 22px rgba(168,85,247,.20),
+    0 0 22px rgba(34,211,238,.14) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.06),
+    0 18px 45px rgba(0,0,0,.40);
+}
+
+/* HUD line debajo del título */
+.Hero-title::after,
+.DiscussionHero-title::after{
+  content:"";
+  display:block;
+  height: 2px;
+  margin: 10px auto 0;
+  width: 50%;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(168,85,247,.60),
+    rgba(34,211,238,.44),
+    transparent
+  );
+  opacity: .95;
+}
+
+/* Badge del tag (General) visible y gamer */
+.DiscussionHero .TagLabel,
+.Hero .TagLabel{
+  background: rgba(0,0,0,.28) !important;
+  border: 1px solid rgba(255,255,255,.14) !important;
+  color: rgba(255,255,255,.92) !important;
+  box-shadow: 0 12px 28px rgba(0,0,0,.35);
+  padding: 6px 10px !important;
+}
+
+/* Subtítulo/descr (si existe) */
+.Hero-description,
+.Hero-subtitle,
+.DiscussionHero-description,
+.DiscussionHero-subtitle{
+  margin: 10px auto 0 !important;
+  max-width: 860px;
+  color: rgba(255,255,255,.82) !important;
+  text-shadow: 0 16px 28px rgba(0,0,0,.70);
+}
+
+/* Compacto en mobile */
+@media (max-width: 680px){
+  .Hero .container,
+  .DiscussionHero .container{ padding: 14px 14px !important; }
+  .Hero-title,
+  .DiscussionHero-title{ padding: 9px 14px !important; letter-spacing: .7px !important; }
+}
+
+/* ==========================================================
+   REPLY PLACEHOLDER (botón "Write a Reply...") — PRO / GAMER
+   REEMPLAZA el bloque anterior por este completo
+   ========================================================== */
+
+button.Post.ReplyPlaceholder{
+  display: block !important;
+  width: 100% !important;
+
+  margin: 0 0 18px !important;
+  padding: 0 !important;
+
+  border-radius: 20px !important;
+  border: 1px solid rgba(255,255,255,.10) !important;
+
+  /* Fondo más “Discord” y gamer */
+  background:
+    radial-gradient(700px 120px at 15% 20%, rgba(168,85,247,.10), transparent 55%),
+    radial-gradient(700px 120px at 85% 20%, rgba(34,211,238,.08), transparent 55%),
+    linear-gradient(180deg, rgba(10,14,20,.72), rgba(8,12,18,.52)) !important;
+
+  box-shadow:
+    0 22px 70px rgba(0,0,0,.45),
+    inset 0 1px 0 rgba(255,255,255,.06) !important;
+
+  overflow: hidden !important;
+  text-align: left !important;
+  cursor: text !important;
+
+  transition:
+    transform .14s var(--hl-ease),
+    box-shadow .14s var(--hl-ease),
+    border-color .14s var(--hl-ease),
+    filter .14s var(--hl-ease) !important;
+
+  position: relative !important;
+}
+
+/* scanlines suaves + brillo */
+button.Post.ReplyPlaceholder::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,.035) 0px,
+      rgba(255,255,255,.035) 1px,
+      transparent 2px,
+      transparent 7px
+    ),
+    radial-gradient(900px 160px at 50% 0%, rgba(255,255,255,.06), transparent 60%);
+  opacity: .55;
+}
+
+/* Barra highlight inferior tipo “input” */
+button.Post.ReplyPlaceholder::after{
+  content:"";
+  position:absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 10px;
+  height: 2px;
+  pointer-events:none;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(168,85,247,.55),
+    rgba(34,211,238,.45),
+    transparent
+  );
+  opacity: .55;
+}
+
+/* El contenedor que heredaba .Post-header: lo hacemos layout limpio */
+button.Post.ReplyPlaceholder > .Post-header{
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+
+  padding: 16px 16px 18px !important;
+
+  border: 0 !important;
+  background: transparent !important;
+
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Avatar más “keycap” */
+button.Post.ReplyPlaceholder .Avatar.PostUser-avatar{
+  width: 46px !important;
+  height: 46px !important;
+  border-radius: 16px !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  font-weight: 950 !important;
+  color: rgba(255,255,255,.96) !important;
+
+  box-shadow:
+    0 16px 36px rgba(0,0,0,.40),
+    inset 0 1px 0 rgba(255,255,255,.10) !important;
+
+  transform: translateZ(0);
+}
+
+/* Texto: que se lea y se vea “inviting” */
+button.Post.ReplyPlaceholder .Post-header{
+  color: rgba(255,255,255,.62) !important;
+  font-weight: 800 !important;
+  letter-spacing: .25px !important;
+  text-shadow: 0 14px 28px rgba(0,0,0,.65) !important;
+
+  /* sensación de input */
+  padding: 10px 12px !important;
+  border-radius: 14px !important;
+  background: rgba(0,0,0,.18) !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.06) !important;
+
+  flex: 1 1 auto !important;
+}
+
+/* Hover: “clickeable” */
+button.Post.ReplyPlaceholder:hover{
+  transform: translateY(-2px);
+  border-color: rgba(34,211,238,.22) !important;
+  box-shadow:
+    0 28px 90px rgba(0,0,0,.55),
+    0 0 0 1px rgba(34,211,238,.10),
+    inset 0 1px 0 rgba(255,255,255,.06) !important;
+  filter: brightness(1.03);
+}
+button.Post.ReplyPlaceholder:hover::after{
+  opacity: .9;
+}
+
+/* Focus: glow pro */
+button.Post.ReplyPlaceholder:focus,
+button.Post.ReplyPlaceholder:focus-visible{
+  outline: none !important;
+  border-color: rgba(168,85,247,.30) !important;
+  box-shadow:
+    0 32px 110px rgba(0,0,0,.62),
+    0 0 0 3px rgba(168,85,247,.12),
+    0 0 0 1px rgba(34,211,238,.10),
+    inset 0 1px 0 rgba(255,255,255,.06) !important;
+}
+button.Post.ReplyPlaceholder:focus::after{
+  opacity: 1;
+}
+
+/* Mobile: compacta un poco */
+@media (max-width: 680px){
+  button.Post.ReplyPlaceholder > .Post-header{
+    padding: 14px 14px 16px !important;
+  }
+  button.Post.ReplyPlaceholder .Avatar.PostUser-avatar{
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 14px !important;
+  }
+}
+
+
+
+
+
+
+
+
+/* ==========================================================
+   HyLeveling POLISH PACK (no radical) — Pegar AL FINAL
+   - Mejor navegación + detalles premium + “aventura”
+   ========================================================== */
+
+/* 1) Scroll + selección más premium */
+html{ scroll-behavior: smooth; }
+:focus-visible{
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(34,211,238,.14), 0 0 0 1px rgba(168,85,247,.14) !important;
+  border-radius: 14px;
+}
+
+/* 2) “Bienvenida” sutil en Index: guía visual para newbies */
+.IndexPage .Hero .container:after{
+  content:"Explora • aprende • reporta bugs • propone ideas";
+  display:block;
+  margin: 12px auto 0;
+  max-width: 900px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  color: rgba(255,255,255,.74);
+  background: rgba(0,0,0,.16);
+  border: 1px solid rgba(255,255,255,.10);
+  text-shadow: 0 14px 22px rgba(0,0,0,.65);
+  backdrop-filter: blur(10px);
+  letter-spacing: .25px;
+}
+
+/* 3) Toolbar: que se entienda el CTA y se vea “quest button” */
+.IndexPage .IndexPage-toolbar .Button--primary{
+  position: relative;
+}
+.IndexPage .IndexPage-toolbar .Button--primary:after{
+  content:"➜";
+  margin-left: 10px;
+  display: inline-block;
+  transform: translateY(-1px);
+  opacity: .9;
+}
+
+/* 4) Tags tiles: hover más “artefacto mágico”, sin cambiar tu idea */
+.TagsPage .TagTiles > li{
+  isolation: isolate;
+}
+.TagsPage .TagTiles > li:hover{
+  filter: brightness(1.05) saturate(1.08);
+}
+
+/* brillo suave “runa” en el borde (se suma a tu hover) */
+.TagsPage .TagTiles > li:hover{
+  box-shadow:
+    0 20px 70px rgba(0,0,0,.55),
+    0 0 0 1px rgba(255,255,255,.10),
+    0 0 28px rgba(168,85,247,.10),
+    0 0 24px rgba(34,211,238,.08) !important;
+}
+
+/* 5) Placas del nombre/descr: un pelín más legibles en fondos claros */
+.TagsPage .TagTiles > li .TagTile-name{
+  background: rgba(0,0,0,.22) !important;
+}
+.TagsPage .TagTiles > li .TagTile-description{
+  background: rgba(0,0,0,.18) !important;
+}
+
+/* 6) DiscussionList: separadores más limpios, lectura más rápida */
+.IndexPage .DiscussionListItem-title,
+.TagPage .DiscussionListItem-title{
+  line-height: 1.25 !important;
+}
+.IndexPage .DiscussionListItem:hover .DiscussionListItem-title,
+.TagPage .DiscussionListItem:hover .DiscussionListItem-title{
+  text-shadow: 0 16px 26px rgba(0,0,0,.55), 0 0 14px rgba(34,211,238,.08) !important;
+}
+
+/* 7) “Nuevo/Unread” más claro sin gritar */
+.DiscussionListItem--unread{
+  border-color: rgba(168,85,247,.22) !important;
+}
+.DiscussionListItem--unread:hover{
+  border-color: rgba(34,211,238,.22) !important;
+}
+
+/* 8) Pequeña mejora a “ReplyPlaceholder”: más sensación de input listo */
+button.Post.ReplyPlaceholder .Post-header{
+  transition: border-color .14s var(--hl-ease), background .14s var(--hl-ease), box-shadow .14s var(--hl-ease);
+}
+button.Post.ReplyPlaceholder:hover .Post-header{
+  border-color: rgba(34,211,238,.20) !important;
+  background: rgba(0,0,0,.16) !important;
+}
+
+
+
+
+
+/* ==========================================================
+   HyLeveling Boot Screen: Loader + Language Gate
+   Pegar al FINAL del Custom CSS
+   ========================================================== */
+
+:root{
+  --hl-boot-bg: rgba(5,8,12,.78);
+  --hl-boot-card: rgba(0,0,0,.22);
+  --hl-boot-border: rgba(255,255,255,.12);
+}
+
+/* Overlay base */
+#hlBoot, #hlLangGate{
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  display: none;
+}
+
+/* Fondo "portal" */
+#hlBoot .hlBoot-bg,
+#hlLangGate .hlBoot-bg{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(900px 420px at 20% 20%, rgba(168,85,247,.18), transparent 60%),
+    radial-gradient(900px 420px at 80% 20%, rgba(34,211,238,.12), transparent 60%),
+    linear-gradient(180deg, var(--hl-boot-bg), rgba(5,8,12,.88));
+  backdrop-filter: blur(10px);
+}
+
+/* Card */
+#hlBoot .hlBoot-card,
+#hlLangGate .hlBoot-card{
+  position: relative;
+  width: min(520px, calc(100% - 28px));
+  margin: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 18px 18px 16px;
+  border-radius: 22px;
+  background: var(--hl-boot-card);
+  border: 1px solid var(--hl-boot-border);
+  box-shadow: 0 30px 120px rgba(0,0,0,.65);
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Glow line */
+#hlBoot .hlBoot-card:before,
+#hlLangGate .hlBoot-card:before{
+  content:"";
+  position:absolute; left:14px; right:14px; top:12px; height:2px;
+  background: linear-gradient(90deg, transparent, rgba(168,85,247,.6), rgba(34,211,238,.45), transparent);
+  opacity:.75;
+}
+
+/* Title */
+.hlBoot-title{
+  font-weight: 950;
+  letter-spacing: .6px;
+  margin: 12px 0 8px;
+  color: rgba(255,255,255,.96);
+  text-shadow: 0 16px 28px rgba(0,0,0,.65);
+}
+
+/* Subtitle */
+.hlBoot-sub{
+  margin: 0 0 14px;
+  color: rgba(255,255,255,.72);
+}
+
+/* Loader ring */
+.hlBoot-ring{
+  width: 70px; height: 70px;
+  margin: 14px auto 8px;
+  border-radius: 999px;
+  border: 2px solid rgba(255,255,255,.10);
+  border-top-color: rgba(168,85,247,.75);
+  border-right-color: rgba(34,211,238,.55);
+  animation: hlSpin 1s linear infinite;
+  box-shadow: 0 0 30px rgba(168,85,247,.10);
+}
+@keyframes hlSpin{ to{ transform: rotate(360deg); } }
+
+/* Buttons */
+.hlLangBtns{
+  display:flex;
+  gap: 10px;
+  justify-content:center;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.hlLangBtn{
+  appearance:none;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.05);
+  color: rgba(255,255,255,.90);
+  border-radius: 14px;
+  padding: 10px 14px;
+  font-weight: 900;
+  letter-spacing: .2px;
+  cursor: pointer;
+  transition: transform .14s var(--hl-ease), box-shadow .14s var(--hl-ease), border-color .14s var(--hl-ease), background .14s var(--hl-ease);
+}
+.hlLangBtn:hover{
+  transform: translateY(-2px);
+  border-color: rgba(34,211,238,.22);
+  box-shadow: 0 18px 50px rgba(0,0,0,.45);
+}
+.hlLangBtn.primary{
+  background: linear-gradient(90deg, rgba(168,85,247,.95), rgba(34,211,238,.85));
+  color: #0b0f16;
+  border: 0;
+}
+
+/* Small note */
+.hlBoot-note{
+  margin-top: 10px;
+  font-size: 12.5px;
+  color: rgba(255,255,255,.58);
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce){
+  .hlBoot-ring{ animation: none !important; }
+}
+
+
+
+
+
+
+/* ==========================================================
+   HyLeveling — Secondary tags (Cuenta/Acceso, Rangos) FIX Hytale
+   Reemplaza tu bloque por este y pégalo AL FINAL del CSS
+   ========================================================== */
+
+/* Variables solo para este bloque */
+:root{
+  --hl-sub-bg: rgba(0,0,0,.10);
+  --hl-sub-border: rgba(255,255,255,.10);
+  --hl-sub-glow1: rgba(168,85,247,.22); /* purple */
+  --hl-sub-glow2: rgba(34,211,238,.16); /* cyan */
+}
+
+/* 1) Contenedor de subtags: limpio, transparente y “aura” */
+.TagsPage .TagTiles > li :is(.TagTile-children,.TagTile-secondary,.TagTile-subtags,.TagTile-subTags,.TagTile-tags){
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 8px !important;
+
+  margin-top: 10px !important;
+  padding: 10px 12px !important;
+
+  background: var(--hl-sub-bg) !important;
+  border: 1px solid var(--hl-sub-border) !important;
+  border-radius: 999px !important;
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 18px 50px rgba(0,0,0,.32),
+    0 0 0 1px rgba(255,255,255,.04),
+    0 0 22px rgba(168,85,247,.08),
+    0 0 18px rgba(34,211,238,.06) !important;
+
+  position: relative !important;
+  z-index: 3 !important; /* suficiente, sin pasarse */
+  overflow: hidden !important;
+}
+
+/* Aura suave arriba del contenedor */
+.TagsPage .TagTiles > li :is(.TagTile-children,.TagTile-secondary,.TagTile-subtags,.TagTile-subTags,.TagTile-tags)::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  pointer-events:none;
+  background:
+    radial-gradient(240px 90px at 20% 30%, var(--hl-sub-glow1), transparent 65%),
+    radial-gradient(240px 90px at 80% 30%, var(--hl-sub-glow2), transparent 65%),
+    linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  opacity: .55;
+}
+
+/* 2) Si vienen como lista: sin puntos, sin márgenes, sin “barras” */
+.TagsPage .TagTiles > li :is(.TagTile-children,.TagTile-secondary,.TagTile-subtags,.TagTile-subTags,.TagTile-tags) ul{
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: contents !important;
+}
+.TagsPage .TagTiles > li :is(.TagTile-children,.TagTile-secondary,.TagTile-subtags,.TagTile-subTags,.TagTile-tags) li{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 3) Chips: estilo Hytale (más light + más pro) */
+.TagsPage .TagTiles > li :is(.TagTile-children,.TagTile-secondary,.TagTile-subtags,.TagTile-subTags,.TagTile-tags)
+  :is(a,span,.TagLabel){
+  position: relative !important;
+  z-index: 1 !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 7px 12px !important;
+  border-radius: 999px !important;
+
+  background: rgba(0,0,0,.14) !important;
+  border: 1px solid rgba(255,255,255,.10) !important;
+
+  color: rgba(255,255,255,.90) !important;
+  text-decoration: none !important;
+  font-weight: 900 !important;
+  font-size: 12.5px !important;
+  letter-spacing: .15px !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.06),
+    0 10px 22px rgba(0,0,0,.26) !important;
+
+  transition:
+    transform .14s var(--hl-ease),
+    box-shadow .14s var(--hl-ease),
+    border-color .14s var(--hl-ease),
+    background .14s var(--hl-ease),
+    filter .14s var(--hl-ease) !important;
+}
+
+/* Mini shine en cada chip (sutil, no molesta) */
+.TagsPage .TagTiles > li :is(.TagTile-children,.TagTile-secondary,.TagTile-subtags,.TagTile-subTags,.TagTile-tags)
+  :is(a,span,.TagLabel)::after{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  border-radius: 999px;
+  pointer-events:none;
+  background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.08) 45%, transparent 75%);
+  opacity: .35;
+}
+
+/* 4) Hover: “magia” sin agrandar todo */
+.TagsPage .TagTiles > li :is(.TagTile-children,.TagTile-secondary,.TagTile-subtags,.TagTile-subTags,.TagTile-tags)
+  a:hover{
+  transform: translateY(-2px) !important;
+  background: rgba(0,0,0,.10) !important;
+  border-color: rgba(34,211,238,.18) !important;
+  box-shadow:
+    0 18px 40px rgba(0,0,0,.40),
+    0 0 0 1px rgba(168,85,247,.10),
+    0 0 20px rgba(34,211,238,.08) !important;
+  filter: brightness(1.04);
+}
+
+/* 5) BORRA el separador “•” (ese era el que te dejaba raro/bug) */
+.TagsPage .TagTiles > li :is(.TagTile-children,.TagTile-secondary,.TagTile-subtags,.TagTile-subTags,.TagTile-tags)
+  a + a::before{
+  content: none !important;
+}
+
+/* 6) Accesibilidad: reduce motion */
+@media (prefers-reduced-motion: reduce){
+  .TagsPage .TagTiles > li :is(.TagTile-children,.TagTile-secondary,.TagTile-subtags,.TagTile-subTags,.TagTile-tags),
+  .TagsPage .TagTiles > li :is(.TagTile-children,.TagTile-secondary,.TagTile-subtags,.TagTile-subTags,.TagTile-tags) *{
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Opcional: 2 chips = simétricos */
+.TagsPage .TagTiles > li :is(.TagTile-children,.TagTile-secondary,.TagTile-subtags,.TagTile-subTags,.TagTile-tags){
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.TagsPage .TagTiles > li :is(.TagTile-children,.TagTile-secondary,.TagTile-subtags,.TagTile-subTags,.TagTile-tags) a{
+  min-width: 140px;
+}
+
+
+
+
+
+/* ==========================================================
+   REMOVE the big transparent plate behind secondary tags
+   (leave only the chips)
+   Pegar AL FINAL
+   ========================================================== */
+
+/* Quita la “placa”/caja */
+.TagsPage .TagTiles > li :is(.TagTile-children,.TagTile-secondary,.TagTile-subtags,.TagTile-subTags,.TagTile-tags){
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  padding: 0 !important;         /* sin bloque grande */
+  margin-top: 10px !important;
+  overflow: visible !important;
+  max-width: none !important;
+}
+
+/* Quita el aura del contenedor (el ::before) */
+.TagsPage .TagTiles > li :is(.TagTile-children,.TagTile-secondary,.TagTile-subtags,.TagTile-subTags,.TagTile-tags)::before{
+  content: none !important;
+}
+
+
+
+
+
+
+
+
+/* ==========================================================
+   HyLeveling — SUBTAGS (TagTile-children) PORTAL + PARTÍCULAS ✅
+   SOLO: <div class="TagTile-children"><a href="/t/...">...</a></div>
+   Pegar AL FINAL de theme.css y dejar SOLO este bloque
+   ========================================================== */
+
+:root{
+  --hlp-a: rgba(168,85,247,.95); /* purple */
+  --hlp-b: rgba(34,211,238,.92); /* cyan */
+}
+
+/* No recorte en la zona de tags */
+.TagsPage .TagTiles > li,
+.TagsPage .TagTiles > li .TagTile,
+.TagsPage .TagTiles > li .TagTile-content,
+.TagsPage .TagTiles > li .TagTile-children{
+  overflow: visible !important;
+}
+
+/* Contenedor sin “placa” */
+.TagsPage .TagTiles > li .TagTile-children{
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+
+  /* ✅ CLAVE: separa botones para que no se pisen */
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 12px !important;
+
+  padding: 0 !important;
+  overflow: visible !important;
+}
+
+
+/* Link base (mata azul) + stacking correcto */
+.TagsPage .TagTiles > li .TagTile-children > a[href^="/t/"]{
+  position: relative !important;
+  z-index: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 8px 16px !important;
+  border-radius: 999px !important;
+
+  background: rgba(0,0,0,.12) !important;
+  background-image: none !important;
+  border: 1px solid rgba(255,255,255,.14) !important;
+
+  color: rgba(255,255,255,.92) !important;
+  text-decoration: none !important;
+  font-weight: 900 !important;
+  letter-spacing: .15px !important;
+
+  box-shadow:
+    0 10px 26px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.06) !important;
+
+  filter: none !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease, background .16s ease, filter .16s ease !important;
+}
+
+/* Texto SIEMPRE arriba (para que ring/partículas no lo tapen) */
+.TagsPage .TagTiles > li .TagTile-children > a[href^="/t/"]{
+  z-index: 1 !important;
+}
+.TagsPage .TagTiles > li .TagTile-children > a[href^="/t/"] *{
+  position: relative;
+  z-index: 3;
+}
+
+/* Ring fino (OFF) — detrás del texto */
+.TagsPage .TagTiles > li .TagTile-children > a[href^="/t/"]::before{
+  content:"";
+  position:absolute;
+  inset:-6px;
+  border-radius: inherit;
+  pointer-events:none;
+  z-index: 2; /* debajo del texto (z=3), arriba del fondo */
+
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    var(--hlp-b) 18%,
+    var(--hlp-a) 44%,
+    var(--hlp-b) 70%,
+    transparent 100%
+  );
+
+  /* solo borde */
+  padding: 2px;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+
+  opacity: 0;
+  transform: scale(.98);
+  filter: blur(.25px);
+}
+
+/* Partículas (más grandes + visibles) */
+.TagsPage .TagTiles > li .TagTile-children > a[href^="/t/"]::after{
+  content:"";
+  position:absolute;
+  inset:-14px;                 /* más área */
+  border-radius: inherit;
+  pointer-events:none;
+  z-index: 2;
+
+  /* puntos más GRANDES */
+  background:
+    radial-gradient(3.5px 3.5px at 8% 28%,   rgba(34,211,238,.78), transparent 72%),
+    radial-gradient(3.5px 3.5px at 12% 68%,  rgba(168,85,247,.74), transparent 72%),
+    radial-gradient(2.8px 2.8px at 16% 48%,  rgba(255,255,255,.30), transparent 76%),
+
+    radial-gradient(3.5px 3.5px at 22% 18%,  rgba(34,211,238,.64), transparent 74%),
+    radial-gradient(2.8px 2.8px at 26% 82%,  rgba(168,85,247,.60), transparent 78%),
+    radial-gradient(3.2px 3.2px at 30% 58%,  rgba(255,255,255,.24), transparent 78%),
+
+    radial-gradient(3.5px 3.5px at 36% 30%,  rgba(168,85,247,.58), transparent 74%),
+    radial-gradient(2.8px 2.8px at 40% 74%,  rgba(34,211,238,.54), transparent 78%),
+    radial-gradient(3.2px 3.2px at 44% 44%,  rgba(255,255,255,.20), transparent 78%),
+
+    radial-gradient(3.5px 3.5px at 52% 18%,  rgba(34,211,238,.52), transparent 76%),
+    radial-gradient(2.8px 2.8px at 56% 86%,  rgba(168,85,247,.50), transparent 78%),
+    radial-gradient(3.2px 3.2px at 60% 58%,  rgba(255,255,255,.18), transparent 78%),
+
+    radial-gradient(3.5px 3.5px at 68% 26%,  rgba(34,211,238,.50), transparent 78%),
+    radial-gradient(2.8px 2.8px at 72% 72%,  rgba(168,85,247,.46), transparent 78%),
+    radial-gradient(3.2px 3.2px at 76% 46%,  rgba(255,255,255,.16), transparent 80%),
+
+    radial-gradient(3.5px 3.5px at 84% 20%,  rgba(168,85,247,.46), transparent 78%),
+    radial-gradient(2.8px 2.8px at 88% 64%,  rgba(34,211,238,.44), transparent 78%),
+    radial-gradient(3.2px 3.2px at 92% 42%,  rgba(255,255,255,.14), transparent 80%);
+
+  opacity: 0;
+  filter: blur(.12px);         /* un poco más glow */
+  mix-blend-mode: screen;      /* brillo bonito (si vuelve blob -> normal) */
+  transform: translate3d(0,0,0);
+  will-change: transform, filter, opacity;
+}
+
+
+/* Hover */
+.TagsPage .TagTiles > li .TagTile-children > a[href^="/t/"]:hover{
+  transform: translateY(-2px) !important;
+  background: rgba(0,0,0,.10) !important;
+  border-color: rgba(34,211,238,.22) !important;
+  filter: brightness(1.06) saturate(1.10) !important;
+
+  box-shadow:
+    0 18px 48px rgba(0,0,0,.55),
+    0 0 14px rgba(34,211,238,.10),
+    0 0 12px rgba(168,85,247,.10),
+    inset 0 1px 0 rgba(255,255,255,.06) !important;
+}
+
+/* Ring ON (gira) */
+.TagsPage .TagTiles > li .TagTile-children > a[href^="/t/"]:hover::before{
+  opacity: .95;
+  animation: hlpSpin 1.05s linear infinite;
+}
+
+/* Partículas ON (parpadean + se mueven) — NOMBRE ÚNICO para no pisarse */
+.TagsPage .TagTiles > li .TagTile-children > a[href^="/t/"]:hover::after{
+  opacity: 1;
+  animation:
+    hlpDustSpin 3.6s linear infinite,
+    hlpDustDrift 6.8s ease-in-out infinite,
+    hlpTwinkle 1.4s ease-in-out infinite alternate;
+}
+
+/* anims */
+@keyframes hlpSpin{ to{ transform: rotate(360deg) scale(.98); } }
+@keyframes hlpTwinkle{ 0%{ filter: blur(.06px);} 100%{ filter: blur(.26px);} }
+@keyframes hlpParticleMove{
+  0%   { transform: translate3d(-1px,  1px, 0) scale(1); }
+  50%  { transform: translate3d( 1px, -1px, 0) scale(1.03); }
+  100% { transform: translate3d(-1px,  2px, 0) scale(1); }
+}
+
+/* reduce motion */
+@media (prefers-reduced-motion: reduce){
+  /* Apaga solo el giro del portal */
+  .TagsPage .TagTiles > li .TagTile-children > a[href^="/t/"]:hover::before{
+    animation: none !important;
+  }
+
+  /* Deja partículas, pero más lentas y sin parpadeo fuerte */
+  .TagsPage .TagTiles > li .TagTile-children > a[href^="/t/"]:hover::after{
+    animation: hlpParticleMove 2.2s ease-in-out infinite alternate !important;
+  }
+}
+/* Rotación continua tipo “polvo en el aire” */
+@keyframes hlpDustSpin{
+  from { transform: translate3d(0,0,0) rotate(0deg) scale(1); }
+  to   { transform: translate3d(0,0,0) rotate(360deg) scale(1); }
+}
+
+/* Deriva lenta (sin volver atrás “brusco”) */
+@keyframes hlpDustDrift{
+  0%   { transform: translate3d(-1.5px,  0.8px, 0) rotate(0deg) scale(1); }
+  25%  { transform: translate3d( 1.2px, -0.6px, 0) rotate(90deg) scale(1.01); }
+  50%  { transform: translate3d( 0.8px,  1.4px, 0) rotate(180deg) scale(1.02); }
+  75%  { transform: translate3d(-1.1px, -0.9px, 0) rotate(270deg) scale(1.01); }
+  100% { transform: translate3d(-1.5px,  0.8px, 0) rotate(360deg) scale(1); }
+}
+
+/* Brillito suave (menos “parpadeo LED”) */
+@keyframes hlpTwinkle{
+  0%   { filter: blur(.10px); opacity: .75; }
+  100% { filter: blur(.22px); opacity: 1; }
+}
+/* ==========================================================
+   FIX SUBTAGS en SIDEBAR / LISTA (cuando hay 2+ hijas)
+   - Hace que TODAS las secundarias se lean igual
+   ========================================================== */
+
+/* Contenedor de hijos: que no quede “gris apagado” */
+.TagsPage-nav .TagLink-children,
+.TagsPage .TagLink-children{
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+/* Cada tag hija (TODAS) como “pill” legible */
+.TagsPage-nav .TagLink-children a,
+.TagsPage .TagLink-children a{
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+
+  padding: 6px 10px !important;
+  margin: 4px 0 !important;
+
+  border-radius: 999px !important;
+  background: rgba(255,255,255,.06) !important;
+  border: 1px solid rgba(255,255,255,.10) !important;
+
+  color: rgba(255,255,255,.86) !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+
+  transition: transform .12s ease, filter .12s ease, border-color .12s ease, background .12s ease !important;
+}
+
+/* Hover: sube contraste */
+.TagsPage-nav .TagLink-children a:hover,
+.TagsPage .TagLink-children a:hover{
+  background: rgba(255,255,255,.09) !important;
+  border-color: rgba(34,211,238,.22) !important;
+  filter: brightness(1.08) !important;
+  transform: translateX(2px) !important;
+}
+
+/* Si alguna viene “más apagada” por clase interna */
+.TagsPage-nav .TagLink-children .TagLink,
+.TagsPage .TagLink-children .TagLink{
+  opacity: 1 !important;
+  color: rgba(255,255,255,.86) !important;
+}
+
+/* Max 3 subtags visibles */
+.TagsPage .TagTiles > li .TagTile-children > a[href^="/t/"]:nth-child(n+3){
+  display: none !important;
+}
+/* ==========================================================
+   FIX HERO POSITION — no empujar layout, solo overlay limpio
+   Pegar AL FINAL
+   ========================================================== */
+
+.App{
+  position: relative !important;
+  padding-top: var(--hl-hero-h) !important; /* crea espacio para el hero */
+}
+
+/* Hero como capa absoluta */
+.App:before{
+  content:"" !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 100% !important;
+  height: var(--hl-hero-h) !important;
+
+  background: var(--hl-hero-img) center center / cover no-repeat !important;
+  background-color: var(--hl-bg) !important;
+
+  border-bottom: 1px solid rgba(255,255,255,.06) !important;
+  z-index: 0 !important;
+  display: block !important;
+}
+
+/* Overlay del aura encima del hero */
+.App:after{
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  height: var(--hl-hero-h) !important;
+  z-index: 1 !important;
+}
+
+/* Contenido siempre arriba */
+.App-content{
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== COMPOSER NUEVO POST - ARREGLO COMPLETO ===== */
+
+/* 1. Contenedor principal más espacioso */
+.Composer,
+.ComposerBody {
+  background: rgba(10,14,22,.92) !important;
+  border-top: 1px solid rgba(255,255,255,.10) !important;
+  backdrop-filter: blur(14px) !important;
+  padding: 20px 18px !important;
+}
+
+/* 2. Header del composer (fila con Start Discussion + Tag + Título) */
+.ComposerBody-header {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 14px !important;
+  align-items: center !important;
+  margin-bottom: 16px !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+/* Chip "Start a Discussion" */
+.ComposerBody-header .item-title h3 {
+  margin: 0 !important;
+  padding: 9px 16px !important;
+  background: rgba(168,85,247,.12) !important;
+  border: 1px solid rgba(168,85,247,.22) !important;
+  border-radius: 999px !important;
+  color: rgba(255,255,255,.95) !important;
+  font-weight: 950 !important;
+  font-size: 14px !important;
+  letter-spacing: .4px !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 12px 28px rgba(0,0,0,.25) !important;
+}
+
+/* Tag chip (General) - ARREGLO DEL BUG */
+.ComposerBody-header .item-tags {
+  flex: 0 0 auto !important;
+  margin: 0 !important;
+}
+
+.ComposerBody-header .item-tags .TagLabel,
+.ComposerBody-header .item-tags .TagsLabel {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 9px 14px !important;
+  background: rgba(0,0,0,.22) !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  border-radius: 999px !important;
+  color: rgba(255,255,255,.92) !important;
+  font-weight: 850 !important;
+  font-size: 13.5px !important;
+  letter-spacing: .2px !important;
+  box-shadow: 0 10px 24px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.06) !important;
+  cursor: pointer !important;
+  transition: all .14s var(--hl-ease) !important;
+}
+
+.ComposerBody-header .item-tags .TagLabel:hover {
+  transform: translateY(-2px) !important;
+  border-color: rgba(34,211,238,.22) !important;
+  box-shadow: 0 16px 36px rgba(0,0,0,.38) !important;
+  filter: brightness(1.04);
+}
+
+
+/* 3. Editor (textarea) - MÁS GRANDE */
+.ComposerBody-editor {
+  margin-bottom: 14px !important;
+}
+
+.TextEditor-editor,
+.ComposerBody-editor textarea.FormControl {
+  width: 100% !important;
+  min-height: 240px !important; /* MÁS ALTO */
+  padding: 16px 18px !important;
+  background: rgba(0,0,0,.20) !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  border-radius: 16px !important;
+  color: rgba(255,255,255,.92) !important;
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.05) !important;
+  resize: vertical !important;
+  transition: border-color .18s ease, box-shadow .18s ease !important;
+}
+
+.TextEditor-editor:focus,
+.ComposerBody-editor textarea:focus {
+  outline: none !important;
+  border-color: rgba(34,211,238,.35) !important;
+  box-shadow: 0 0 0 3px rgba(34,211,238,.12), inset 0 1px 0 rgba(255,255,255,.05) !important;
+}
+
+.TextEditor-editor::placeholder,
+.ComposerBody-editor textarea::placeholder {
+  color: rgba(255,255,255,.52) !important;
+}
+
+/* 4. Footer toolbar (botones de formateo) */
+.TextEditor-controls,
+.Composer-footer {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  align-items: center !important;
+  padding: 14px 0 0 !important;
+  border-top: 1px solid rgba(255,255,255,.08) !important;
+  list-style: none !important;
+  margin: 0 !important;
+}
+
+/* Botón principal "Post Discussion" */
+.TextEditor-controls .item-submit .Button--primary,
+.Composer-footer .item-submit .Button--primary {
+  background: linear-gradient(90deg, rgba(168,85,247,.95), rgba(34,211,238,.85)) !important;
+  border: 0 !important;
+  color: #0b0f16 !important;
+  font-weight: 950 !important;
+  padding: 12px 20px !important;
+  border-radius: 14px !important;
+  box-shadow: 0 16px 42px rgba(168,85,247,.18) !important;
+  transition: transform .14s var(--hl-ease), box-shadow .14s var(--hl-ease), filter .14s var(--hl-ease) !important;
+}
+
+.TextEditor-controls .item-submit .Button--primary:hover,
+.Composer-footer .item-submit .Button--primary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 22px 60px rgba(34,211,238,.16) !important;
+  filter: brightness(1.03) !important;
+}
+
+/* Toolbar de markdown (bold, italic, etc.) */
+.MarkdownToolbar {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 6px !important;
+  align-items: center !important;
+}
+
+.MarkdownToolbar .Button,
+.TextEditor-toolbar .Button {
+  padding: 9px 11px !important;
+  background: rgba(255,255,255,.04) !important;
+  border: 1px solid rgba(255,255,255,.10) !important;
+  border-radius: 10px !important;
+  color: rgba(255,255,255,.82) !important;
+  transition: all .14s var(--hl-ease) !important;
+  min-width: 38px !important;
+  min-height: 38px !important;
+}
+
+.MarkdownToolbar .Button:hover,
+.TextEditor-toolbar .Button:hover {
+  background: rgba(34,211,238,.08) !important;
+  border-color: rgba(34,211,238,.18) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 8px 20px rgba(0,0,0,.22) !important;
+}
+
+/* Botones secundarios (upload, media, emoji) */
+.TextEditor-controls .item-fof-upload .Button,
+.TextEditor-controls .item-fof-upload-media .Button {
+  padding: 9px 12px !important;
+  background: rgba(255,255,255,.045) !important;
+  border: 1px solid rgba(255,255,255,.10) !important;
+  border-radius: 10px !important;
+  color: rgba(255,255,255,.85) !important;
+  transition: all .14s var(--hl-ease) !important;
+}
+
+.TextEditor-controls .item-fof-upload .Button:hover,
+.TextEditor-controls .item-fof-upload-media .Button:hover {
+  background: rgba(168,85,247,.08) !important;
+  border-color: rgba(168,85,247,.18) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Avatar del composer */
+.ComposerBody-avatar {
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 16px !important;
+  box-shadow: 0 12px 28px rgba(0,0,0,.35) !important;
+  margin-right: 14px !important;
+  flex-shrink: 0 !important;
+}
+
+/* Responsive: en mobile, stack vertical */
+@media (max-width: 680px) {
+  .ComposerBody-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  
+  .ComposerBody-header .item-tags,
+  .ComposerBody-header .item-title {
+    width: 100% !important;
+  }
+  
+  .TextEditor-controls {
+    gap: 8px !important;
+  }
+  
+  .MarkdownToolbar .Button {
+    min-width: 34px !important;
+    min-height: 34px !important;
+    padding: 7px 9px !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* ===== FIX BORDE DOBLE - SELECTOR EXACTO DEFINITIVO ===== */
+
+/* Anula el LI contenedor */
+.ComposerBody-header .item-discussionTitle {
+  all: unset !important;
+  display: block !important;
+  width: 100% !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 0 12px 0 !important;
+}
+
+/* Anula el H3 (primer hijo del LI) */
+.item-discussionTitle > h3:nth-child(1) {
+  all: unset !important;
+  display: block !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+}
+
+/* Elimina pseudo-elementos del H3 */
+.item-discussionTitle > h3:nth-child(1)::before,
+.item-discussionTitle > h3:nth-child(1)::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* SOLO el input (primer hijo del H3) tiene estilo */
+.item-discussionTitle > h3:nth-child(1) > input:nth-child(1) {
+  all: unset !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 14px 18px !important;
+  margin: 0 !important;
+  background: rgba(0,0,0,.22) !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  border-radius: 16px !important;
+  color: rgba(255,255,255,.96) !important;
+  font-weight: 850 !important;
+  font-size: 17px !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  letter-spacing: .2px !important;
+  line-height: 1.5 !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.06) !important;
+  transition: border-color .18s ease, box-shadow .18s ease !important;
+  outline: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+/* Focus */
+.item-discussionTitle > h3:nth-child(1) > input:nth-child(1):focus {
+  border-color: rgba(34,211,238,.35) !important;
+  box-shadow: 0 0 0 3px rgba(34,211,238,.12), inset 0 1px 0 rgba(255,255,255,.06) !important;
+}
+
+/* Placeholder */
+.item-discussionTitle > h3:nth-child(1) > input:nth-child(1)::placeholder {
+  color: rgba(255,255,255,.52) !important;
+  opacity: 1 !important;
+}
+
+/* Override máxima especificidad con body */
+body #app .ComposerBody-header .item-discussionTitle > h3:nth-child(1) {
+  all: unset !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+body #app .ComposerBody-header .item-discussionTitle > h3:nth-child(1) > input:nth-child(1) {
+  all: unset !important;
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 14px 18px !important;
+  background: rgba(0,0,0,.22) !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  border-radius: 16px !important;
+  color: rgba(255,255,255,.96) !important;
+  font-weight: 850 !important;
+  font-size: 17px !important;
+  font-family: inherit !important;
+  letter-spacing: .2px !important;
+  line-height: 1.5 !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.06) !important;
+}
+
+/* Por si el H3 tiene estilos inline o del theme */
+.ComposerBody-header li.item-discussionTitle h3[style] {
+  all: unset !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+/* ==========================================================
+   HyLeveling — Composer Page (clarkwinkelmann) PRO ✨
+   - layout centrado, panel con glow, sidebar más limpia
+   - botones + toolbar más pro
+   ========================================================== */
+
+/* 1) Fondo suave (sin ensuciar el tema) */
+body{
+  background:
+    radial-gradient(900px 520px at 18% 0%, rgba(168,85,247,.14), transparent 60%),
+    radial-gradient(820px 520px at 85% 10%, rgba(34,211,238,.10), transparent 60%),
+    linear-gradient(180deg, rgba(9,12,18,1), rgba(7,10,15,1)) !important;
+}
+
+/* 2) Contenedor principal de composer page (selector robusto) */
+.ComposerPage,
+.ComposerPage .App-content,
+.ComposerPage .container{
+  position: relative !important;
+}
+
+/* 3) Centrado del contenido y mejor spacing */
+.ComposerPage .container{
+  max-width: 1250px !important;
+  padding: 26px 18px 34px !important;
+}
+
+/* 4) “Card” principal del editor (panel) */
+.ComposerPage .ComposerBody{
+  background: rgba(11,15,22,.86) !important;
+  border: 1px solid rgba(255,255,255,.10) !important;
+  border-radius: 22px !important;
+  box-shadow:
+    0 30px 90px rgba(0,0,0,.55),
+    0 0 0 1px rgba(168,85,247,.08),
+    0 0 60px rgba(34,211,238,.08) !important;
+  backdrop-filter: blur(16px) !important;
+  padding: 22px 22px 18px !important;
+}
+
+/* 5) Header “Start a discussion” más limpio */
+.ComposerPage .ComposerBody-header{
+  gap: 12px !important;
+  margin-bottom: 10px !important;
+}
+.ComposerPage .ComposerBody-header .item-title h3{
+  background: rgba(168,85,247,.10) !important;
+  border: 1px solid rgba(168,85,247,.22) !important;
+  border-radius: 999px !important;
+  padding: 9px 14px !important;
+  font-weight: 950 !important;
+}
+
+/* 6) Chip de tags */
+.ComposerPage .ComposerBody-header .item-tags .TagLabel{
+  background: rgba(0,0,0,.25) !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  border-radius: 999px !important;
+  padding: 9px 14px !important;
+}
+.ComposerPage .ComposerBody-header .item-tags .TagLabel:hover{
+  border-color: rgba(34,211,238,.22) !important;
+  background: rgba(34,211,238,.07) !important;
+}
+
+/* 7) Inputs más pro */
+.ComposerPage input.FormControl,
+.ComposerPage textarea.FormControl,
+.ComposerPage .TextEditor-editor{
+  background: rgba(0,0,0,.24) !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  border-radius: 16px !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.05) !important;
+}
+.ComposerPage input.FormControl:focus,
+.ComposerPage textarea.FormControl:focus,
+.ComposerPage .TextEditor-editor:focus{
+  border-color: rgba(34,211,238,.35) !important;
+  box-shadow: 0 0 0 3px rgba(34,211,238,.10), inset 0 1px 0 rgba(255,255,255,.05) !important;
+}
+
+/* 8) Editor altura cómoda */
+.ComposerPage .TextEditor-editor,
+.ComposerPage textarea.FormControl{
+  min-height: 340px !important;
+}
+
+/* 9) Toolbar: barra más compacta y ordenada */
+.ComposerPage .TextEditor-controls{
+  border-top: 1px solid rgba(255,255,255,.10) !important;
+  margin-top: 14px !important;
+  padding-top: 14px !important;
+  gap: 10px !important;
+}
+
+/* 10) Botón Post Discussion más “main CTA” */
+.ComposerPage .TextEditor-controls .item-submit .Button--primary{
+  background: linear-gradient(90deg, rgba(168,85,247,.95), rgba(34,211,238,.85)) !important;
+  border: 0 !important;
+  color: #0b0f16 !important;
+  font-weight: 950 !important;
+  padding: 12px 22px !important;
+  border-radius: 14px !important;
+  box-shadow: 0 18px 50px rgba(168,85,247,.18) !important;
+}
+.ComposerPage .TextEditor-controls .item-submit .Button--primary:hover{
+  transform: translateY(-2px) !important;
+  filter: brightness(1.05) !important;
+  box-shadow: 0 24px 70px rgba(34,211,238,.14) !important;
+}
+
+/* 11) Botones del toolbar más “gamer clean” */
+.ComposerPage .MarkdownToolbar .Button,
+.ComposerPage .TextEditor-toolbar .Button{
+  background: rgba(255,255,255,.04) !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  border-radius: 12px !important;
+  min-width: 40px !important;
+  min-height: 40px !important;
+}
+.ComposerPage .MarkdownToolbar .Button:hover,
+.ComposerPage .TextEditor-toolbar .Button:hover{
+  background: rgba(34,211,238,.08) !important;
+  border-color: rgba(34,211,238,.18) !important;
+  box-shadow: 0 10px 26px rgba(0,0,0,.25) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* 12) Sidebar del composer page (lista de tags) más elegante */
+.ComposerPage .ComposerSidebar,
+.ComposerPage .SideNav{
+  background: rgba(11,15,22,.55) !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+  border-radius: 18px !important;
+  padding: 14px 12px !important;
+  backdrop-filter: blur(12px) !important;
+}
+.ComposerPage .SideNav a{
+  border-radius: 12px !important;
+}
+.ComposerPage .SideNav a:hover{
+  background: rgba(168,85,247,.08) !important;
+}
+
+/* 13) Responsive */
+@media (max-width: 992px){
+  .ComposerPage .container{ padding: 18px 12px 26px !important; }
+  .ComposerPage .ComposerBody{ padding: 18px !important; }
+}
+
+
+/* =====  RESET-PASSWORD — v14 ===== */
+body[route^="reset"]{
+  background:#070A12;
+  color:rgba(255,255,255,.92);
+}
+
+/* inputs 100 % ancho + estilo gamer */
+body[route^="reset"] .form-control{
+  width:100%;
+  background:rgba(0,0,0,.28);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:14px;
+  padding:12px 14px;
+  color:rgba(255,255,255,.92);
+}
+body[route^="reset"] .form-control::placeholder{
+  color:rgba(255,255,255,.45);
+}
+
+/* botón grande con gradiente */
+body[route^="reset"] .button{
+  width:100%;
+  margin-top:8px;
+  padding:12px 16px;
+  font-weight:900;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.14);
+  background:linear-gradient(90deg,#A855F7,#22D3EE);
+  color:#0B0F16;
+  box-shadow:0 10px 26px rgba(0,0,0,.45);
+}

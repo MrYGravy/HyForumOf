@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "name": "@miforums/reset-password-redesign",
+  "scripts": {
+    "dev": "flarum-webpack-config && webpack --mode development --watch",
+    "build": "flarum-webpack-config && webpack --mode production"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@babel/plugin-transform-react-jsx": "^7.28.6",
+    "@babel/preset-env": "^7.29.0",
+    "babel-loader": "^10.0.0",
+    "flarum-webpack-config": "^2.0.0",
+    "webpack": "^5.0.0",
+    "webpack-cli": "^4.0.0"
+  }
+}
