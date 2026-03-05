@@ -3,19 +3,19 @@
   'database' => 
   array (
     'driver' => 'mysql',
-    'host' => 'localhost',
+    'host' => 'prueba',
     'port' => 3306,
-    'database' => 'flarum',
-    'username' => 'flarum',
-    'password' => '6037213dD.',
+    'database' => 'prueba',
+    'username' => 'prueba',
+    'password' => 'prueba',
     'charset' => 'utf8mb4',
     'collation' => 'utf8mb4_unicode_ci',
-    'prefix' => 'flarum',
+    'prefix' => 'prueba',
     'strict' => false,
     'engine' => 'InnoDB',
     'prefix_indexes' => true,
   ),
-  'url' => 'https://forum.hyleveling.net',
+  'url' => 'https://pruebaleveling.net',
   'paths' => 
   array (
     'api' => 'api',
